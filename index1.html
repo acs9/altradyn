@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALTRADYN PRIME — Intelligent Systems & Venture Development Platform</title>
+  <meta name="description" content="ALTRADYN Prime LLP is an independent business-building and operating platform. One platform. Multiple possibilities.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-ivory">
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <div class="container nav-wrapper">
+      <div class="brand-logo" onclick="switchPage('home')">
+        <div class="logo-glyph">
+          <div class="logo-glyph-diamond"></div>
+          <div class="logo-glyph-dot"></div>
+        </div>
+        <div>
+          <div class="brand-title">ALTRADYN <span style="color:var(--gold); font-size:0.7rem;">PRIME</span></div>
+          <div class="brand-subtitle">Venture Platform</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a class="nav-link active" onclick="switchPage('home')">01 // Home</a></li>
+          <li><a class="nav-link" onclick="switchPage('about')">02 // About</a></li>
+          <li><a class="nav-link" onclick="switchPage('model')">03 // Our Model</a></li>
+          <li><a class="nav-link" onclick="switchPage('ventures')">04 // Ventures</a></li>
+          <li><a class="nav-link" onclick="switchPage('focus')">05 // Focus Areas</a></li>
+          <li><a class="nav-link" onclick="switchPage('perspectives')">06 // Perspectives</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-cta" onclick="switchPage('connect')">
+        <span>CONNECT</span>
+        <span>→</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== 01. HOME PAGE ==================== -->
+  <main id="page-home" class="page-view active">
+    <!-- Hero -->
+    <section class="hero-section bg-navy pattern-grid-dark">
+      <div class="container">
+        <div class="badge-tag">
+          <span style="width:6px; height:6px; background:var(--gold); border-radius:50%; display:inline-block;"></span>
+          PARENT OPERATING PLATFORM
+        </div>
+        <h1 class="hero-title">
+          WE BUILD WHAT<br>
+          <span style="color:var(--gold)">COMES NEXT.</span>
+        </h1>
+        <p class="hero-subtitle">
+          ALTRADYN Prime is an independent business-building and operating platform. We identify opportunities at the intersection of technology, intelligence and changing markets—and build enduring enterprises.
+        </p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <button class="btn-cta" onclick="switchPage('ventures')">EXPLORE VENTURES →</button>
+          <button class="btn-secondary" onclick="switchPage('model')">OUR 5-STAGE MODEL</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thesis 3 Pillars -->
+    <section style="padding: 5rem 0;" class="pattern-grid-light">
+      <div class="container">
+        <div style="margin-bottom: 3rem;">
+          <div class="badge-tag" style="background:#fff; color:var(--teal); border-color:rgba(27,77,74,0.3);">
+            THE ALTRADYN THESIS
+          </div>
+          <h2 style="font-size:2.2rem; color:var(--navy); margin-top:0.5rem;">Businesses as Living Systems.</h2>
+          <p style="color:var(--ink-muted); max-width:640px; margin-top:0.5rem;">
+            Most companies operate in silos. ALTRADYN builds an interconnected parent operating system where intelligence, technology, and capital compound across ventures.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card-ivory">
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">PILLAR 01</span>
+            <h3 style="font-size:1.35rem; color:var(--navy); margin:0.75rem 0;">IDENTIFY</h3>
+            <p style="font-size:0.88rem; color:var(--ink-muted);">
+              Spot structural inefficiencies and nascent technology shifts before they become mainstream categories.
+            </p>
+          </div>
+
+          <div class="card-ivory">
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal); font-weight:700;">PILLAR 02</span>
+            <h3 style="font-size:1.35rem; color:var(--navy); margin:0.75rem 0;">BUILD</h3>
+            <p style="font-size:0.88rem; color:var(--ink-muted);">
+              Deploy dedicated platform engineering, shared AI pipelines, and strategic governance to rapidly construct resilient ventures.
+            </p>
+          </div>
+
+          <div class="card-ivory">
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">PILLAR 03</span>
+            <h3 style="font-size:1.35rem; color:var(--navy); margin:0.75rem 0;">SCALE</h3>
+            <p style="font-size:0.88rem; color:var(--ink-muted);">
+              Operate as permanent long-term partners with enduring holding structures and multi-venture compounding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venture Preview Section -->
+    <section class="bg-navy pattern-grid-dark" style="padding: 5rem 0;">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <div class="badge-tag">PORTFOLIO MATRIX</div>
+            <h2 style="font-size:2.2rem; color:var(--ivory);">Featured Platform Ventures</h2>
+          </div>
+          <button class="btn-secondary" onclick="switchPage('ventures')">VIEW ALL VENTURES →</button>
+        </div>
+
+        <div class="grid-3">
+          <div class="card-navy" style="cursor:pointer;" onclick="openVentureModal('synapse')">
+            <div style="display:flex; justify-content:space-between; font-family:ui-monospace; font-size:0.7rem; color:var(--gold); margin-bottom:0.75rem;">
+              <span>V-01 // AI & DATA</span>
+              <span style="background:rgba(184,147,90,0.15); padding:2px 8px; border-radius:4px;">BUILDING</span>
+            </div>
+            <h3 style="font-size:1.4rem; color:var(--ivory);">SynapseOps</h3>
+            <p style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); margin:0.35rem 0 1rem;">Autonomous Enterprise AI Orchestration</p>
+            <p style="font-size:0.85rem; color:rgba(245,241,232,0.75); margin-bottom:1.5rem;">
+              Multi-agent reasoning layers connecting legacy corporate ERP and databases into real-time decision loops.
+            </p>
+            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">Learn More →</div>
+          </div>
+
+          <div class="card-navy" style="cursor:pointer;" onclick="openVentureModal('meridian')">
+            <div style="display:flex; justify-content:space-between; font-family:ui-monospace; font-size:0.7rem; color:var(--gold); margin-bottom:0.75rem;">
+              <span>V-02 // PLATFORMS</span>
+              <span style="background:rgba(27,77,74,0.3); padding:2px 8px; border-radius:4px; color:#4ade80;">ACTIVE</span>
+            </div>
+            <h3 style="font-size:1.4rem; color:var(--ivory);">Meridian Flow</h3>
+            <p style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); margin:0.35rem 0 1rem;">Global Logistics Intelligence Network</p>
+            <p style="font-size:0.85rem; color:rgba(245,241,232,0.75); margin-bottom:1.5rem;">
+              Cross-border maritime routing and supply chain prediction engine for global trade corridors.
+            </p>
+            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">Learn More →</div>
+          </div>
+
+          <div class="card-navy" style="cursor:pointer;" onclick="openVentureModal('terra')">
+            <div style="display:flex; justify-content:space-between; font-family:ui-monospace; font-size:0.7rem; color:var(--gold); margin-bottom:0.75rem;">
+              <span>V-03 // ASSETS</span>
+              <span style="background:rgba(184,147,90,0.15); padding:2px 8px; border-radius:4px;">INCUBATING</span>
+            </div>
+            <h3 style="font-size:1.4rem; color:var(--ivory);">TerraLedger</h3>
+            <p style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); margin:0.35rem 0 1rem;">Institutional Asset Digital Rails</p>
+            <p style="font-size:0.85rem; color:rgba(245,241,232,0.75); margin-bottom:1.5rem;">
+              Tokenized commercial real estate liquidity protocols and automated debt covenants.
+            </p>
+            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">Learn More →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 02. ABOUT PAGE ==================== -->
+  <main id="page-about" class="page-view">
+    <section class="hero-section bg-navy pattern-grid-dark">
+      <div class="container">
+        <div class="badge-tag">ABOUT ALTRADYN PRIME</div>
+        <h1 class="hero-title">BUILT TO EVOLVE.</h1>
+        <p class="hero-subtitle">
+          We are not a traditional private equity firm, incubator, or software agency. We are a parent operating platform that constructs, owns, and scales technology-driven businesses.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 5rem 0;" class="pattern-grid-light">
+      <div class="container">
+        <div class="grid-3">
+          <div class="card-ivory">
+            <h3 style="color:var(--navy); margin-bottom:0.75rem;">01 / Permanent Capital</h3>
+            <p style="font-size:0.88rem; color:var(--ink-muted);">
+              Unconstrained by artificial 7-year fund cycles. We build for generational durability and continuous cash-flow compounding.
+            </p>
+          </div>
+          <div class="card-ivory">
+            <h3 style="color:var(--navy); margin-bottom:0.75rem;">02 / Deep Shared Tech</h3>
+            <p style="font-size:0.88rem; color:var(--ink-muted);">
+              Every portfolio company draws from a centralized pool of engineering intelligence, AI inference rails, and legal infrastructure.
+            </p>
+          </div>
+          <div class="card-ivory">
+            <h3 style="color:var(--navy); margin-bottom:0.75rem;">03 / Operator-Led</h3>
+            <p style="font-size:0.88rem; color:var(--ink-muted);">
+              Founded and steered by veteran builders who have engineered systems from scratch, ensuring ruthless execution over pitch decks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 03. OUR MODEL ==================== -->
+  <main id="page-model" class="page-view">
+    <section class="hero-section bg-navy pattern-grid-dark">
+      <div class="container">
+        <div class="badge-tag">CONTINUOUS ENGINE</div>
+        <h1 class="hero-title">THE 5-STAGE MODEL.</h1>
+        <p class="hero-subtitle">
+          How ALTRADYN moves systematically from macro observation to scaled enterprise operations.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 5rem 0;" class="pattern-grid-light">
+      <div class="container">
+        <div class="grid-5">
+          <div class="card-ivory">
+            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 01</span>
+            <h4 style="color:var(--navy); margin:0.5rem 0;">Observe</h4>
+            <p style="font-size:0.8rem; color:var(--ink-muted);">Market friction analysis & signals</p>
+          </div>
+          <div class="card-ivory">
+            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 02</span>
+            <h4 style="color:var(--navy); margin:0.5rem 0;">Identify</h4>
+            <p style="font-size:0.8rem; color:var(--ink-muted);">Thesis formulation & vector mapping</p>
+          </div>
+          <div class="card-ivory">
+            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 03</span>
+            <h4 style="color:var(--navy); margin:0.5rem 0;">Validate</h4>
+            <p style="font-size:0.8rem; color:var(--ink-muted);">Prototype testing & customer proof</p>
+          </div>
+          <div class="card-ivory">
+            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 04</span>
+            <h4 style="color:var(--navy); margin:0.5rem 0;">Build</h4>
+            <p style="font-size:0.8rem; color:var(--ink-muted);">Full-stack platform deployment</p>
+          </div>
+          <div class="card-ivory">
+            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 05</span>
+            <h4 style="color:var(--navy); margin:0.5rem 0;">Scale</h4>
+            <p style="font-size:0.8rem; color:var(--ink-muted);">Autonomous expansion & compounding</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 04. VENTURES ==================== -->
+  <main id="page-ventures" class="page-view">
+    <section class="hero-section bg-navy pattern-grid-dark">
+      <div class="container">
+        <div class="badge-tag">PORTFOLIO & SANDBOX</div>
+        <h1 class="hero-title">THE ECOSYSTEM.</h1>
+        <p class="hero-subtitle">
+          Active companies and incubating platforms architected and operated by ALTRADYN Prime.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 5rem 0;" class="pattern-grid-light">
+      <div class="container">
+        <div class="grid-3">
+          <div class="card-ivory" onclick="openVentureModal('synapse')" style="cursor:pointer;">
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal);">V-01 // AI & DATA</span>
+            <h3 style="color:var(--navy); margin:0.5rem 0;">SynapseOps</h3>
+            <p style="font-size:0.85rem; color:var(--ink-muted); margin-bottom:1rem;">Autonomous Enterprise AI Orchestration</p>
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">Explore Details →</span>
+          </div>
+
+          <div class="card-ivory" onclick="openVentureModal('meridian')" style="cursor:pointer;">
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal);">V-02 // PLATFORMS</span>
+            <h3 style="color:var(--navy); margin:0.5rem 0;">Meridian Flow</h3>
+            <p style="font-size:0.85rem; color:var(--ink-muted); margin-bottom:1rem;">Global Logistics Intelligence Network</p>
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">Explore Details →</span>
+          </div>
+
+          <div class="card-ivory" onclick="openVentureModal('terra')" style="cursor:pointer;">
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal);">V-03 // ASSETS</span>
+            <h3 style="color:var(--navy); margin:0.5rem 0;">TerraLedger</h3>
+            <p style="font-size:0.85rem; color:var(--ink-muted); margin-bottom:1rem;">Institutional Asset Digital Rails</p>
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">Explore Details →</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 05. FOCUS AREAS ==================== -->
+  <main id="page-focus" class="page-view">
+    <section class="hero-section bg-navy pattern-grid-dark">
+      <div class="container">
+        <div class="badge-tag">DOMAINS & THESIS</div>
+        <h1 class="hero-title">WHERE WE BUILD.</h1>
+        <p class="hero-subtitle">
+          We focus on sectors undergoing fundamental technological reorganization.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 5rem 0;" class="pattern-grid-light">
+      <div class="container">
+        <div class="grid-2">
+          <div class="card-ivory">
+            <h3 style="color:var(--navy); margin-bottom:0.5rem;">AI & Autonomous Systems</h3>
+            <p style="font-size:0.9rem; color:var(--ink-muted);">
+              Moving beyond chatbot toys into deterministic, multi-agent automated systems for high-value enterprise workflows.
+            </p>
+          </div>
+          <div class="card-ivory">
+            <h3 style="color:var(--navy); margin-bottom:0.5rem;">Physical Asset Intelligence</h3>
+            <p style="font-size:0.9rem; color:var(--ink-muted);">
+              Bridging real estate, energy, and logistics assets with computational intelligence and automated financial rails.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 06. PERSPECTIVES ==================== -->
+  <main id="page-perspectives" class="page-view">
+    <section class="hero-section bg-navy pattern-grid-dark">
+      <div class="container">
+        <div class="badge-tag">ESSAYS & BRIEFINGS</div>
+        <h1 class="hero-title">PERSPECTIVES.</h1>
+        <p class="hero-subtitle">
+          Long-form thinking on systems design, AI economics, and the mechanics of building durable value.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 5rem 0;" class="pattern-grid-light">
+      <div class="container">
+        <div class="grid-2">
+          <div class="card-ivory" onclick="openArticleModal('post-saas')" style="cursor:pointer;">
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">ESSAY // BUSINESS MODELS</span>
+            <h3 style="color:var(--navy); margin:0.75rem 0;">The Post-SaaS Architecture: Why Seat-Based Software is Dying</h3>
+            <p style="font-size:0.88rem; color:var(--ink-muted);">
+              How AI agents replace per-seat billing with outcome-based value realization.
+            </p>
+            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal); margin-top:1rem;">Read Briefing →</div>
+          </div>
+
+          <div class="card-ivory" onclick="openArticleModal('foundation-models')" style="cursor:pointer;">
+            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">ESSAY // TECHNOLOGY</span>
+            <h3 style="color:var(--navy); margin:0.75rem 0;">Beyond Foundation Models: The Enduring Value of Domain Context</h3>
+            <p style="font-size:0.88rem; color:var(--ink-muted);">
+              Commoditization of LLM weights and why proprietary context graphs hold the true enterprise moat.
+            </p>
+            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal); margin-top:1rem;">Read Briefing →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 07. CONNECT ==================== -->
+  <main id="page-connect" class="page-view">
+    <section class="hero-section bg-navy pattern-grid-dark">
+      <div class="container">
+        <div class="badge-tag">ENGAGEMENT DESK</div>
+        <h1 class="hero-title">LET'S TALK.</h1>
+        <p class="hero-subtitle">
+          Whether you are a founder looking to co-build, a corporate partner, or an asset owner, connect with ALTRADYN Prime.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 5rem 0;" class="pattern-grid-light">
+      <div class="container" style="max-width:720px;">
+        <div class="card-ivory">
+          <form onsubmit="handleFormSubmit(event)">
+            <div style="margin-bottom:1.25rem;">
+              <label style="display:block; font-family:ui-monospace; font-size:0.75rem; margin-bottom:0.4rem; color:var(--navy);">YOUR FULL NAME</label>
+              <input type="text" required placeholder="e.g. Diptanshu Sharma" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(11,31,58,0.2); font-size:0.9rem;">
+            </div>
+
+            <div style="margin-bottom:1.25rem;">
+              <label style="display:block; font-family:ui-monospace; font-size:0.75rem; margin-bottom:0.4rem; color:var(--navy);">CORPORATE EMAIL</label>
+              <input type="email" required placeholder="name@company.com" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(11,31,58,0.2); font-size:0.9rem;">
+            </div>
+
+            <div style="margin-bottom:1.25rem;">
+              <label style="display:block; font-family:ui-monospace; font-size:0.75rem; margin-bottom:0.4rem; color:var(--navy);">ENGAGEMENT AREA</label>
+              <select style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(11,31,58,0.2); font-size:0.9rem; background:#fff;">
+                <option>Build with ALTRADYN (Founders & EIR)</option>
+                <option>Strategic & Technology Partnership</option>
+                <option>Business & Asset Opportunity</option>
+                <option>Careers & Talent</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <label style="display:block; font-family:ui-monospace; font-size:0.75rem; margin-bottom:0.4rem; color:var(--navy);">CONTEXT / MESSAGE</label>
+              <textarea rows="4" required placeholder="Briefly describe your venture concept or inquiry..." style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(11,31,58,0.2); font-size:0.9rem;"></textarea>
+            </div>
+
+            <button type="submit" class="btn-cta" style="width:100%; justify-content:center; padding:0.85rem;">
+              SUBMIT STRATEGIC INQUIRY →
+            </button>
+          </form>
+          <div id="form-success" style="display:none; margin-top:1.5rem; padding:1rem; background:rgba(27,77,74,0.15); border:1px solid var(--teal); border-radius:8px; color:var(--teal); font-family:ui-monospace; font-size:0.85rem; text-align:center;">
+            ✓ Inquiry logged. Our venture committee reviews proposals within 48 business hours.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== MODALS ==================== -->
+  <div id="app-modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-navy-dark" style="padding: 4rem 0 2rem; border-top: 1px solid rgba(245,241,232,0.1);">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; padding-bottom:2rem; border-bottom:1px solid rgba(245,241,232,0.1);">
+        <div>
+          <div style="font-weight:800; font-size:1.1rem; color:var(--ivory);">ALTRADYN <span style="color:var(--gold); font-size:0.7rem;">PRIME</span></div>
+          <p style="font-size:0.8rem; color:rgba(245,241,232,0.6); margin-top:0.3rem;">The Parent Platform Behind What Comes Next.</p>
+        </div>
+        <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">
+          ONE PLATFORM. MULTIPLE POSSIBILITIES.
+        </div>
+      </div>
+      <div style="margin-top:2rem; font-family:ui-monospace; font-size:0.75rem; color:rgba(245,241,232,0.4); display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <div>© 2026 ALTRADYN Prime LLP. All rights reserved.</div>
+        <div>Built for high performance & durability.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    function switchPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById('page-' + pageId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(pageId)) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    const ventureData = {
+      synapse: {
+        title: "SynapseOps",
+        code: "V-01 // AI & DATA",
+        tagline: "Autonomous Enterprise AI Orchestration",
+        desc: "SynapseOps bridges core enterprise legacy databases and live operational feeds with autonomous reasoning agents, creating zero-latency decision pipelines for critical operations."
+      },
+      meridian: {
+        title: "Meridian Flow",
+        code: "V-02 // PLATFORMS",
+        tagline: "Global Logistics Intelligence Network",
+        desc: "A distributed computational logistics graph optimizing multi-modal freight transport, predicting bottlenecks 14 days in advance and re-routing high-value cargo dynamically."
+      },
+      terra: {
+        title: "TerraLedger",
+        code: "V-03 // ASSETS",
+        tagline: "Institutional Asset Digital Rails",
+        desc: "Programmable institutional debt and equity tokenization rails for physical infrastructure, renewable energy grids, and prime commercial real estate portfolios."
+      }
+    };
+
+    function openVentureModal(id) {
+      const data = ventureData[id];
+      if (!data) return;
+      const content = document.getElementById('modal-content');
+      content.innerHTML = `
+        <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal); font-weight:700;">${data.code}</span>
+        <h2 style="font-size:2rem; color:var(--navy); margin:0.5rem 0;">${data.title}</h2>
+        <p style="font-family:ui-monospace; font-size:0.85rem; color:var(--gold); margin-bottom:1.5rem;">"${data.tagline}"</p>
+        <p style="font-size:1rem; color:var(--ink); line-height:1.7; margin-bottom:2rem;">${data.desc}</p>
+        <button class="btn-cta" onclick="closeModal(); switchPage('connect');">Engage with this Venture →</button>
+      `;
+      document.getElementById('app-modal').classList.add('open');
+    }
+
+    function openArticleModal(id) {
+      const content = document.getElementById('modal-content');
+      content.innerHTML = `
+        <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">STRATEGIC ESSAY</span>
+        <h2 style="font-size:2rem; color:var(--navy); margin:0.5rem 0;">The Post-SaaS Architecture</h2>
+        <p style="font-family:'Newsreader', serif; font-size:1.15rem; color:var(--ink); line-height:1.8; margin-top:1.5rem;">
+          The enterprise software model of the past two decades—charging $40/user/month for database wrappers—is fundamentally breaking. As AI agents begin doing the work rather than humans clicking buttons, revenue will shift from per-seat subscriptions to verifiable outcome capture.
+        </p>
+      `;
+      document.getElementById('app-modal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('app-modal').classList.remove('open');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').style.display = 'block';
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

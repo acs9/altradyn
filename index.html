@@ -1,514 +1,2111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALTRADYN PRIME — Intelligent Systems & Venture Development Platform</title>
-  <meta name="description" content="ALTRADYN Prime LLP is an independent business-building and operating platform. One platform. Multiple possibilities.">
+  <title>ALTRADYN PRIME — Intelligent Systems. Enduring Ventures.</title>
+  <meta name="description" content="ALTRADYN Prime is an independent business-building, operating, and venture development platform conceiving, validating, and scaling enduring market systems.">
+  <meta property="og:title" content="ALTRADYN PRIME — Intelligent Systems. Enduring Ventures.">
+  <meta property="og:description" content="One platform. Multiple possibilities. Building high-conviction ventures at the intersection of intelligence, technology, and market systems.">
+  
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-ivory">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ==================== HEADER ==================== -->
+  <style>
+    /* -------------------------------------------------------------
+       ALTRADYN PRIME — CLEAN MINIMALISM ARCHITECTURAL DESIGN SYSTEM
+       ------------------------------------------------------------- */
+    :root {
+      --bg-canvas: #FBFBFA;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F5F5F3;
+      --bg-pill: #F0F0EE;
+      --text-primary: #1A1A1A;
+      --text-secondary: #4A4A48;
+      --text-muted: #6B6B6B;
+      --text-light: #8C8C8A;
+      --border-color: #E5E5E3;
+      --border-dark: #1A1A1A;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --max-width: 1280px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 15px;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background-color: #1A1A1A;
+      color: #FFFFFF;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    p {
+      color: var(--text-secondary);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(251, 251, 250, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-symbol {
+      width: 32px;
+      height: 32px;
+      background: #1A1A1A;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid var(--border-dark);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 28px;
+    }
+
+    @media (min-width: 960px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.15s ease;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--text-primary);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--text-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 0px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: #1A1A1A;
+      color: #FFFFFF;
+      border: 1px solid #1A1A1A;
+    }
+
+    .btn-primary:hover {
+      background: #333333;
+      border-color: #333333;
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: #1A1A1A;
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-subtle);
+      border-color: #1A1A1A;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: var(--bg-pill);
+      border: 1px solid var(--border-color);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 80px 0 60px 0;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .hero-title {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.05;
+      font-weight: 300;
+      letter-spacing: -0.04em;
+      margin: 20px 0;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .hero-lead {
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Live Canvas Box */
+    .canvas-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      position: relative;
+    }
+
+    .canvas-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .canvas-container {
+      width: 100%;
+      height: 380px;
+      background: #FBFBFA;
+      border: 1px solid var(--border-color);
+      position: relative;
+      cursor: crosshair;
+      overflow: hidden;
+    }
+
+    #ecosystemCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Telemetry Stats Bar */
+    .telemetry-bar {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .telemetry-bar {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .telemetry-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 20px 24px;
+    }
+
+    .telemetry-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .telemetry-val {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--text-primary);
+    }
+
+    /* Sections Shared */
+    section {
+      padding: 96px 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .section-header {
+      margin-bottom: 48px;
+      max-width: 760px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      margin: 14px 0;
+    }
+
+    .section-title em {
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Model Stage Cards & Interactive Layout */
+    .model-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .model-nav-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    .stage-tab-btn {
+      padding: 16px;
+      text-align: left;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+
+    .stage-tab-btn:hover {
+      border-color: #1A1A1A;
+    }
+
+    .stage-tab-btn.active {
+      background: #1A1A1A;
+      color: #FFFFFF;
+      border-color: #1A1A1A;
+    }
+
+    .stage-tab-btn.active .stage-num {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .stage-tab-btn.active .stage-title {
+      color: #FFFFFF;
+    }
+
+    .stage-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .stage-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .stage-detail-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 40px;
+    }
+
+    .stage-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    @media (min-width: 960px) {
+      .stage-detail-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+
+    /* Ventures Grid */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .filter-btn {
+      padding: 6px 14px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--text-primary);
+      color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+      background: #1A1A1A;
+      color: #FFFFFF;
+      border-color: #1A1A1A;
+    }
+
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .ventures-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .ventures-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .venture-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .venture-card:hover {
+      border-color: #1A1A1A;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.07);
+    }
+
+    .venture-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .venture-name {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .venture-cat {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .venture-tagline {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .venture-thesis-quote {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      padding: 12px 14px;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    /* Focus Areas Cards */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .focus-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .focus-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 32px 28px;
+      transition: all 0.2s ease;
+    }
+
+    .focus-card:hover {
+      border-color: #1A1A1A;
+    }
+
+    .focus-title {
+      font-size: 20px;
+      font-weight: 400;
+      margin: 12px 0 8px 0;
+    }
+
+    /* Perspectives */
+    .perspectives-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 800px) {
+      .perspectives-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .essay-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .essay-card:hover {
+      border-color: #1A1A1A;
+      box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Engagement / Connect Form */
+    .connect-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 960px) {
+      .connect-layout {
+        grid-template-columns: 1.25fr 0.75fr;
+      }
+    }
+
+    .connect-form-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 36px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background: #FBFBFA;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 13px;
+      border-radius: 0;
+      transition: border-color 0.15s ease;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: #1A1A1A;
+      background: #FFFFFF;
+    }
+
+    .pathways-selector {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .pathways-selector {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    .pathway-btn {
+      padding: 12px 8px;
+      text-align: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      font-size: 11px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: all 0.15s ease;
+    }
+
+    .pathway-btn.active {
+      background: #1A1A1A;
+      color: #FFFFFF;
+      border-color: #1A1A1A;
+    }
+
+    /* Modal System */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 820px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.2);
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 28px;
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-body {
+      padding: 32px 28px;
+      overflow-y: auto;
+    }
+
+    .modal-footer {
+      padding: 16px 28px;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Footer */
+    footer {
+      background: #1A1A1A;
+      color: #FFFFFF;
+      padding: 80px 0 40px 0;
+      border-top: 1px solid #333333;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+      }
+    }
+
+    .footer-col-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+      }
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu-btn {
+      display: flex;
+      padding: 8px;
+    }
+
+    @media (min-width: 960px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      padding: 24px;
+      z-index: 49;
+    }
+
+    .mobile-drawer.open {
+      display: block;
+    }
+
+    .mobile-drawer a {
+      display: block;
+      padding: 12px 0;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      border-bottom: 1px solid var(--bg-subtle);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
   <header>
-    <div class="container nav-wrapper">
-      <div class="brand-logo" onclick="switchPage('home')">
-        <div class="logo-glyph">
-          <div class="logo-glyph-diamond"></div>
-          <div class="logo-glyph-dot"></div>
-        </div>
-        <div>
-          <div class="brand-title">ALTRADYN <span style="color:var(--gold); font-size:0.7rem;">PRIME</span></div>
-          <div class="brand-subtitle">Venture Platform</div>
+    <div class="container">
+      <div class="nav-inner">
+        <!-- Logo -->
+        <a href="#hero" class="brand-logo">
+          <div class="brand-symbol">A</div>
+          <span>ALTRADYN PRIME</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="nav-links">
+          <a href="#about" class="nav-link">Overview</a>
+          <a href="#model" class="nav-link">5-Stage Model</a>
+          <a href="#ventures" class="nav-link">Sovereign Ventures</a>
+          <a href="#focus" class="nav-link">Capability Vectors</a>
+          <a href="#perspectives" class="nav-link">Perspectives</a>
+          <a href="#connect" class="nav-link">Engagement</a>
+        </nav>
+
+        <!-- CTAs -->
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <a href="#connect" class="btn btn-primary">Connect With Us</a>
+          <button class="mobile-menu-btn btn-secondary" id="mobileMenuToggle" aria-label="Toggle Navigation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
         </div>
       </div>
+    </div>
 
-      <nav>
-        <ul>
-          <li><a class="nav-link active" onclick="switchPage('home')">01 // Home</a></li>
-          <li><a class="nav-link" onclick="switchPage('about')">02 // About</a></li>
-          <li><a class="nav-link" onclick="switchPage('model')">03 // Our Model</a></li>
-          <li><a class="nav-link" onclick="switchPage('ventures')">04 // Ventures</a></li>
-          <li><a class="nav-link" onclick="switchPage('focus')">05 // Focus Areas</a></li>
-          <li><a class="nav-link" onclick="switchPage('perspectives')">06 // Perspectives</a></li>
-        </ul>
-      </nav>
-
-      <button class="btn-cta" onclick="switchPage('connect')">
-        <span>CONNECT</span>
-        <span>→</span>
-      </button>
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="#about" onclick="toggleMobileMenu()">Overview & Philosophy</a>
+      <a href="#model" onclick="toggleMobileMenu()">5-Stage Venture Engine</a>
+      <a href="#ventures" onclick="toggleMobileMenu()">Sovereign Ventures (6)</a>
+      <a href="#focus" onclick="toggleMobileMenu()">Capability Vectors (5)</a>
+      <a href="#perspectives" onclick="toggleMobileMenu()">Perspectives & Essays</a>
+      <a href="#connect" onclick="toggleMobileMenu()">Strategic Engagement Portal</a>
     </div>
   </header>
 
-  <!-- ==================== 01. HOME PAGE ==================== -->
-  <main id="page-home" class="page-view active">
-    <!-- Hero -->
-    <section class="hero-section bg-navy pattern-grid-dark">
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section" id="hero" style="border-top: none;">
       <div class="container">
-        <div class="badge-tag">
-          <span style="width:6px; height:6px; background:var(--gold); border-radius:50%; display:inline-block;"></span>
-          PARENT OPERATING PLATFORM
+        <div class="hero-grid">
+          <div>
+            <div class="badge-pill">
+              <span>●</span> Platform Philosophy & Governance
+            </div>
+            <h1 class="hero-title">
+              Intelligent Systems. <em>Enduring Ventures.</em>
+            </h1>
+            <p class="hero-lead">
+              ALTRADYN Prime is an independent business-building, operating, and venture development platform. We conceive, validate, engineer, and scale enduring enterprises across artificial intelligence, autonomous platforms, and strategic physical assets.
+            </p>
+            <div class="hero-actions">
+              <a href="#ventures" class="btn btn-primary">Explore Sovereign Ventures</a>
+              <a href="#model" class="btn btn-secondary">Inspect 5-Stage Engine</a>
+              <a href="#connect" class="btn btn-secondary">Initiate Engagement</a>
+            </div>
+          </div>
+
+          <!-- Interactive Ecosystem Canvas Card -->
+          <div class="canvas-card">
+            <div class="canvas-header">
+              <span class="badge-pill">Interactive Ecosystem Graph</span>
+              <span style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">LIVE TELEMETRY</span>
+            </div>
+            <div class="canvas-container" id="canvasContainer">
+              <canvas id="ecosystemCanvas"></canvas>
+            </div>
+            <div style="margin-top: 12px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">
+              <span>Click or hover nodes to inspect synergies</span>
+              <span>6 Entities • 1 Core Fabric</span>
+            </div>
+          </div>
         </div>
-        <h1 class="hero-title">
-          WE BUILD WHAT<br>
-          <span style="color:var(--gold)">COMES NEXT.</span>
-        </h1>
-        <p class="hero-subtitle">
-          ALTRADYN Prime is an independent business-building and operating platform. We identify opportunities at the intersection of technology, intelligence and changing markets—and build enduring enterprises.
-        </p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-          <button class="btn-cta" onclick="switchPage('ventures')">EXPLORE VENTURES →</button>
-          <button class="btn-secondary" onclick="switchPage('model')">OUR 5-STAGE MODEL</button>
+
+        <!-- Platform Telemetry Metrics Bar -->
+        <div class="telemetry-bar">
+          <div class="telemetry-item">
+            <div class="telemetry-label">Active Ventures</div>
+            <div class="telemetry-val">6 Sovereign</div>
+          </div>
+          <div class="telemetry-item">
+            <div class="telemetry-label">Core Vectors</div>
+            <div class="telemetry-val">5 Domains</div>
+          </div>
+          <div class="telemetry-item">
+            <div class="telemetry-label">Shared Architecture</div>
+            <div class="telemetry-val">100% Unified</div>
+          </div>
+          <div class="telemetry-item">
+            <div class="telemetry-label">Governance Mode</div>
+            <div class="telemetry-val">Long-Horizon</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Thesis 3 Pillars -->
-    <section style="padding: 5rem 0;" class="pattern-grid-light">
+    <!-- About & Platform Thesis Section -->
+    <section id="about">
       <div class="container">
-        <div style="margin-bottom: 3rem;">
-          <div class="badge-tag" style="background:#fff; color:var(--teal); border-color:rgba(27,77,74,0.3);">
-            THE ALTRADYN THESIS
-          </div>
-          <h2 style="font-size:2.2rem; color:var(--navy); margin-top:0.5rem;">Businesses as Living Systems.</h2>
-          <p style="color:var(--ink-muted); max-width:640px; margin-top:0.5rem;">
-            Most companies operate in silos. ALTRADYN builds an interconnected parent operating system where intelligence, technology, and capital compound across ventures.
+        <div class="section-header">
+          <div class="badge-pill">Platform Thesis & Foundation</div>
+          <h2 class="section-title">The Platform Behind <em>What Comes Next.</em></h2>
+          <p class="section-desc">
+            Traditional corporate consulting firms write reports. Conventional IT agencies sell billable hours. Traditional venture funds play a financial lottery. <strong>ALTRADYN Prime builds the actual systems</strong>—deploying dedicated engineering pods, proprietary core intellectual property, and institutional capital.
           </p>
         </div>
 
-        <div class="grid-3">
-          <div class="card-ivory">
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">PILLAR 01</span>
-            <h3 style="font-size:1.35rem; color:var(--navy); margin:0.75rem 0;">IDENTIFY</h3>
-            <p style="font-size:0.88rem; color:var(--ink-muted);">
-              Spot structural inefficiencies and nascent technology shifts before they become mainstream categories.
-            </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px;">
+            <div style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">PILLAR 01</div>
+            <h3 style="font-size: 19px; font-weight: 600; margin-bottom: 8px;">Shared Cognitive & Tech Core</h3>
+            <p style="font-size: 13px; color: var(--text-secondary);">Proprietary semantic middleware, vector lineage, and deterministic compliance architectures inherited on day zero by every portfolio venture.</p>
           </div>
-
-          <div class="card-ivory">
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal); font-weight:700;">PILLAR 02</span>
-            <h3 style="font-size:1.35rem; color:var(--navy); margin:0.75rem 0;">BUILD</h3>
-            <p style="font-size:0.88rem; color:var(--ink-muted);">
-              Deploy dedicated platform engineering, shared AI pipelines, and strategic governance to rapidly construct resilient ventures.
-            </p>
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px;">
+            <div style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">PILLAR 02</div>
+            <h3 style="font-size: 19px; font-weight: 600; margin-bottom: 8px;">Systemic Risk & Unit Economics</h3>
+            <p style="font-size: 13px; color: var(--text-secondary);">Empirical stress-testing of margin dynamics, counterparty incentives, and customer acquisition moats before committing scale capital.</p>
           </div>
-
-          <div class="card-ivory">
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">PILLAR 03</span>
-            <h3 style="font-size:1.35rem; color:var(--navy); margin:0.75rem 0;">SCALE</h3>
-            <p style="font-size:0.88rem; color:var(--ink-muted);">
-              Operate as permanent long-term partners with enduring holding structures and multi-venture compounding.
-            </p>
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px;">
+            <div style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">PILLAR 03</div>
+            <h3 style="font-size: 19px; font-weight: 600; margin-bottom: 8px;">Inter-Portfolio Compounding</h3>
+            <p style="font-size: 13px; color: var(--text-secondary);">Ventures feed data, distribution, and operational telemetry into one another, creating an accelerating non-linear competitive moat.</p>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px;">
+            <div style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">PILLAR 04</div>
+            <h3 style="font-size: 19px; font-weight: 600; margin-bottom: 8px;">Sovereign Institutional Governance</h3>
+            <p style="font-size: 13px; color: var(--text-secondary);">Long-term equity alignment designed for multi-decade cash generation, strategic resilience, and sovereign jurisdictional compliance.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Venture Preview Section -->
-    <section class="bg-navy pattern-grid-dark" style="padding: 5rem 0;">
+    <!-- The 5-Stage Business-Building Engine Section -->
+    <section id="model" style="background: var(--bg-subtle);">
       <div class="container">
-        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; flex-wrap:wrap; gap:1rem;">
-          <div>
-            <div class="badge-tag">PORTFOLIO MATRIX</div>
-            <h2 style="font-size:2.2rem; color:var(--ivory);">Featured Platform Ventures</h2>
-          </div>
-          <button class="btn-secondary" onclick="switchPage('ventures')">VIEW ALL VENTURES →</button>
+        <div class="section-header">
+          <div class="badge-pill">The 5-Stage Engine</div>
+          <h2 class="section-title">A Systematic Engine For <em>Venture Creation.</em></h2>
+          <p class="section-desc">
+            We do not treat innovation as serendipity. We adhere to an uncompromising 5-stage validation discipline to build durable category leaders.
+          </p>
         </div>
 
-        <div class="grid-3">
-          <div class="card-navy" style="cursor:pointer;" onclick="openVentureModal('synapse')">
-            <div style="display:flex; justify-content:space-between; font-family:ui-monospace; font-size:0.7rem; color:var(--gold); margin-bottom:0.75rem;">
-              <span>V-01 // AI & DATA</span>
-              <span style="background:rgba(184,147,90,0.15); padding:2px 8px; border-radius:4px;">BUILDING</span>
+        <!-- Stage Switcher Tabs -->
+        <div class="model-nav-grid" id="stageTabsContainer">
+          <button class="stage-tab-btn active" onclick="switchStage(1)">
+            <div class="stage-num">STAGE 01</div>
+            <div class="stage-title">Observe Change</div>
+          </button>
+          <button class="stage-tab-btn" onclick="switchStage(2)">
+            <div class="stage-num">STAGE 02</div>
+            <div class="stage-title">Identify Opportunities</div>
+          </button>
+          <button class="stage-tab-btn" onclick="switchStage(3)">
+            <div class="stage-num">STAGE 03</div>
+            <div class="stage-title">Validate Ideas</div>
+          </button>
+          <button class="stage-tab-btn" onclick="switchStage(4)">
+            <div class="stage-num">STAGE 04</div>
+            <div class="stage-title">Build Ventures</div>
+          </button>
+          <button class="stage-tab-btn" onclick="switchStage(5)">
+            <div class="stage-num">STAGE 05</div>
+            <div class="stage-title">Operate and Scale</div>
+          </button>
+        </div>
+
+        <!-- Dynamic Stage Detail Box -->
+        <div class="stage-detail-box" id="stageContentBox">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sovereign Ventures Directory Section -->
+    <section id="ventures">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill">Sovereign Entities</div>
+          <h2 class="section-title">Ecosystem <em>Ventures.</em></h2>
+          <p class="section-desc">
+            Independent market entities engineered on the ALTRADYN Prime platform across artificial intelligence, distributed data, and industrial assets.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filter-bar" id="ventureFilterBar">
+          <button class="filter-btn active" onclick="filterVentures('all', this)">All Categories</button>
+          <button class="filter-btn" onclick="filterVentures('AI & Cognitive Systems', this)">AI & Cognitive</button>
+          <button class="filter-btn" onclick="filterVentures('Data Infrastructure', this)">Data Infrastructure</button>
+          <button class="filter-btn" onclick="filterVentures('Strategic Assets', this)">Strategic Assets</button>
+          <button class="filter-btn" onclick="filterVentures('Digital Platforms', this)">Digital Platforms</button>
+          <button class="filter-btn" onclick="filterVentures('Next-Gen Systems', this)">Next-Gen Systems</button>
+        </div>
+
+        <!-- Ventures Grid -->
+        <div class="ventures-grid" id="venturesContainer">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Capability Vectors / Focus Areas Section -->
+    <section id="focus" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill">Capability Vectors</div>
+          <h2 class="section-title">Where We <em>Build & Operate.</em></h2>
+          <p class="section-desc">
+            We focus exclusively on high-friction, multi-decade market transformations where modern intelligence creates asymmetric leverage.
+          </p>
+        </div>
+
+        <div class="focus-grid" id="focusAreasContainer">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Perspectives & Essays Section -->
+    <section id="perspectives">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill">Strategic Essays</div>
+          <h2 class="section-title">How We <em>Think.</em></h2>
+          <p class="section-desc">
+            Unfiltered strategic analyses, venture frameworks, and systems thinking from the ALTRADYN Prime research and strategy councils.
+          </p>
+        </div>
+
+        <div class="perspectives-grid" id="perspectivesContainer">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Engagement Portal Section -->
+    <section id="connect" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-pill">Executive Intake Portal</div>
+          <h2 class="section-title">Connect With <em>ALTRADYN Prime.</em></h2>
+          <p class="section-desc">
+            We are deliberate about the ventures we build, the capital we allocate, and the partners we welcome into our ecosystem. Select your engagement track below.
+          </p>
+        </div>
+
+        <div class="connect-layout">
+          <!-- Alignment Form -->
+          <div class="connect-form-card">
+            <!-- Pathway Track Selector -->
+            <div class="pathways-selector" id="pathwaySelector">
+              <button class="pathway-btn active" onclick="selectPathway('founder', this)">Founders</button>
+              <button class="pathway-btn" onclick="selectPathway('business_owner', this)">Enterprise</button>
+              <button class="pathway-btn" onclick="selectPathway('strategic_partner', this)">Partners</button>
+              <button class="pathway-btn" onclick="selectPathway('capital', this)">Capital</button>
+              <button class="pathway-btn" onclick="selectPathway('talent', this)">Builders</button>
             </div>
-            <h3 style="font-size:1.4rem; color:var(--ivory);">SynapseOps</h3>
-            <p style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); margin:0.35rem 0 1rem;">Autonomous Enterprise AI Orchestration</p>
-            <p style="font-size:0.85rem; color:rgba(245,241,232,0.75); margin-bottom:1.5rem;">
-              Multi-agent reasoning layers connecting legacy corporate ERP and databases into real-time decision loops.
-            </p>
-            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">Learn More →</div>
+
+            <form id="engagementForm" onsubmit="handleFormSubmit(event)">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-input" id="formName" required placeholder="e.g. Elena Rostova">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Professional Email *</label>
+                  <input type="email" class="form-input" id="formEmail" required placeholder="e.g. elena@domain.com">
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                  <label class="form-label">Organization / Entity</label>
+                  <input type="text" class="form-input" id="formOrg" placeholder="e.g. Apex Systems">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Target Sector Vector</label>
+                  <select class="form-select" id="formSector">
+                    <option value="AI & Cognitive Systems">AI & Cognitive Systems</option>
+                    <option value="Enterprise Data Infrastructure">Enterprise Data Infrastructure</option>
+                    <option value="Autonomous Digital Platforms">Autonomous Digital Platforms</option>
+                    <option value="Strategic Asset Modernization">Strategic Asset Modernization</option>
+                    <option value="Next-Gen Kinetic & Robotics">Next-Gen Kinetic & Robotics</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Core Strategic Proposal / Thesis *</label>
+                <textarea class="form-textarea" id="formSummary" rows="4" required placeholder="Outline your venture thesis, operational bottleneck, or strategic alignment opportunity..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
+                Transmit Strategic Proposal to ALTRADYN Council
+              </button>
+            </form>
+
+            <div id="formSuccessMessage" style="display: none; text-align: center; padding: 32px 16px;">
+              <div style="width: 48px; height: 48px; background: var(--bg-pill); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <h3 style="font-size: 22px; font-weight: 400; margin-bottom: 8px;">Proposal Successfully Received</h3>
+              <p style="font-size: 13px; color: var(--text-secondary); max-width: 420px; margin: 0 auto 16px auto;">
+                Your strategic dossier has been securely routed to the ALTRADYN Prime Strategy Council.
+              </p>
+              <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px; font-family: var(--font-mono); font-size: 11px; max-width: 320px; margin: 0 auto 16px auto; text-align: left;">
+                <div>Routing Ref: <strong id="routingRef">ALT-ENG-8492</strong></div>
+                <div>Response Window: <strong>Within 48 Business Hours</strong></div>
+              </div>
+              <button class="btn btn-secondary" onclick="resetForm()">Submit Another Inquiry</button>
+            </div>
           </div>
 
-          <div class="card-navy" style="cursor:pointer;" onclick="openVentureModal('meridian')">
-            <div style="display:flex; justify-content:space-between; font-family:ui-monospace; font-size:0.7rem; color:var(--gold); margin-bottom:0.75rem;">
-              <span>V-02 // PLATFORMS</span>
-              <span style="background:rgba(27,77,74,0.3); padding:2px 8px; border-radius:4px; color:#4ade80;">ACTIVE</span>
+          <!-- Alignment Standards Side Card -->
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="badge-pill" style="margin-bottom: 12px;">Mutual Conviction Filter</div>
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 14px;">What We Look For In Partners</h3>
+              <ul style="list-style: none; font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+                <li style="margin-bottom: 14px;">
+                  <strong style="color: var(--text-primary);">Systems-Level Thinking:</strong> Ability to see past shallow product features to structural market architecture.
+                </li>
+                <li style="margin-bottom: 14px;">
+                  <strong style="color: var(--text-primary);">Unfair Technical or Domain Moat:</strong> Deep operational expertise, proprietary data access, or technical breakthroughs.
+                </li>
+                <li style="margin-bottom: 14px;">
+                  <strong style="color: var(--text-primary);">Long-Term Alignment:</strong> Commitment to building durable, cash-generative category leaders over quick flips.
+                </li>
+              </ul>
             </div>
-            <h3 style="font-size:1.4rem; color:var(--ivory);">Meridian Flow</h3>
-            <p style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); margin:0.35rem 0 1rem;">Global Logistics Intelligence Network</p>
-            <p style="font-size:0.85rem; color:rgba(245,241,232,0.75); margin-bottom:1.5rem;">
-              Cross-border maritime routing and supply chain prediction engine for global trade corridors.
-            </p>
-            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">Learn More →</div>
-          </div>
 
-          <div class="card-navy" style="cursor:pointer;" onclick="openVentureModal('terra')">
-            <div style="display:flex; justify-content:space-between; font-family:ui-monospace; font-size:0.7rem; color:var(--gold); margin-bottom:0.75rem;">
-              <span>V-03 // ASSETS</span>
-              <span style="background:rgba(184,147,90,0.15); padding:2px 8px; border-radius:4px;">INCUBATING</span>
+            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 16px; font-family: var(--font-mono); font-size: 11px;">
+              <div style="font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">ALTRADYN PRIME LLP</div>
+              <div style="color: var(--text-muted);">council@altradynprime.com</div>
+              <div style="color: var(--text-muted); margin-top: 4px;">Institutional Office: Global Platform Hub</div>
             </div>
-            <h3 style="font-size:1.4rem; color:var(--ivory);">TerraLedger</h3>
-            <p style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); margin:0.35rem 0 1rem;">Institutional Asset Digital Rails</p>
-            <p style="font-size:0.85rem; color:rgba(245,241,232,0.75); margin-bottom:1.5rem;">
-              Tokenized commercial real estate liquidity protocols and automated debt covenants.
-            </p>
-            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">Learn More →</div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ==================== 02. ABOUT PAGE ==================== -->
-  <main id="page-about" class="page-view">
-    <section class="hero-section bg-navy pattern-grid-dark">
-      <div class="container">
-        <div class="badge-tag">ABOUT ALTRADYN PRIME</div>
-        <h1 class="hero-title">BUILT TO EVOLVE.</h1>
-        <p class="hero-subtitle">
-          We are not a traditional private equity firm, incubator, or software agency. We are a parent operating platform that constructs, owns, and scales technology-driven businesses.
-        </p>
-      </div>
-    </section>
-
-    <section style="padding: 5rem 0;" class="pattern-grid-light">
-      <div class="container">
-        <div class="grid-3">
-          <div class="card-ivory">
-            <h3 style="color:var(--navy); margin-bottom:0.75rem;">01 / Permanent Capital</h3>
-            <p style="font-size:0.88rem; color:var(--ink-muted);">
-              Unconstrained by artificial 7-year fund cycles. We build for generational durability and continuous cash-flow compounding.
-            </p>
-          </div>
-          <div class="card-ivory">
-            <h3 style="color:var(--navy); margin-bottom:0.75rem;">02 / Deep Shared Tech</h3>
-            <p style="font-size:0.88rem; color:var(--ink-muted);">
-              Every portfolio company draws from a centralized pool of engineering intelligence, AI inference rails, and legal infrastructure.
-            </p>
-          </div>
-          <div class="card-ivory">
-            <h3 style="color:var(--navy); margin-bottom:0.75rem;">03 / Operator-Led</h3>
-            <p style="font-size:0.88rem; color:var(--ink-muted);">
-              Founded and steered by veteran builders who have engineered systems from scratch, ensuring ruthless execution over pitch decks.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==================== 03. OUR MODEL ==================== -->
-  <main id="page-model" class="page-view">
-    <section class="hero-section bg-navy pattern-grid-dark">
-      <div class="container">
-        <div class="badge-tag">CONTINUOUS ENGINE</div>
-        <h1 class="hero-title">THE 5-STAGE MODEL.</h1>
-        <p class="hero-subtitle">
-          How ALTRADYN moves systematically from macro observation to scaled enterprise operations.
-        </p>
-      </div>
-    </section>
-
-    <section style="padding: 5rem 0;" class="pattern-grid-light">
-      <div class="container">
-        <div class="grid-5">
-          <div class="card-ivory">
-            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 01</span>
-            <h4 style="color:var(--navy); margin:0.5rem 0;">Observe</h4>
-            <p style="font-size:0.8rem; color:var(--ink-muted);">Market friction analysis & signals</p>
-          </div>
-          <div class="card-ivory">
-            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 02</span>
-            <h4 style="color:var(--navy); margin:0.5rem 0;">Identify</h4>
-            <p style="font-size:0.8rem; color:var(--ink-muted);">Thesis formulation & vector mapping</p>
-          </div>
-          <div class="card-ivory">
-            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 03</span>
-            <h4 style="color:var(--navy); margin:0.5rem 0;">Validate</h4>
-            <p style="font-size:0.8rem; color:var(--ink-muted);">Prototype testing & customer proof</p>
-          </div>
-          <div class="card-ivory">
-            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 04</span>
-            <h4 style="color:var(--navy); margin:0.5rem 0;">Build</h4>
-            <p style="font-size:0.8rem; color:var(--ink-muted);">Full-stack platform deployment</p>
-          </div>
-          <div class="card-ivory">
-            <span style="font-family:ui-monospace; font-size:0.7rem; color:var(--gold);">STAGE 05</span>
-            <h4 style="color:var(--navy); margin:0.5rem 0;">Scale</h4>
-            <p style="font-size:0.8rem; color:var(--ink-muted);">Autonomous expansion & compounding</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==================== 04. VENTURES ==================== -->
-  <main id="page-ventures" class="page-view">
-    <section class="hero-section bg-navy pattern-grid-dark">
-      <div class="container">
-        <div class="badge-tag">PORTFOLIO & SANDBOX</div>
-        <h1 class="hero-title">THE ECOSYSTEM.</h1>
-        <p class="hero-subtitle">
-          Active companies and incubating platforms architected and operated by ALTRADYN Prime.
-        </p>
-      </div>
-    </section>
-
-    <section style="padding: 5rem 0;" class="pattern-grid-light">
-      <div class="container">
-        <div class="grid-3">
-          <div class="card-ivory" onclick="openVentureModal('synapse')" style="cursor:pointer;">
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal);">V-01 // AI & DATA</span>
-            <h3 style="color:var(--navy); margin:0.5rem 0;">SynapseOps</h3>
-            <p style="font-size:0.85rem; color:var(--ink-muted); margin-bottom:1rem;">Autonomous Enterprise AI Orchestration</p>
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">Explore Details →</span>
-          </div>
-
-          <div class="card-ivory" onclick="openVentureModal('meridian')" style="cursor:pointer;">
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal);">V-02 // PLATFORMS</span>
-            <h3 style="color:var(--navy); margin:0.5rem 0;">Meridian Flow</h3>
-            <p style="font-size:0.85rem; color:var(--ink-muted); margin-bottom:1rem;">Global Logistics Intelligence Network</p>
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">Explore Details →</span>
-          </div>
-
-          <div class="card-ivory" onclick="openVentureModal('terra')" style="cursor:pointer;">
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal);">V-03 // ASSETS</span>
-            <h3 style="color:var(--navy); margin:0.5rem 0;">TerraLedger</h3>
-            <p style="font-size:0.85rem; color:var(--ink-muted); margin-bottom:1rem;">Institutional Asset Digital Rails</p>
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">Explore Details →</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==================== 05. FOCUS AREAS ==================== -->
-  <main id="page-focus" class="page-view">
-    <section class="hero-section bg-navy pattern-grid-dark">
-      <div class="container">
-        <div class="badge-tag">DOMAINS & THESIS</div>
-        <h1 class="hero-title">WHERE WE BUILD.</h1>
-        <p class="hero-subtitle">
-          We focus on sectors undergoing fundamental technological reorganization.
-        </p>
-      </div>
-    </section>
-
-    <section style="padding: 5rem 0;" class="pattern-grid-light">
-      <div class="container">
-        <div class="grid-2">
-          <div class="card-ivory">
-            <h3 style="color:var(--navy); margin-bottom:0.5rem;">AI & Autonomous Systems</h3>
-            <p style="font-size:0.9rem; color:var(--ink-muted);">
-              Moving beyond chatbot toys into deterministic, multi-agent automated systems for high-value enterprise workflows.
-            </p>
-          </div>
-          <div class="card-ivory">
-            <h3 style="color:var(--navy); margin-bottom:0.5rem;">Physical Asset Intelligence</h3>
-            <p style="font-size:0.9rem; color:var(--ink-muted);">
-              Bridging real estate, energy, and logistics assets with computational intelligence and automated financial rails.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==================== 06. PERSPECTIVES ==================== -->
-  <main id="page-perspectives" class="page-view">
-    <section class="hero-section bg-navy pattern-grid-dark">
-      <div class="container">
-        <div class="badge-tag">ESSAYS & BRIEFINGS</div>
-        <h1 class="hero-title">PERSPECTIVES.</h1>
-        <p class="hero-subtitle">
-          Long-form thinking on systems design, AI economics, and the mechanics of building durable value.
-        </p>
-      </div>
-    </section>
-
-    <section style="padding: 5rem 0;" class="pattern-grid-light">
-      <div class="container">
-        <div class="grid-2">
-          <div class="card-ivory" onclick="openArticleModal('post-saas')" style="cursor:pointer;">
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">ESSAY // BUSINESS MODELS</span>
-            <h3 style="color:var(--navy); margin:0.75rem 0;">The Post-SaaS Architecture: Why Seat-Based Software is Dying</h3>
-            <p style="font-size:0.88rem; color:var(--ink-muted);">
-              How AI agents replace per-seat billing with outcome-based value realization.
-            </p>
-            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal); margin-top:1rem;">Read Briefing →</div>
-          </div>
-
-          <div class="card-ivory" onclick="openArticleModal('foundation-models')" style="cursor:pointer;">
-            <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">ESSAY // TECHNOLOGY</span>
-            <h3 style="color:var(--navy); margin:0.75rem 0;">Beyond Foundation Models: The Enduring Value of Domain Context</h3>
-            <p style="font-size:0.88rem; color:var(--ink-muted);">
-              Commoditization of LLM weights and why proprietary context graphs hold the true enterprise moat.
-            </p>
-            <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal); margin-top:1rem;">Read Briefing →</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==================== 07. CONNECT ==================== -->
-  <main id="page-connect" class="page-view">
-    <section class="hero-section bg-navy pattern-grid-dark">
-      <div class="container">
-        <div class="badge-tag">ENGAGEMENT DESK</div>
-        <h1 class="hero-title">LET'S TALK.</h1>
-        <p class="hero-subtitle">
-          Whether you are a founder looking to co-build, a corporate partner, or an asset owner, connect with ALTRADYN Prime.
-        </p>
-      </div>
-    </section>
-
-    <section style="padding: 5rem 0;" class="pattern-grid-light">
-      <div class="container" style="max-width:720px;">
-        <div class="card-ivory">
-          <form onsubmit="handleFormSubmit(event)">
-            <div style="margin-bottom:1.25rem;">
-              <label style="display:block; font-family:ui-monospace; font-size:0.75rem; margin-bottom:0.4rem; color:var(--navy);">YOUR FULL NAME</label>
-              <input type="text" required placeholder="e.g. Diptanshu Sharma" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(11,31,58,0.2); font-size:0.9rem;">
-            </div>
-
-            <div style="margin-bottom:1.25rem;">
-              <label style="display:block; font-family:ui-monospace; font-size:0.75rem; margin-bottom:0.4rem; color:var(--navy);">CORPORATE EMAIL</label>
-              <input type="email" required placeholder="name@company.com" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(11,31,58,0.2); font-size:0.9rem;">
-            </div>
-
-            <div style="margin-bottom:1.25rem;">
-              <label style="display:block; font-family:ui-monospace; font-size:0.75rem; margin-bottom:0.4rem; color:var(--navy);">ENGAGEMENT AREA</label>
-              <select style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(11,31,58,0.2); font-size:0.9rem; background:#fff;">
-                <option>Build with ALTRADYN (Founders & EIR)</option>
-                <option>Strategic & Technology Partnership</option>
-                <option>Business & Asset Opportunity</option>
-                <option>Careers & Talent</option>
-              </select>
-            </div>
-
-            <div style="margin-bottom:1.5rem;">
-              <label style="display:block; font-family:ui-monospace; font-size:0.75rem; margin-bottom:0.4rem; color:var(--navy);">CONTEXT / MESSAGE</label>
-              <textarea rows="4" required placeholder="Briefly describe your venture concept or inquiry..." style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(11,31,58,0.2); font-size:0.9rem;"></textarea>
-            </div>
-
-            <button type="submit" class="btn-cta" style="width:100%; justify-content:center; padding:0.85rem;">
-              SUBMIT STRATEGIC INQUIRY →
-            </button>
-          </form>
-          <div id="form-success" style="display:none; margin-top:1.5rem; padding:1rem; background:rgba(27,77,74,0.15); border:1px solid var(--teal); border-radius:8px; color:var(--teal); font-family:ui-monospace; font-size:0.85rem; text-align:center;">
-            ✓ Inquiry logged. Our venture committee reviews proposals within 48 business hours.
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==================== MODALS ==================== -->
-  <div id="app-modal" class="modal-overlay" onclick="closeModal(event)">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal()">×</button>
-      <div id="modal-content"></div>
-    </div>
-  </div>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-navy-dark" style="padding: 4rem 0 2rem; border-top: 1px solid rgba(245,241,232,0.1);">
+  <!-- Footer -->
+  <footer>
     <div class="container">
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; padding-bottom:2rem; border-bottom:1px solid rgba(245,241,232,0.1);">
+      <div class="footer-grid">
         <div>
-          <div style="font-weight:800; font-size:1.1rem; color:var(--ivory);">ALTRADYN <span style="color:var(--gold); font-size:0.7rem;">PRIME</span></div>
-          <p style="font-size:0.8rem; color:rgba(245,241,232,0.6); margin-top:0.3rem;">The Parent Platform Behind What Comes Next.</p>
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-symbol" style="background: #FFFFFF; color: #1A1A1A;">A</div>
+            <span style="color: #FFFFFF;">ALTRADYN PRIME</span>
+          </div>
+          <p style="color: rgba(255, 255, 255, 0.7); font-size: 13px; max-width: 320px; line-height: 1.6;">
+            The parent platform and sovereign operating foundation behind high-conviction ventures in AI, data infrastructure, and physical asset systems.
+          </p>
         </div>
-        <div style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold);">
-          ONE PLATFORM. MULTIPLE POSSIBILITIES.
+
+        <div>
+          <div class="footer-col-title">Venture Ecosystem</div>
+          <ul class="footer-links">
+            <li><a href="#ventures" onclick="openVentureModal('synapse-flow')">SynapseFlow OS</a></li>
+            <li><a href="#ventures" onclick="openVentureModal('axiom-mesh')">Axiom Mesh</a></li>
+            <li><a href="#ventures" onclick="openVentureModal('terragrid-assets')">TerraGrid Dynamics</a></li>
+            <li><a href="#ventures" onclick="openVentureModal('khorus-platforms')">Khorus Exchange</a></li>
+            <li><a href="#ventures" onclick="openVentureModal('neural-fabric')">Vanguard Cognitive</a></li>
+            <li><a href="#ventures" onclick="openVentureModal('orion-logix')">Orion Kinetic</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Platform & Model</div>
+          <ul class="footer-links">
+            <li><a href="#about">Platform Thesis</a></li>
+            <li><a href="#model">5-Stage Creation Model</a></li>
+            <li><a href="#focus">Capability Vectors</a></li>
+            <li><a href="#perspectives">Research Perspectives</a></li>
+            <li><a href="#connect">Strategic Engagement</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Governance & Legal</div>
+          <ul class="footer-links">
+            <li><a href="#about">Platform Governance</a></li>
+            <li><a href="#about">Conviction Filter</a></li>
+            <li><a href="#connect">Partner Verification</a></li>
+            <li><a href="#connect">Institutional Office</a></li>
+          </ul>
         </div>
       </div>
-      <div style="margin-top:2rem; font-family:ui-monospace; font-size:0.75rem; color:rgba(245,241,232,0.4); display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
-        <div>© 2026 ALTRADYN Prime LLP. All rights reserved.</div>
-        <div>Built for high performance & durability.</div>
+
+      <div class="footer-bottom">
+        <div>ALTRADYN PRIME LLP © 2026. ALL RIGHTS RESERVED.</div>
+        <div style="display: flex; gap: 24px;">
+          <span>CONFIDENTIAL PLATFORM SPECIFICATION</span>
+          <a href="#hero" style="color: rgba(255, 255, 255, 0.8);">Back to Top ↑</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <!-- Venture Detail Modal -->
+  <div class="modal-overlay" id="ventureModal" onclick="closeVentureModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="badge-pill" id="mCode">ALT-01</span>
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Venture Architectural Blueprint</span>
+        </div>
+        <button onclick="closeVentureModal()" style="font-size: 20px; font-weight: 300; padding: 4px;">&times;</button>
+      </div>
+      <div class="modal-body" id="ventureModalBody">
+        <!-- Injected via JS -->
+      </div>
+      <div class="modal-footer">
+        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">Sovereign entity backed by ALTRADYN Prime platform.</span>
+        <button class="btn btn-primary" onclick="closeVentureModal(); window.location.hash = 'connect';">Initiate Partnership</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Perspective Essay Reader Modal -->
+  <div class="modal-overlay" id="essayModal" onclick="closeEssayModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="badge-pill" id="eCategory">Venture Architecture</span>
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);" id="eReadTime">6 min read</span>
+        </div>
+        <button onclick="closeEssayModal()" style="font-size: 20px; font-weight: 300; padding: 4px;">&times;</button>
+      </div>
+      <div class="modal-body" id="essayModalBody">
+        <!-- Injected via JS -->
+      </div>
+      <div class="modal-footer">
+        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">ALTRADYN Prime Strategy Publication</span>
+        <button class="btn btn-secondary" onclick="closeEssayModal()">Close Reader</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================================
+       DATA & INTERACTIVE JAVASCRIPT CONTROLLERS
+       ============================================================= -->
   <script>
-    function switchPage(pageId) {
-      document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
-      const target = document.getElementById('page-' + pageId);
-      if (target) {
-        target.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    // -------------------------------------------------------------
+    // 1. DATA REPOSITORIES
+    // -------------------------------------------------------------
+    const VENTURES_DATA = [
+      {
+        id: 'synapse-flow',
+        code: 'ALT-01',
+        name: 'SynapseFlow OS',
+        displayCategory: 'AI & Cognitive Systems',
+        stage: 'operating',
+        tagline: 'Autonomous cognitive routing and multi-agent coordination for enterprise workflows.',
+        thesis: 'Enterprise operations will transition from human-directed software to autonomous multi-agent systems orchestrated by deterministic verification layers.',
+        architectureSummary: 'A hybrid semantic middleware that blends specialized neural models with deterministic business logic and audit constraints.',
+        problemSpace: 'Complex enterprises suffer from fragmented manual handoffs across ERP, logistics, and customer operations, bleeding margin and latency.',
+        builtCapabilities: [
+          'Multi-agent workflow orchestration',
+          'Deterministic audit and compliance verification',
+          'Real-time continuous model fine-tuning and telemetry',
+          'Zero-latency semantic memory caching'
+        ],
+        platformLeverage: [
+          'Built upon ALTRADYN Shared Cognitive Core',
+          'Accelerated by shared enterprise testing sandbox',
+          'Access to ALTRADYN cross-portfolio distribution'
+        ],
+        operationalMetrics: [
+          { label: 'Agent Transactions / Mo', value: '42M+' },
+          { label: 'Latency Reduction', value: '78%' },
+          { label: 'Operating Reliability', value: '99.98%' }
+        ],
+        techStack: ['Distributed Rust', 'PyTorch C++', 'Vector Graph DB', 'gRPC Telemetry'],
+        foundingYear: '2024'
+      },
+      {
+        id: 'axiom-mesh',
+        code: 'ALT-02',
+        name: 'Axiom Mesh',
+        displayCategory: 'Data Infrastructure',
+        stage: 'operating',
+        tagline: 'Unified real-time data fabric with distributed lineage and zero-trust verification.',
+        thesis: 'Data silos are fatal to AI transformation. Organizations require a decentralized, query-in-place data fabric with sub-millisecond governance.',
+        architectureSummary: 'An edge-native, zero-copy distributed query layer connecting heterogeneous databases without massive ETL overhead.',
+        problemSpace: 'High ingestion costs and compliance hurdles prevent real-time decisioning across global business operations.',
+        builtCapabilities: [
+          'Edge-native distributed semantic query engine',
+          'Cryptographic data lineage and provenance tracking',
+          'Automated PII/GDPR policy enforcement at network layer',
+          'Zero-copy schema synthesis'
+        ],
+        platformLeverage: [
+          'Direct integration into all ALTRADYN portfolio ventures',
+          'Shared IP repository & infrastructure cost-amortization'
+        ],
+        operationalMetrics: [
+          { label: 'Daily Data Processed', value: '1.8 PB' },
+          { label: 'Query Compute Savings', value: '62%' },
+          { label: 'Active Enterprise Nodes', value: '3,400+' }
+        ],
+        techStack: ['Apache Arrow', 'ClickHouse Core', 'eBPF Kernel Probes', 'Wasm Runtimes'],
+        foundingYear: '2024'
+      },
+      {
+        id: 'terragrid-assets',
+        code: 'ALT-03',
+        name: 'TerraGrid Dynamics',
+        displayCategory: 'Strategic Assets',
+        stage: 'operating',
+        tagline: 'Algorithmic physical asset management and yield optimization for industrial real estate.',
+        thesis: 'Real estate and industrial assets are static balance sheets waiting to be unlocked by dynamic yield modeling and predictive energy infrastructure.',
+        architectureSummary: 'A spatial intelligence platform combining satellite telemetry, IoT thermal sensors, and predictive load balancing.',
+        problemSpace: 'Industrial logistics warehouses and commercial assets operate with 30%+ energy inefficiencies and sub-optimal utilization.',
+        builtCapabilities: [
+          'Algorithmic tenant density and flow optimization',
+          'Predictive microgrid and battery storage balancing',
+          'Automated lease-to-yield valuation modeling',
+          'Digital twin physical asset telemetry'
+        ],
+        platformLeverage: [
+          'Direct equity alignment with ALTRADYN capital allocation',
+          'Cross-leveraged with Axiom Mesh data pipelines'
+        ],
+        operationalMetrics: [
+          { label: 'Managed Asset Area', value: '4.2M sq.ft' },
+          { label: 'Energy Consumption Drop', value: '29.4%' },
+          { label: 'Net Asset Yield Uplift', value: '+340 bps' }
+        ],
+        techStack: ['Spatial GIS Engine', 'Time-series IoT Stack', 'Predictive ML Yield Models'],
+        foundingYear: '2025'
+      },
+      {
+        id: 'khorus-platforms',
+        code: 'ALT-04',
+        name: 'Khorus B2B Exchange',
+        displayCategory: 'Digital Platforms',
+        stage: 'incubation',
+        tagline: 'Decentralized procurement and dynamic contract clearing for raw commodity supply chains.',
+        thesis: 'Legacy wholesale trade relies on opaque phone brokers and 90-day settlement lags; digitizing contract execution unlocks massive capital velocity.',
+        architectureSummary: 'An automated clearing and risk-pricing protocol tailored for volatile industrial inputs and supply chains.',
+        problemSpace: 'Small and medium manufacturing enterprises face 15% procurement premiums due to fragmented supply channels and credit friction.',
+        builtCapabilities: [
+          'Dynamic algorithmic price discovery & hedging',
+          'Smart collateralized contract clearing',
+          'Automated quality inspection verification API'
+        ],
+        platformLeverage: [
+          'Incubated in ALTRADYN Venture Studio',
+          'Seed capital & executive product leadership from ALTRADYN'
+        ],
+        operationalMetrics: [
+          { label: 'Cleared Pilot Volume', value: '$84M' },
+          { label: 'Settlement Speed', value: 'T+0 (vs T+30)' },
+          { label: 'Verified Suppliers', value: '420+' }
+        ],
+        techStack: ['Next.js', 'Go Core', 'PostgreSQL', 'Secure Enclave HSM'],
+        foundingYear: '2025'
+      },
+      {
+        id: 'neural-fabric',
+        code: 'ALT-05',
+        name: 'Vanguard Cognitive Labs',
+        displayCategory: 'AI & Cognitive Systems',
+        stage: 'incubation',
+        tagline: 'Small-scale, sovereign on-premise foundation models for defense and regulated enterprises.',
+        thesis: 'Strict sovereign regulatory frameworks will make public cloud LLMs non-viable for critical infrastructure, creating a multi-billion dollar shift to hardened private models.',
+        architectureSummary: 'Quantized 7B-32B specialized domain models capable of running air-gapped on standard commercial GPU clusters with zero external network leakage.',
+        problemSpace: 'Regulated aerospace, medical, and financial institutions cannot stream proprietary IP to public API endpoints.',
+        builtCapabilities: [
+          'Sub-4bit air-gapped weight quantization',
+          'Deterministic knowledge boundary guards',
+          'Hardware-agnostic inference runtimes'
+        ],
+        platformLeverage: [
+          'Supported by ALTRADYN R&D fellowships and compute clusters',
+          'Legal and compliance frameworks co-developed by ALTRADYN'
+        ],
+        operationalMetrics: [
+          { label: 'Inference Cost Ratio', value: '1/8th Cloud APIs' },
+          { label: 'Network Air-gap Grade', value: 'Level 4 Secured' },
+          { label: 'Context Retrieval Speed', value: '12ms' }
+        ],
+        techStack: ['C++ CUDA', 'Triton Inference Server', 'vLLM', 'Rust Guardrails'],
+        foundingYear: '2025'
+      },
+      {
+        id: 'orion-logix',
+        code: 'ALT-06',
+        name: 'Orion Kinetic Systems',
+        displayCategory: 'Next-Gen Systems',
+        stage: 'validation',
+        tagline: 'Autonomous robotic dispatch and predictive micro-fulfillment for high-density urban grids.',
+        thesis: 'Urban fulfillment cannot scale with human drivers alone. Hybrid autonomous micro-hubs with predictive inventory placement represent the next 50-year urban transport layer.',
+        architectureSummary: 'A spatial routing engine integrating physical sorting robots with municipal traffic intelligence.',
+        problemSpace: 'Last-mile urban parcel delivery costs represent up to 53% of total shipping overhead, causing urban gridlock and carbon spikes.',
+        builtCapabilities: [
+          'Multi-vehicle kinetic path planning',
+          'Sub-hourly demand forecast synthesis',
+          'Autonomous modular container docking'
+        ],
+        platformLeverage: [
+          'Validated via ALTRADYN Market Intelligence Engine',
+          'Synergistic with TerraGrid physical asset footprint'
+        ],
+        operationalMetrics: [
+          { label: 'Target Route Efficiency', value: '+45%' },
+          { label: 'Validation Stage', value: 'Hardware Loop 2' }
+        ],
+        techStack: ['ROS 2', 'Embedded Linux', 'Spatial Graph Neural Networks'],
+        foundingYear: '2026'
       }
+    ];
 
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(pageId)) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    const ventureData = {
-      synapse: {
-        title: "SynapseOps",
-        code: "V-01 // AI & DATA",
-        tagline: "Autonomous Enterprise AI Orchestration",
-        desc: "SynapseOps bridges core enterprise legacy databases and live operational feeds with autonomous reasoning agents, creating zero-latency decision pipelines for critical operations."
+    const STAGES_DATA = {
+      1: {
+        stepNumber: 1,
+        title: 'Observe Change',
+        subtitle: 'Systemic market reconnaissance & macro signal analysis',
+        summary: 'We continuously track structural friction, technological inflection points, and shifting regulatory frameworks across global markets.',
+        objective: 'Filter signal from noise to identify multi-decade structural shifts before they become consensus trends.',
+        mechanics: [
+          'Continuous quantitative tracking of market inefficiencies, margin compression, and friction points.',
+          'Monitoring breakthrough compute, algorithmic, and material science developments.',
+          'Mapping regulatory shifts and capital reallocation in legacy infrastructure.'
+        ],
+        leverage: 'Proprietary Market Intelligence Engine scanning 12,000+ data nodes, regulatory feeds, and industry supply chains.',
+        decisionGate: 'Is this a genuine structural shift with a 10+ year horizon, or an ephemeral market narrative?',
+        outputs: ['Sector Vulnerability Reports', 'Friction Point Dossiers', 'Macro Horizon Thesis']
       },
-      meridian: {
-        title: "Meridian Flow",
-        code: "V-02 // PLATFORMS",
-        tagline: "Global Logistics Intelligence Network",
-        desc: "A distributed computational logistics graph optimizing multi-modal freight transport, predicting bottlenecks 14 days in advance and re-routing high-value cargo dynamically."
+      2: {
+        stepNumber: 2,
+        title: 'Identify Opportunities',
+        subtitle: 'Systemic thesis formation & structural arbitrage',
+        summary: 'We view businesses as interconnected systems. We pinpoint specific nodes where technology and intelligence create asymmetric leverage.',
+        objective: 'Formulate precise venture hypotheses that target high-margin moats and structural market deficits.',
+        mechanics: [
+          'Deconstructing legacy value chains into modular components (data, settlement, physical distribution, orchestration).',
+          'Assessing unit economics and unfair competitive leverage enabled by shared platform capabilities.',
+          'Stress-testing counter-party incentives, pricing power, and distribution moats.'
+        ],
+        leverage: 'Shared economic modeling toolsets, sector-specialist advisory councils, and cross-domain pattern matching.',
+        decisionGate: 'Does solving this problem unlock at least 5x structural leverage over incumbent models?',
+        outputs: ['Venture Concept Blueprints', 'Economic Lever Models', 'Unit Economic Projections']
       },
-      terra: {
-        title: "TerraLedger",
-        code: "V-03 // ASSETS",
-        tagline: "Institutional Asset Digital Rails",
-        desc: "Programmable institutional debt and equity tokenization rails for physical infrastructure, renewable energy grids, and prime commercial real estate portfolios."
+      3: {
+        stepNumber: 3,
+        title: 'Validate Ideas',
+        subtitle: 'Empirical stress-testing & commercial proof-of-conviction',
+        summary: 'Before committing significant capital, we rigorously validate demand, technological feasibility, and defensibility with real market participants.',
+        objective: 'Kill unviable ideas quickly with minimal burn while doubling down on validated, high-conviction vectors.',
+        mechanics: [
+          'Building rapid functional prototypes and synthetic market test environments.',
+          'Securing exploratory letters of intent (LOIs) and pilot commitments with enterprise partners.',
+          'Verifying technical viability, latency benchmarks, and architectural scalability.'
+        ],
+        leverage: 'Access to enterprise sandbox environments and ALTRADYN corporate partner advisory network.',
+        decisionGate: 'Do enterprise buyers demonstrate willing capital commitment and clear quantifiable ROI?',
+        outputs: ['Enterprise Pilot Commitments', 'Feasibility Benchmarks', 'Go/No-Go Investment Committee Mandate']
+      },
+      4: {
+        stepNumber: 4,
+        title: 'Build Ventures & Capabilities',
+        subtitle: 'Institutional venture engineering & co-founding execution',
+        summary: 'We assemble elite founder-operators, deploy dedicated engineering pods, and inject shared ALTRADYN core infrastructure to accelerate time-to-market.',
+        objective: 'Construct production-grade, highly defensible technology platforms and sovereign operating entities.',
+        mechanics: [
+          'Recruiting exceptional entrepreneurial leadership and matching them with pre-validated concepts.',
+          'Deploying shared technological foundations (data layers, auth, security, multi-agent frameworks).',
+          'Structuring sovereign legal, equity, and governance frameworks designed for multi-decade endurance.'
+        ],
+        leverage: 'Shared Engineering CoE, Legal & Regulatory Shield, Tier-1 Compute Clusters, and Shared Back-Office OS.',
+        decisionGate: 'Has the venture achieved product-system fit and repeatable, scalable unit economics?',
+        outputs: ['Independent Operating Entity', 'Production Infrastructure', 'Founding Executive Team']
+      },
+      5: {
+        stepNumber: 5,
+        title: 'Operate and Scale Businesses',
+        subtitle: 'Compounding ecosystem synergy & long-term capital allocation',
+        summary: 'As ventures mature into standalone leaders, ALTRADYN provides continuous strategic governance, cross-portfolio distribution, and follow-on capital.',
+        objective: 'Drive exponential compounding and build an enduring, multi-industry business ecosystem.',
+        mechanics: [
+          'Cross-selling and inter-portfolio capability sharing across all active ALTRADYN subsidiaries.',
+          'Dynamic capital allocation based on cash generation, return on invested capital (ROIC), and strategic leverage.',
+          'Attracting external institutional growth capital or executing strategic asset integrations.'
+        ],
+        leverage: 'Ecosystem network effects, institutional credibility, parent balance sheet, and board-level strategy.',
+        decisionGate: 'Does the operating business reinforce the broader ALTRADYN ecosystem moat and create enduring value?',
+        outputs: ['Market-Dominant Venture', 'Self-Sustaining Cash Flow Engine', 'Shared IP Contribution']
       }
     };
 
+    const FOCUS_AREAS_DATA = [
+      {
+        id: 'ai-cognitive',
+        title: 'Artificial Intelligence & Cognitive Systems',
+        category: 'AI & Cognitive Systems',
+        desc: 'Autonomous multi-agent swarms, deterministic neural middleware, and domain-specialized sovereign inference.',
+        thesis: 'The next era of AI is autonomous systems deeply embedded into industrial, logistical, and financial decision loops with verifiable guarantees.',
+        activeVentures: '2 Ventures Active'
+      },
+      {
+        id: 'digital-platforms',
+        title: 'Autonomous Digital Platforms & Marketplaces',
+        category: 'Digital Platforms',
+        desc: 'Algorithmic clearing, smart contract settlement, and frictionless transactional networks for high-friction markets.',
+        thesis: 'Software-driven programmatic clearing unlocks massive dormant velocity across legacy intermediary chains.',
+        activeVentures: '1 Venture Active'
+      },
+      {
+        id: 'data-infra',
+        title: 'Enterprise Data & Intelligence Infrastructure',
+        category: 'Data Infrastructure',
+        desc: 'Decentralized query-in-place fabrics, cryptographic data lineage, and zero-latency semantic indexing.',
+        thesis: 'Unified, governed, and instant access to operational data exhaust without brittle ETL pipelines.',
+        activeVentures: '1 Venture Active'
+      },
+      {
+        id: 'strategic-assets',
+        title: 'Real Estate & Strategic Asset Opportunities',
+        category: 'Strategic Assets',
+        desc: 'Algorithmic asset optimization, smart microgrids, and high-yield physical-digital operational convergence.',
+        thesis: 'Digital twins and algorithmic yield models unlock extraordinary balance sheet leverage across physical infrastructure.',
+        activeVentures: '1 Venture Active'
+      },
+      {
+        id: 'next-gen-systems',
+        title: 'Next-Gen Physical-Digital & Robotic Systems',
+        category: 'Next-Gen Systems',
+        desc: 'Spatial graph path planning, robotic micro-fulfillment, and kinetic logistics coordination.',
+        thesis: 'When spatial intelligence meets robotics, the cost curve of moving atoms begins to mirror the economics of software.',
+        activeVentures: '1 Venture Active'
+      }
+    ];
+
+    const PERSPECTIVES_DATA = [
+      {
+        id: 'businesses-as-systems',
+        title: 'Businesses as Systems: Why Conventional Venture Models Fail in the Age of Intelligence',
+        category: 'Venture Architecture',
+        readTime: '6 min read',
+        date: 'February 2026',
+        summary: 'Building isolated products is a fragile strategy. The most enduring enterprises are constructed as compounding operational systems where data, capital, and capabilities reinforce one another.',
+        quote: 'The future does not arrive fully formed. It gets built by those who see organizations not as collections of departments, but as dynamic feedback loops.',
+        theses: [
+          'Isolated startups face crippling customer acquisition and infrastructure duplication costs.',
+          'A platform model amortizes complex capabilities (AI models, data governance, legal architecture) across multiple operating entities.',
+          'True competitive advantage comes not from single software features, but from structural system-level leverage.'
+        ],
+        paragraphs: [
+          'For the past two decades, the dominant venture building playbook was deceptively simple: find a fragmented market, build a single-point SaaS application, raise hyper-dilutive rounds of venture capital, and spend aggressively on customer acquisition. This model worked when software margins were naturally 80%+ and distribution channels were underpriced.',
+          'Today, that paradigm has broken down. Software commoditization is accelerating at an unprecedented rate. Foundation models and generative code tools mean that any standalone feature can be replicated within weeks. When software becomes cheap to write, the moat shifts fundamentally to structural systems, proprietary data feedback loops, and sovereign execution capabilities.',
+          'At ALTRADYN Prime, we approach business building through the lens of complex systems theory. A business is not an isolated balance sheet; it is an information processing and value transfer engine. When we incubate or scale a venture, we do not start with a feature checklist. We start by mapping the entire value system—identifying where friction concentrates, where leverage can be applied, and how the new venture can draw upon and reinforce the parent ecosystem.',
+          'Consider the difference between a standalone AI startup and a venture built on the ALTRADYN platform. The standalone startup spends twelve months and millions of dollars building data lineage pipelines, enterprise audit mechanisms, and compliance shields. An ALTRADYN venture inherits these capabilities on day zero from our shared core. This 5x acceleration in time-to-value is what turns promising hypotheses into enduring, cash-generative enterprises.'
+        ]
+      },
+      {
+        id: 'opportunity-rarely-announces-itself',
+        title: 'Opportunity Rarely Announces Itself: The Art of Asymmetric Market Observation',
+        category: 'Market Intelligence',
+        readTime: '5 min read',
+        date: 'January 2026',
+        summary: 'Consensus trends are already priced in. High-conviction venture platforms generate superior returns by observing friction points that incumbents ignore or consider immutable.',
+        quote: 'Technology is only useful when it creates leverage. Without structural leverage, technology is merely expensive overhead.',
+        theses: [
+          'Consensus market opportunities suffer from immediate margin erosion and bidding wars.',
+          'The most valuable ventures originate at the intersection of regulatory changes, physical assets, and computational advances.',
+          'Observation is an active discipline requiring quantitative telemetry, not passive brainstorming.'
+        ],
+        paragraphs: [
+          'Whenever an industry trend reaches the front page of mainstream financial publications, the risk-adjusted returns for new entrants have already plummeted. When everyone agrees that a sector is the next big thing, capital floods in, talent costs spike, and customer acquisition costs explode.',
+          'Real asymmetric opportunities reside in the uncomfortable spaces between established industry boundaries. They exist where traditional real estate operators do not understand edge compute, where industrial chemical manufacturers rely on manual phone brokers, or where defense contractors are paralyzed by public cloud security constraints.',
+          'At ALTRADYN Prime, our Stage 1 observation methodology relies on structured friction mapping. We study where human latency causes margin collapse, where regulatory compliance creates artificial bottlenecks, and where physical assets underperform their computational potential. When we find an anomaly where modern computational intelligence can deliver an order-of-magnitude efficiency gain, we formulate a thesis and initiate empirical validation.',
+          'We do not seek to build everything. We remain exceptionally selective, choosing only those opportunities where ALTRADYN platform capabilities create an unfair and enduring competitive advantage.'
+        ]
+      },
+      {
+        id: 'physical-digital-convergence',
+        title: 'Beyond Pure Software: The Unstoppable Convergence of Physical Assets and Algorithmic Intelligence',
+        category: 'Strategic Assets',
+        readTime: '7 min read',
+        date: 'December 2025',
+        summary: 'The next decade of transformative enterprise value will not come from purely virtual applications, but from bringing computational precision to physical infrastructure, energy grids, and real estate.',
+        quote: 'When spatial intelligence meets physical infrastructure, the cost curve of moving and managing atoms begins to mirror the economics of software.',
+        theses: [
+          'Purely virtual software is vulnerable to rapid commoditization; physical-digital integrations establish formidable defensive moats.',
+          'Real estate, logistics warehouses, and industrial assets require algorithmic operational layers to survive rising energy and capital costs.',
+          'Asset-backed technology ventures generate higher quality, multi-generational cash flows.'
+        ],
+        paragraphs: [
+          'For the past thirty years, the technology sector treated the physical world as an afterthought. Software companies prided themselves on being "asset-light," scoffing at balance sheets with physical inventory or land holdings. Yet the physical world remains where 85% of global GDP is produced, consumed, and transported.',
+          'Today, rising interest rates, geopolitical realignments, and escalating energy costs have rendered pure asset-light models fragile. Conversely, physical assets that lack intelligent computational orchestration suffer from debilitating yield drag.',
+          'Through ventures like TerraGrid Dynamics and Orion Kinetic Systems, ALTRADYN Prime is pioneering the synthesis of heavy physical assets and light algorithmic intelligence. By deploying IoT thermal arrays, spatial digital twins, and predictive battery balancing across millions of square feet of industrial space, we transform static concrete and steel into dynamic, self-optimizing balance sheet assets.',
+          'This hybrid model creates twin moats: software-like operating margins underpinned by the enduring tangible value of hard real estate and infrastructure.'
+        ]
+      }
+    ];
+
+    // -------------------------------------------------------------
+    // 2. RENDERING CONTROLLERS
+    // -------------------------------------------------------------
+
+    // Render 5-Stage Engine Content
+    function switchStage(stageNum) {
+      const stage = STAGES_DATA[stageNum];
+      if (!stage) return;
+
+      // Update Tab Styles
+      const tabButtons = document.querySelectorAll('#stageTabsContainer .stage-tab-btn');
+      tabButtons.forEach((btn, index) => {
+        if (index + 1 === stageNum) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Update Box Content
+      const box = document.getElementById('stageContentBox');
+      box.innerHTML = `
+        <div class="stage-detail-grid">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span class="badge-pill">STAGE 0${stage.stepNumber}</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-transform: uppercase;">EXECUTION PROTOCOL</span>
+            </div>
+            <h3 style="font-size: 28px; font-weight: 300; margin-bottom: 6px;">${stage.title}</h3>
+            <p style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">${stage.subtitle}</p>
+            <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">${stage.summary}</p>
+
+            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 18px; margin-bottom: 24px;">
+              <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">STAGE OBJECTIVE</div>
+              <p style="font-size: 13px; color: var(--text-primary); font-weight: 500;">${stage.objective}</p>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px;">KEY EXECUTION MECHANICS</div>
+              <ul style="list-style: none; font-size: 13px; color: var(--text-secondary);">
+                ${stage.mechanics.map(m => `
+                  <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
+                    <span style="font-family: var(--font-mono); font-size: 10px; color: #1A1A1A; font-weight: 700;">●</span>
+                    <span>${m}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
+            <div style="background: var(--bg-canvas); border: 1px solid var(--border-color); padding: 24px;">
+              <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">ALTRADYN PLATFORM LEVERAGE</div>
+              <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">${stage.leverage}</p>
+
+              <div style="border-top: 1px solid var(--border-color); padding-top: 14px;">
+                <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">GOVERNANCE DECISION GATE</div>
+                <p style="font-size: 12px; font-style: italic; color: var(--text-primary);">"${stage.decisionGate}"</p>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 20px;">
+              <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">MANDATORY STAGE OUTPUTS</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                ${stage.outputs.map(out => `
+                  <span style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 4px 8px; font-family: var(--font-mono); font-size: 11px; color: var(--text-primary);">${out}</span>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Render Ventures Grid
+    function renderVentures(filterCategory = 'all') {
+      const container = document.getElementById('venturesContainer');
+      const filtered = filterCategory === 'all' 
+        ? VENTURES_DATA 
+        : VENTURES_DATA.filter(v => v.displayCategory === filterCategory);
+
+      container.innerHTML = filtered.map(v => `
+        <div class="venture-card">
+          <div>
+            <div class="venture-header">
+              <span class="badge-pill">${v.code}</span>
+              <span style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; padding: 2px 6px; background: var(--bg-subtle); border: 1px solid var(--border-color); font-weight: 600;">
+                ● ${v.stage}
+              </span>
+            </div>
+            <h3 class="venture-name">${v.name}</h3>
+            <div class="venture-cat">${v.displayCategory}</div>
+            <p class="venture-tagline">${v.tagline}</p>
+            <div class="venture-thesis-quote">"${v.thesis}"</div>
+          </div>
+
+          <div style="border-top: 1px solid var(--border-color); padding-top: 16px; margin-top: 8px;">
+            <button class="btn btn-secondary" style="width: 100%;" onclick="openVentureModal('${v.id}')">
+              Inspect Blueprint →
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterVentures(cat, btn) {
+      document.querySelectorAll('#ventureFilterBar .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderVentures(cat);
+    }
+
+    // Render Focus Areas Grid
+    function renderFocusAreas() {
+      const container = document.getElementById('focusAreasContainer');
+      container.innerHTML = FOCUS_AREAS_DATA.map(fa => `
+        <div class="focus-card">
+          <div class="badge-pill">${fa.category}</div>
+          <h3 class="focus-title">${fa.title}</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.5;">${fa.desc}</p>
+          <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 10px; font-size: 11px; font-style: italic; color: var(--text-primary); margin-bottom: 16px;">
+            "${fa.thesis}"
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">${fa.activeVentures}</div>
+        </div>
+      `).join('');
+    }
+
+    // Render Perspectives Hub
+    function renderPerspectives() {
+      const container = document.getElementById('perspectivesContainer');
+      container.innerHTML = PERSPECTIVES_DATA.map(art => `
+        <div class="essay-card" onclick="openEssayModal('${art.id}')">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-family: var(--font-mono); font-size: 11px;">
+              <span class="badge-pill">${art.category}</span>
+              <span style="color: var(--text-muted);">${art.readTime}</span>
+            </div>
+            <h3 style="font-size: 20px; font-weight: 400; margin-bottom: 10px; line-height: 1.3;">${art.title}</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5;">${art.summary}</p>
+            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px; font-size: 12px; font-style: italic; color: var(--text-primary); margin-bottom: 16px;">
+              "${art.quote}"
+            </div>
+          </div>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 14px; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 11px;">
+            <span style="color: var(--text-muted);">${art.date}</span>
+            <span style="font-weight: 600; text-transform: uppercase;">Read Essay →</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // -------------------------------------------------------------
+    // 3. MODALS & INTERACTION LOGIC
+    // -------------------------------------------------------------
     function openVentureModal(id) {
-      const data = ventureData[id];
-      if (!data) return;
-      const content = document.getElementById('modal-content');
-      content.innerHTML = `
-        <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--teal); font-weight:700;">${data.code}</span>
-        <h2 style="font-size:2rem; color:var(--navy); margin:0.5rem 0;">${data.title}</h2>
-        <p style="font-family:ui-monospace; font-size:0.85rem; color:var(--gold); margin-bottom:1.5rem;">"${data.tagline}"</p>
-        <p style="font-size:1rem; color:var(--ink); line-height:1.7; margin-bottom:2rem;">${data.desc}</p>
-        <button class="btn-cta" onclick="closeModal(); switchPage('connect');">Engage with this Venture →</button>
+      const v = VENTURES_DATA.find(item => item.id === id);
+      if (!v) return;
+
+      document.getElementById('mCode').innerText = v.code;
+      const body = document.getElementById('ventureModalBody');
+      body.innerHTML = `
+        <div style="margin-bottom: 24px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <h2 style="font-size: 26px; font-weight: 300;">${v.name}</h2>
+            <span class="badge-pill">● Status: ${v.stage}</span>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">${v.displayCategory} • Est. ${v.foundingYear}</div>
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 20px;">${v.tagline}</p>
+          <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 16px; font-style: italic; font-size: 13px; color: var(--text-primary); margin-bottom: 24px;">
+            "${v.thesis}"
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+          <div style="background: #FBFBFA; border: 1px solid var(--border-color); padding: 16px;">
+            <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">PROBLEM SPACE</div>
+            <p style="font-size: 12px; color: var(--text-secondary);">${v.problemSpace}</p>
+          </div>
+          <div style="background: #FBFBFA; border: 1px solid var(--border-color); padding: 16px;">
+            <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">ARCHITECTURAL SOLUTION</div>
+            <p style="font-size: 12px; color: var(--text-secondary);">${v.architectureSummary}</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">OPERATIONAL TELEMETRY METRICS</div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            ${v.operationalMetrics.map(m => `
+              <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">${m.label}</div>
+                <div style="font-family: var(--font-display); font-size: 18px; font-weight: 400; color: var(--text-primary); margin-top: 2px;">${m.value}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">ENGINEERED CAPABILITIES</div>
+            <ul style="list-style: none; font-size: 12px; color: var(--text-secondary);">
+              ${v.builtCapabilities.map(cap => `
+                <li style="margin-bottom: 6px; padding-left: 12px; text-indent: -12px;">✓ ${cap}</li>
+              `).join('')}
+            </ul>
+          </div>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">INHERITED PLATFORM LEVERAGE</div>
+            <ul style="list-style: none; font-size: 12px; color: var(--text-secondary);">
+              ${v.platformLeverage.map(lev => `
+                <li style="margin-bottom: 6px; padding-left: 12px; text-indent: -12px;">⚡ ${lev}</li>
+              `).join('')}
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">CORE TECHNICAL STACK</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            ${v.techStack.map(t => `<span style="background: var(--bg-pill); border: 1px solid var(--border-color); padding: 4px 8px; font-family: var(--font-mono); font-size: 11px;">${t}</span>`).join('')}
+          </div>
+        </div>
       `;
-      document.getElementById('app-modal').classList.add('open');
+
+      document.getElementById('ventureModal').classList.add('active');
     }
 
-    function openArticleModal(id) {
-      const content = document.getElementById('modal-content');
-      content.innerHTML = `
-        <span style="font-family:ui-monospace; font-size:0.75rem; color:var(--gold); font-weight:700;">STRATEGIC ESSAY</span>
-        <h2 style="font-size:2rem; color:var(--navy); margin:0.5rem 0;">The Post-SaaS Architecture</h2>
-        <p style="font-family:'Newsreader', serif; font-size:1.15rem; color:var(--ink); line-height:1.8; margin-top:1.5rem;">
-          The enterprise software model of the past two decades—charging $40/user/month for database wrappers—is fundamentally breaking. As AI agents begin doing the work rather than humans clicking buttons, revenue will shift from per-seat subscriptions to verifiable outcome capture.
-        </p>
-      `;
-      document.getElementById('app-modal').classList.add('open');
+    function closeVentureModal() {
+      document.getElementById('ventureModal').classList.remove('active');
     }
 
-    function closeModal() {
-      document.getElementById('app-modal').classList.remove('open');
+    function openEssayModal(id) {
+      const art = PERSPECTIVES_DATA.find(item => item.id === id);
+      if (!art) return;
+
+      document.getElementById('eCategory').innerText = art.category;
+      document.getElementById('eReadTime').innerText = art.readTime;
+      const body = document.getElementById('essayModalBody');
+      body.innerHTML = `
+        <h1 style="font-size: 26px; font-weight: 300; line-height: 1.25; margin-bottom: 12px;">${art.title}</h1>
+        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 18px;">${art.summary}</p>
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); padding-bottom: 16px; border-bottom: 1px solid var(--border-color); margin-bottom: 20px;">
+          Published by ALTRADYN Strategy Council • ${art.date}
+        </div>
+
+        <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 18px; margin-bottom: 24px;">
+          <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">CORE ARCHITECTURAL THESES</div>
+          <ul style="list-style: none; font-size: 12px; color: var(--text-secondary);">
+            ${art.theses.map(t => `<li style="margin-bottom: 6px;">✓ ${t}</li>`).join('')}
+          </ul>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 16px; font-style: italic; font-size: 14px; color: var(--text-primary); margin-bottom: 24px;">
+          "${art.quote}"
+        </div>
+
+        <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+          ${art.paragraphs.map(p => `<p style="margin-bottom: 16px;">${p}</p>`).join('')}
+        </div>
+      `;
+
+      document.getElementById('essayModal').classList.add('active');
+    }
+
+    function closeEssayModal() {
+      document.getElementById('essayModal').classList.remove('active');
+    }
+
+    // Engagement Pathway Switcher
+    let currentPathway = 'founder';
+    function selectPathway(pathway, btn) {
+      currentPathway = pathway;
+      document.querySelectorAll('#pathwaySelector .pathway-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     }
 
     function handleFormSubmit(e) {
       e.preventDefault();
-      document.getElementById('form-success').style.display = 'block';
-      e.target.reset();
+      document.getElementById('engagementForm').style.display = 'none';
+      document.getElementById('routingRef').innerText = 'ALT-ENG-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('formSuccessMessage').style.display = 'block';
     }
+
+    function resetForm() {
+      document.getElementById('engagementForm').reset();
+      document.getElementById('engagementForm').style.display = 'block';
+      document.getElementById('formSuccessMessage').style.display = 'none';
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileDrawer').classList.toggle('open');
+    }
+    document.getElementById('mobileMenuToggle').addEventListener('click', toggleMobileMenu);
+
+    // Keyboard ESC to close modals
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeVentureModal();
+        closeEssayModal();
+      }
+    });
+
+    // -------------------------------------------------------------
+    // 4. INTERACTIVE ECOSYSTEM NETWORK CANVAS (VANILLA JS)
+    // -------------------------------------------------------------
+    function initCanvas() {
+      const canvas = document.getElementById('ecosystemCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const container = document.getElementById('canvasContainer');
+
+      let width = container.clientWidth;
+      let height = container.clientHeight;
+      canvas.width = width * window.devicePixelRatio;
+      canvas.height = height * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
+      const nodes = [
+        { id: 'core', label: 'ALTRADYN Core', x: width * 0.5, y: height * 0.5, radius: 24, isCenter: true, angle: 0 },
+        { id: 'synapse', label: 'SynapseFlow', x: 0, y: 0, radius: 14, angle: 0 },
+        { id: 'axiom', label: 'Axiom Mesh', x: 0, y: 0, radius: 14, angle: (Math.PI * 2) / 5 },
+        { id: 'terragrid', label: 'TerraGrid', x: 0, y: 0, radius: 14, angle: (Math.PI * 4) / 5 },
+        { id: 'khorus', label: 'Khorus Ex', x: 0, y: 0, radius: 14, angle: (Math.PI * 6) / 5 },
+        { id: 'vanguard', label: 'Vanguard Cognitive', x: 0, y: 0, radius: 14, angle: (Math.PI * 8) / 5 }
+      ];
+
+      let hoverNode = null;
+      let orbitRadius = Math.min(width, height) * 0.38;
+      let baseAngle = 0;
+
+      function updatePositions() {
+        baseAngle += 0.002;
+        nodes.forEach((n) => {
+          if (n.isCenter) {
+            n.x = width * 0.5;
+            n.y = height * 0.5;
+          } else {
+            const currentAngle = n.angle + baseAngle;
+            n.x = width * 0.5 + Math.cos(currentAngle) * orbitRadius;
+            n.y = height * 0.5 + Math.sin(currentAngle) * orbitRadius;
+          }
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Draw Orbit Ring
+        ctx.beginPath();
+        ctx.arc(width * 0.5, height * 0.5, orbitRadius, 0, Math.PI * 2);
+        ctx.strokeStyle = '#E5E5E3';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        // Draw Connection Lines
+        nodes.forEach(n => {
+          if (!n.isCenter) {
+            ctx.beginPath();
+            ctx.moveTo(nodes[0].x, nodes[0].y);
+            ctx.lineTo(n.x, n.y);
+            ctx.strokeStyle = '#E5E5E3';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        });
+
+        // Draw Outer Venture Connections
+        for (let i = 1; i < nodes.length; i++) {
+          const next = i === nodes.length - 1 ? 1 : i + 1;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[next].x, nodes[next].y);
+          ctx.strokeStyle = 'rgba(229, 229, 227, 0.6)';
+          ctx.setLineDash([4, 4]);
+          ctx.stroke();
+          ctx.setLineDash([]);
+        }
+
+        // Draw Nodes
+        nodes.forEach(n => {
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+          if (n.isCenter) {
+            ctx.fillStyle = '#1A1A1A';
+            ctx.fill();
+            ctx.strokeStyle = '#1A1A1A';
+          } else {
+            ctx.fillStyle = hoverNode === n ? '#1A1A1A' : '#FFFFFF';
+            ctx.fill();
+            ctx.strokeStyle = '#1A1A1A';
+          }
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+
+          // Text Labels
+          ctx.font = n.isCenter ? '600 11px Space Grotesk' : '500 10px JetBrains Mono';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          if (n.isCenter) {
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillText('CORE', n.x, n.y);
+          } else {
+            ctx.fillStyle = hoverNode === n ? '#FFFFFF' : '#1A1A1A';
+            ctx.fillText(n.label.substring(0, 3).toUpperCase(), n.x, n.y);
+
+            // Label beneath
+            ctx.font = '500 9px JetBrains Mono';
+            ctx.fillStyle = '#6B6B6B';
+            ctx.fillText(n.label, n.x, n.y + n.radius + 12);
+          }
+        });
+
+        updatePositions();
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', () => {
+        width = container.clientWidth;
+        height = container.clientHeight;
+        canvas.width = width * window.devicePixelRatio;
+        canvas.height = height * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+        orbitRadius = Math.min(width, height) * 0.38;
+      });
+
+      canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        hoverNode = nodes.find(n => Math.hypot(n.x - mx, n.y - my) < n.radius + 6) || null;
+      });
+
+      draw();
+    }
+
+    // -------------------------------------------------------------
+    // INITIALIZATION ON DOM LOAD
+    // -------------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', () => {
+      switchStage(1);
+      renderVentures('all');
+      renderFocusAreas();
+      renderPerspectives();
+      initCanvas();
+    });
   </script>
 </body>
 </html>
