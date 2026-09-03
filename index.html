@@ -1,2111 +1,1307 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALTRADYN PRIME — Intelligent Systems. Enduring Ventures.</title>
-  <meta name="description" content="ALTRADYN Prime is an independent business-building, operating, and venture development platform conceiving, validating, and scaling enduring market systems.">
-  <meta property="og:title" content="ALTRADYN PRIME — Intelligent Systems. Enduring Ventures.">
-  <meta property="og:description" content="One platform. Multiple possibilities. Building high-conviction ventures at the intersection of intelligence, technology, and market systems.">
-  
-  <!-- Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* -------------------------------------------------------------
-       ALTRADYN PRIME — CLEAN MINIMALISM ARCHITECTURAL DESIGN SYSTEM
-       ------------------------------------------------------------- */
-    :root {
-      --bg-canvas: #FBFBFA;
-      --bg-surface: #FFFFFF;
-      --bg-subtle: #F5F5F3;
-      --bg-pill: #F0F0EE;
-      --text-primary: #1A1A1A;
-      --text-secondary: #4A4A48;
-      --text-muted: #6B6B6B;
-      --text-light: #8C8C8A;
-      --border-color: #E5E5E3;
-      --border-dark: #1A1A1A;
-      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --max-width: 1280px;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background-color: var(--bg-canvas);
-      color: var(--text-primary);
-      line-height: 1.6;
-      font-size: 15px;
-      overflow-x: hidden;
-    }
-
-    ::selection {
-      background-color: #1A1A1A;
-      color: #FFFFFF;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      letter-spacing: -0.03em;
-      color: var(--text-primary);
-      line-height: 1.2;
-    }
-
-    p {
-      color: var(--text-secondary);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    /* Container Utility */
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-
-    /* Header & Navigation */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(251, 251, 250, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .brand-symbol {
-      width: 32px;
-      height: 32px;
-      background: #1A1A1A;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      font-weight: 700;
-      border: 1px solid var(--border-dark);
-    }
-
-    .nav-links {
-      display: none;
-      align-items: center;
-      gap: 28px;
-    }
-
-    @media (min-width: 960px) {
-      .nav-links {
-        display: flex;
-      }
-    }
-
-    .nav-link {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 500;
-      color: var(--text-muted);
-      transition: color 0.15s ease;
-      position: relative;
-      padding: 6px 0;
-    }
-
-    .nav-link:hover, .nav-link.active {
-      color: var(--text-primary);
-    }
-
-    .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--text-primary);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 20px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      border-radius: 0px;
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: #1A1A1A;
-      color: #FFFFFF;
-      border: 1px solid #1A1A1A;
-    }
-
-    .btn-primary:hover {
-      background: #333333;
-      border-color: #333333;
-    }
-
-    .btn-secondary {
-      background: #FFFFFF;
-      color: #1A1A1A;
-      border: 1px solid var(--border-color);
-    }
-
-    .btn-secondary:hover {
-      background: var(--bg-subtle);
-      border-color: #1A1A1A;
-    }
-
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      background: var(--bg-pill);
-      border: 1px solid var(--border-color);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-      color: var(--text-primary);
-      font-family: var(--font-mono);
-    }
-
-    /* Hero Section */
-    .hero-section {
-      padding: 80px 0 60px 0;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    @media (min-width: 1024px) {
-      .hero-grid {
-        grid-template-columns: 1.15fr 0.85fr;
-      }
-    }
-
-    .hero-title {
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.05;
-      font-weight: 300;
-      letter-spacing: -0.04em;
-      margin: 20px 0;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      font-weight: 600;
-    }
-
-    .hero-lead {
-      font-size: clamp(16px, 2vw, 19px);
-      line-height: 1.6;
-      color: var(--text-secondary);
-      max-width: 620px;
-      margin-bottom: 32px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    /* Live Canvas Box */
-    .canvas-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      padding: 20px;
-      position: relative;
-    }
-
-    .canvas-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .canvas-container {
-      width: 100%;
-      height: 380px;
-      background: #FBFBFA;
-      border: 1px solid var(--border-color);
-      position: relative;
-      cursor: crosshair;
-      overflow: hidden;
-    }
-
-    #ecosystemCanvas {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    /* Telemetry Stats Bar */
-    .telemetry-bar {
-      margin-top: 48px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    @media (min-width: 768px) {
-      .telemetry-bar {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .telemetry-item {
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      padding: 20px 24px;
-    }
-
-    .telemetry-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .telemetry-val {
-      font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 400;
-      color: var(--text-primary);
-    }
-
-    /* Sections Shared */
-    section {
-      padding: 96px 0;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .section-header {
-      margin-bottom: 48px;
-      max-width: 760px;
-    }
-
-    .section-title {
-      font-size: clamp(30px, 4vw, 46px);
-      font-weight: 300;
-      letter-spacing: -0.03em;
-      margin: 14px 0;
-    }
-
-    .section-title em {
-      font-style: italic;
-      font-weight: 600;
-    }
-
-    .section-desc {
-      font-size: 16px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Model Stage Cards & Interactive Layout */
-    .model-nav-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .model-nav-grid {
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
-
-    .stage-tab-btn {
-      padding: 16px;
-      text-align: left;
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      transition: all 0.2s ease;
-    }
-
-    .stage-tab-btn:hover {
-      border-color: #1A1A1A;
-    }
-
-    .stage-tab-btn.active {
-      background: #1A1A1A;
-      color: #FFFFFF;
-      border-color: #1A1A1A;
-    }
-
-    .stage-tab-btn.active .stage-num {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .stage-tab-btn.active .stage-title {
-      color: #FFFFFF;
-    }
-
-    .stage-num {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .stage-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .stage-detail-box {
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      padding: 40px;
-    }
-
-    .stage-detail-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
-    }
-
-    @media (min-width: 960px) {
-      .stage-detail-grid {
-        grid-template-columns: 1.2fr 0.8fr;
-      }
-    }
-
-    /* Ventures Grid */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 32px;
-    }
-
-    .filter-btn {
-      padding: 6px 14px;
-      font-size: 11px;
-      font-family: var(--font-mono);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      color: var(--text-secondary);
-      transition: all 0.15s ease;
-    }
-
-    .filter-btn:hover {
-      border-color: var(--text-primary);
-      color: var(--text-primary);
-    }
-
-    .filter-btn.active {
-      background: #1A1A1A;
-      color: #FFFFFF;
-      border-color: #1A1A1A;
-    }
-
-    .ventures-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    @media (min-width: 768px) {
-      .ventures-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1100px) {
-      .ventures-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .venture-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .venture-card:hover {
-      border-color: #1A1A1A;
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.07);
-    }
-
-    .venture-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 12px;
-    }
-
-    .venture-name {
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--text-primary);
-      margin-bottom: 2px;
-    }
-
-    .venture-cat {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .venture-tagline {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-
-    .venture-thesis-quote {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-color);
-      padding: 12px 14px;
-      font-size: 12px;
-      font-style: italic;
-      color: var(--text-primary);
-      margin-bottom: 20px;
-    }
-
-    /* Focus Areas Cards */
-    .focus-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    @media (min-width: 768px) {
-      .focus-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .focus-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .focus-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      padding: 32px 28px;
-      transition: all 0.2s ease;
-    }
-
-    .focus-card:hover {
-      border-color: #1A1A1A;
-    }
-
-    .focus-title {
-      font-size: 20px;
-      font-weight: 400;
-      margin: 12px 0 8px 0;
-    }
-
-    /* Perspectives */
-    .perspectives-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    @media (min-width: 800px) {
-      .perspectives-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .essay-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .essay-card:hover {
-      border-color: #1A1A1A;
-      box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.06);
-    }
-
-    /* Engagement / Connect Form */
-    .connect-layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    @media (min-width: 960px) {
-      .connect-layout {
-        grid-template-columns: 1.25fr 0.75fr;
-      }
-    }
-
-    .connect-form-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      padding: 36px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-label {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .form-input, .form-select, .form-textarea {
-      width: 100%;
-      padding: 12px 14px;
-      background: #FBFBFA;
-      border: 1px solid var(--border-color);
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-size: 13px;
-      border-radius: 0;
-      transition: border-color 0.15s ease;
-    }
-
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      outline: none;
-      border-color: #1A1A1A;
-      background: #FFFFFF;
-    }
-
-    .pathways-selector {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: 640px) {
-      .pathways-selector {
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
-
-    .pathway-btn {
-      padding: 12px 8px;
-      text-align: center;
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      font-size: 11px;
-      font-family: var(--font-mono);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      transition: all 0.15s ease;
-    }
-
-    .pathway-btn.active {
-      background: #1A1A1A;
-      color: #FFFFFF;
-      border-color: #1A1A1A;
-    }
-
-    /* Modal System */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      overflow-y: auto;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .modal-box {
-      width: 100%;
-      max-width: 820px;
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.2);
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      margin: auto;
-    }
-
-    .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 28px;
-      background: var(--bg-subtle);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .modal-body {
-      padding: 32px 28px;
-      overflow-y: auto;
-    }
-
-    .modal-footer {
-      padding: 16px 28px;
-      background: var(--bg-subtle);
-      border-top: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    /* Footer */
-    footer {
-      background: #1A1A1A;
-      color: #FFFFFF;
-      padding: 80px 0 40px 0;
-      border-top: 1px solid #333333;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    @media (min-width: 768px) {
-      .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-      }
-    }
-
-    .footer-col-title {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(255, 255, 255, 0.5);
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-
-    .footer-links {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-
-    .footer-links a {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 13px;
-      transition: color 0.15s ease;
-    }
-
-    .footer-links a:hover {
-      color: #FFFFFF;
-    }
-
-    .footer-bottom {
-      padding-top: 32px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      align-items: center;
-      justify-content: space-between;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    @media (min-width: 768px) {
-      .footer-bottom {
-        flex-direction: row;
-      }
-    }
-
-    /* Mobile Drawer */
-    .mobile-menu-btn {
-      display: flex;
-      padding: 8px;
-    }
-
-    @media (min-width: 960px) {
-      .mobile-menu-btn {
-        display: none;
-      }
-    }
-
-    .mobile-drawer {
-      display: none;
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--border-color);
-      padding: 24px;
-      z-index: 49;
-    }
-
-    .mobile-drawer.open {
-      display: block;
-    }
-
-    .mobile-drawer a {
-      display: block;
-      padding: 12px 0;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 600;
-      border-bottom: 1px solid var(--bg-subtle);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALTRADYN PRIME — One Platform. Multiple Possibilities.</title>
+<meta name="description" content="ALTRADYN Prime is an independent business-building, operating and venture development platform. We see businesses as systems — and build what comes next.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151310'/%3E%3Cpath d='M32 13 51 32 32 51 13 32Z' fill='none' stroke='%23F2EFE8' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23B5451D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============ FOUNDATION ============ */
+:root{
+  --paper:#F2EFE8;
+  --ink:#151310;
+  --rust:#B5451D;
+  --ink-70:rgba(21,19,16,.7);
+  --ink-55:rgba(21,19,16,.55);
+  --ink-45:rgba(21,19,16,.45);
+  --ink-25:rgba(21,19,16,.25);
+  --ink-12:rgba(21,19,16,.12);
+  --pline:rgba(242,239,232,.18);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --sans:'Archivo',Helvetica,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --serif:'Instrument Serif',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--rust);color:var(--paper)}
+:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;color:inherit;background:none;border:0}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--paper)}
+::-webkit-scrollbar-thumb{background:var(--ink-25);border:3px solid var(--paper)}
+/* paper grain */
+body::after{content:"";position:fixed;inset:0;z-index:350;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.sec{padding:clamp(88px,11vw,150px) 0}
+.mono{font-family:var(--mono)}
+.it{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
+.pd{color:var(--rust);font-style:normal}
+
+/* section header system */
+.sec-head{display:flex;align-items:center;gap:18px;margin-bottom:22px}
+.sec-idx{font:600 11px var(--mono);letter-spacing:.16em;color:var(--rust)}
+.sec-rule{flex:1;height:1px;background:var(--ink-12)}
+.sec-label{font:500 11px var(--mono);letter-spacing:.2em;color:var(--ink-45)}
+.sec-title{font-weight:750;font-stretch:125%;text-transform:uppercase;font-size:clamp(36px,4.8vw,74px);line-height:1.02;letter-spacing:.004em;margin-bottom:clamp(40px,5vw,68px)}
+.sec-title .it{font-size:1.04em}
+
+/* reveal choreography */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .95s var(--ease),transform .95s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+.hline{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.hline>span{display:block;transform:translateY(112%);transition:transform 1.05s var(--ease);transition-delay:var(--d,0s)}
+.loaded .hline>span{transform:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);
+  font:600 12px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;padding:18px 26px;transition:background .35s var(--ease),border-color .35s var(--ease)}
+.btn svg{transition:transform .35s var(--ease)}
+.btn:hover{background:var(--rust);border-color:var(--rust)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tlink{position:relative;display:inline-flex;align-items:center;gap:10px;font:500 12px var(--mono);letter-spacing:.15em;text-transform:uppercase;padding-bottom:7px;transition:color .3s}
+.tlink::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform-origin:left;transition:transform .45s var(--ease)}
+.tlink:hover{color:var(--rust)}
+.tlink:hover::after{transform:scaleX(.35)}
+.tlink svg{transition:transform .35s var(--ease)}
+.tlink:hover svg{transform:translateX(4px)}
+
+/* ============ HEADER ============ */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--rust);z-index:120}
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(242,239,232,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--ink-12)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-stretch:125%;letter-spacing:.05em;font-size:15px}
+.logo .dm{width:9px;height:9px;background:var(--rust);transform:rotate(45deg);flex:none}
+.logo em{font-style:normal;font-weight:500;font-stretch:100%;letter-spacing:.05em;color:var(--ink-55)}
+nav.main{display:flex;gap:clamp(16px,2vw,30px)}
+nav.main a{font:500 11px var(--mono);letter-spacing:.14em;color:var(--ink-55);transition:color .3s;position:relative;padding:6px 0}
+nav.main a:hover{color:var(--ink)}
+nav.main a.active{color:var(--rust)}
+.hd-cta{display:flex;align-items:center;gap:22px}
+.hd-cta .tlink{font-size:11px}
+.burger{display:none;flex-direction:column;gap:6px;padding:10px 2px}
+.burger i{display:block;width:26px;height:1.5px;background:var(--ink);transition:.35s var(--ease)}
+@media(max-width:1080px){nav.main,.hd-cta .tlink{display:none}.burger{display:flex}}
+
+/* mobile menu */
+.menu{position:fixed;inset:0;z-index:200;background:var(--ink);color:var(--paper);clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu.open{clip-path:inset(0 0 0% 0);visibility:visible}
+.menu-in{display:flex;flex-direction:column;height:100%;padding-top:0;padding-bottom:28px}
+.menu-head{display:flex;align-items:center;justify-content:space-between;height:74px;flex:none}
+.m-word{font-weight:800;font-stretch:125%;letter-spacing:.05em;font-size:15px;display:flex;align-items:center;gap:12px}
+.m-word .dm{width:9px;height:9px;background:var(--rust);transform:rotate(45deg)}
+.m-close{padding:12px}
+.m-close svg{stroke:var(--paper)}
+.m-nav{display:flex;flex-direction:column;margin-top:6vh;flex:1}
+.m-link{display:flex;align-items:baseline;gap:20px;padding:clamp(8px,1.6vh,16px) 0;border-bottom:1px solid var(--pline);
+  font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:clamp(30px,6.5vh,54px);line-height:1.05;
+  opacity:0;transform:translateY(28px);transition:opacity .6s var(--ease),transform .6s var(--ease),color .3s;transition-delay:0s}
+.menu.open .m-link{opacity:1;transform:none;transition-delay:calc(.12s + var(--i)*.055s)}
+.m-link .m-idx{font:500 12px var(--mono);color:var(--rust);letter-spacing:.1em}
+.m-link:hover{color:var(--rust)}
+.m-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:500 10.5px var(--mono);letter-spacing:.16em;color:rgba(242,239,232,.55);padding-top:22px}
+.m-foot a:hover{color:var(--rust)}
+
+/* ============ HERO ============ */
+.hero{padding-top:clamp(120px,15vh,170px);padding-bottom:clamp(60px,8vh,100px)}
+.hero-meta{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--ink-12);
+  padding-bottom:14px;margin-bottom:clamp(36px,5.5vh,60px);font:500 10.5px var(--mono);letter-spacing:.18em;color:var(--ink-45)}
+.hero-meta b{font-weight:600;color:var(--ink-70)}
+.hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,4.5vw,72px);align-items:stretch}
+h1{font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:clamp(44px,6.4vw,102px);line-height:.99;letter-spacing:.004em;margin:6px 0 0}
+h1 .it{font-size:1.05em;letter-spacing:0}
+.hero-sub{max-width:540px;font-size:clamp(16.5px,1.35vw,19.5px);line-height:1.62;color:var(--ink-70);margin:clamp(26px,3.5vh,40px) 0 clamp(28px,4vh,42px)}
+.hero-sub strong{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.scroll-cue{display:flex;align-items:center;gap:14px;margin-top:clamp(46px,8vh,88px);font:500 10px var(--mono);letter-spacing:.22em;color:var(--ink-45)}
+.s-line{width:56px;height:1px;background:var(--ink-25);position:relative;overflow:hidden}
+.s-line::after{content:"";position:absolute;inset:0;background:var(--rust);transform:translateX(-101%);animation:sweep 2.8s var(--ease) infinite}
+@keyframes sweep{45%{transform:translateX(0)}100%{transform:translateX(101%)}}
+
+/* instrument panel (hero diagram) */
+.panel{position:relative;border:1px solid var(--ink-25);display:flex;flex-direction:column;min-height:560px;height:100%}
+.panel>i{position:absolute;width:9px;height:9px;border:0 solid var(--ink);z-index:2}
+.panel .c1{top:-1px;left:-1px;border-top-width:1px;border-left-width:1px}
+.panel .c2{top:-1px;right:-1px;border-top-width:1px;border-right-width:1px}
+.panel .c3{bottom:-1px;left:-1px;border-bottom-width:1px;border-left-width:1px}
+.panel .c4{bottom:-1px;right:-1px;border-bottom-width:1px;border-right-width:1px}
+.panel-top{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--ink-12);
+  font:500 10px var(--mono);letter-spacing:.2em;color:var(--ink-55);flex:none}
+.live{display:inline-flex;align-items:center;gap:9px;color:var(--rust)}
+.live i{width:6px;height:6px;border-radius:50%;background:var(--rust);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.panel-canvas{position:relative;flex:1;min-height:340px}
+#systemCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.panel-read{display:flex;align-items:center;gap:12px;border-top:1px solid var(--ink-12);padding:13px 18px;
+  font:500 10.5px var(--mono);letter-spacing:.14em;color:var(--ink-70);flex:none;min-height:44px}
+.read-sq{width:8px;height:8px;background:var(--rust);flex:none;transform:rotate(45deg);transition:transform .3s var(--ease)}
+.read-sq.tick{transform:rotate(135deg) scale(1.25)}
+
+/* ============ TICKER ============ */
+.ticker{overflow:hidden;border-block:1px solid var(--ink-12)}
+.tk-track{display:flex;width:max-content;padding:13px 0;animation:tick 48s linear infinite}
+.tk-half{display:flex;align-items:center;flex:none}
+.tk-half span{font:500 11px var(--mono);letter-spacing:.22em;color:var(--ink-70);white-space:nowrap}
+.tsep{width:6px;height:6px;background:var(--rust);transform:rotate(45deg);margin:0 36px;flex:none;opacity:.7}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:4fr 8fr;gap:clamp(30px,4vw,72px);align-items:start}
+.about-sticky{position:sticky;top:110px;font:500 10.5px var(--mono);letter-spacing:.18em;color:var(--ink-45);line-height:2.1}
+.about-sticky b{color:var(--rust);font-weight:600;display:block}
+.about-lede{font-size:clamp(19px,1.7vw,24px);line-height:1.55;max-width:32em;font-weight:450}
+.about-lede strong{font-weight:650}
+.about-cols{columns:2;column-gap:46px;margin-top:30px;font-size:16px;color:var(--ink-70);max-width:100%}
+.about-cols p{break-inside:avoid;margin-bottom:18px}
+.about-cols strong{color:var(--ink);font-weight:600}
+.id-row{display:grid;grid-template-columns:1fr 1fr;margin-top:44px}
+.id-cell{border:1px solid var(--ink-25);padding:26px 28px;transition:border-color .35s}
+.id-cell+.id-cell{border-left:0}
+.id-cell:hover{border-color:var(--ink)}
+.id-cell h4{font-weight:750;font-stretch:125%;text-transform:uppercase;font-size:19px;display:flex;align-items:center;gap:12px}
+.id-cell h4 i{width:7px;height:7px;background:var(--rust);transform:rotate(45deg)}
+.id-cell .id-tag{display:block;font:500 10px var(--mono);letter-spacing:.18em;color:var(--rust);margin:8px 0 14px}
+.id-cell ul{list-style:none;font:500 10.5px var(--mono);letter-spacing:.12em;color:var(--ink-55);line-height:2.1}
+.id-cell li::before{content:"—  ";color:var(--ink-25)}
+.prin{margin-top:clamp(60px,7vw,92px)}
+.prin-row{display:grid;grid-template-columns:64px 1fr 1.4fr;gap:26px;align-items:baseline;padding:26px 4px;border-top:1px solid var(--ink-25);transition:background .3s}
+.prin-row:last-child{border-bottom:1px solid var(--ink-25)}
+.prin-row:hover{background:rgba(21,19,16,.028)}
+.prin-num{font:600 12px var(--mono);color:var(--rust);letter-spacing:.1em}
+.prin-t{font-weight:700;font-stretch:115%;text-transform:uppercase;font-size:clamp(17px,1.5vw,21px);letter-spacing:.01em}
+.prin-d{font-size:15.5px;color:var(--ink-70)}
+.facts{display:flex;flex-wrap:wrap;border-block:1px solid var(--ink-25);margin-top:clamp(64px,7vw,96px)}
+.fact{flex:1;min-width:190px;padding:24px 28px;border-left:1px solid var(--ink-12)}
+.fact:first-child{border-left:0}
+.fact small{display:block;font:500 10px var(--mono);letter-spacing:.2em;color:var(--ink-45);margin-bottom:8px}
+.fact b{font-weight:800;font-stretch:125%;font-size:clamp(22px,2vw,28px);letter-spacing:.01em}
+
+/* ============ MODEL ============ */
+.model-grid{display:grid;grid-template-columns:4fr 8fr;gap:clamp(30px,4vw,72px);align-items:start}
+.st-tabs{display:flex;flex-direction:column;border-bottom:1px solid var(--ink-25)}
+.stage-tab{position:relative;display:flex;align-items:baseline;gap:16px;text-align:left;padding:19px 4px 19px 22px;border-top:1px solid var(--ink-25);transition:opacity .3s}
+.stage-tab::before{content:"";position:absolute;left:0;top:0;width:2px;height:0;background:var(--rust);transition:height .5s var(--ease)}
+.stage-tab.active::before{height:100%}
+.st-num{font:600 11px var(--mono);color:var(--ink-45);letter-spacing:.1em;transition:color .3s}
+.st-name{font-weight:700;font-stretch:118%;text-transform:uppercase;font-size:clamp(17px,1.5vw,21px);color:var(--ink-45);transition:color .3s}
+.st-hint{margin-left:auto;font:500 9.5px var(--mono);letter-spacing:.2em;color:var(--ink-25)}
+.stage-tab:hover .st-name{color:var(--ink-70)}
+.stage-tab.active .st-name{color:var(--ink)}
+.stage-tab.active .st-num{color:var(--rust)}
+.stage-tab.active .st-hint{color:var(--rust)}
+.st-panels{position:relative;min-height:440px}
+.stage-panel{display:none;position:relative;padding:6px 0 0}
+.stage-panel.active{display:block;animation:panelIn .65s var(--ease)}
+@keyframes panelIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.sp-num{position:absolute;right:-6px;top:-34px;font-weight:800;font-stretch:125%;font-size:clamp(110px,12vw,190px);line-height:1;
+  color:transparent;-webkit-text-stroke:1px var(--ink-25);pointer-events:none;user-select:none}
+.sp-body>*{position:relative;z-index:1}
+.sp-body h3{font-weight:750;font-stretch:122%;text-transform:uppercase;font-size:clamp(26px,2.6vw,38px)}
+.sp-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,1.7vw,23px);color:var(--rust);margin:10px 0 20px}
+.sp-body>p.sp-desc{max-width:56ch;color:var(--ink-70);font-size:16.5px}
+.sp-list{list-style:none;margin-top:26px;border-top:1px solid var(--ink-12)}
+.sp-list li{font:500 11px var(--mono);letter-spacing:.16em;color:var(--ink-55);padding:11px 2px;border-bottom:1px solid var(--ink-12);display:flex;gap:14px}
+.sp-list li::before{content:"";width:7px;height:7px;background:var(--rust);transform:rotate(45deg);flex:none;margin-top:4px;opacity:.85}
+
+/* platform structure figure */
+.structure{margin-top:clamp(72px,8vw,110px)}
+.fig-cap{font:600 10.5px var(--mono);letter-spacing:.2em;color:var(--rust);margin-bottom:20px}
+.s-parent{background:var(--ink);color:var(--paper);padding:22px 28px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.s-parent b{font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:clamp(16px,1.5vw,20px);letter-spacing:.02em}
+.s-parent span{font:500 10px var(--mono);letter-spacing:.18em;color:rgba(242,239,232,.6)}
+.s-link{display:grid;grid-template-columns:1fr 1fr;height:36px}
+.s-link i{width:1px;background:var(--ink-25);justify-self:center}
+.s-branches{display:grid;grid-template-columns:1fr 1fr}
+.s-child{border:1px solid var(--ink-25);padding:26px 28px;transition:border-color .35s}
+.s-child:hover{border-color:var(--ink)}
+.s-child+.s-child{border-left:0}
+.s-child h4{font-weight:750;font-stretch:125%;text-transform:uppercase;font-size:18px}
+.s-child .s-tag{display:block;font:500 10px var(--mono);letter-spacing:.18em;color:var(--rust);margin:7px 0 14px}
+.s-child ul{list-style:none;font:500 10.5px var(--mono);letter-spacing:.12em;color:var(--ink-55);line-height:2.15}
+.s-child li::before{content:"—  ";color:var(--ink-25)}
+.s-note{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.5vw,20px);color:var(--ink-70);margin-top:28px;max-width:52ch}
+
+/* ============ VENTURES ============ */
+.venture-list{border-bottom:1px solid var(--ink-25)}
+.venture{border-top:1px solid var(--ink-25)}
+.venture.flash{animation:vflash 1.5s ease .35s both}
+@keyframes vflash{0%{box-shadow:inset 0 0 0 1px var(--rust)}100%{box-shadow:inset 0 0 0 1px transparent}}
+.venture-head{display:grid;grid-template-columns:74px 1.1fr .9fr auto 46px;gap:18px;align-items:center;width:100%;text-align:left;
+  padding:25px 12px;transition:background .4s var(--ease),color .4s var(--ease)}
+.v-idx{font:600 11.5px var(--mono);letter-spacing:.1em;color:var(--ink-45);transition:color .3s}
+.v-name{font-weight:750;font-stretch:125%;text-transform:uppercase;font-size:clamp(19px,2vw,29px);letter-spacing:.01em}
+.v-domain{font:500 10.5px var(--mono);letter-spacing:.18em;opacity:.55;text-transform:uppercase}
+.v-status{display:inline-flex;align-items:center;gap:9px;font:500 10px var(--mono);letter-spacing:.16em;opacity:.75}
+.v-status .dot{width:7px;height:7px;border:1px solid currentColor;flex:none}
+.venture.s-operating .dot{background:var(--rust);border-color:var(--rust)}
+.venture.s-building .dot{background:currentColor;animation:pulse 2.2s ease-in-out infinite}
+.venture.s-forming .dot{background:currentColor;opacity:.45;animation:none}
+.venture-head .v-arrow{justify-self:end;transition:transform .45s var(--ease)}
+.venture-head:hover,.venture.open .venture-head{background:var(--ink);color:var(--paper)}
+.venture:hover .v-idx,.venture.open .v-idx{color:var(--rust)}
+.venture.open .v-arrow{transform:rotate(90deg)}
+.venture-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.venture.open .venture-body{grid-template-rows:1fr}
+.vb-in{overflow:hidden}
+.vb-pad{padding:8px 12px 34px calc(74px + 30px)}
+.vb-pad p{max-width:62ch;color:var(--ink-70);font-size:16px}
+.v-meta{margin-top:18px;font:500 10.5px var(--mono);letter-spacing:.16em;color:var(--ink-55);display:flex;align-items:center;gap:12px}
+.v-meta::before{content:"";width:7px;height:7px;background:var(--rust);transform:rotate(45deg);flex:none}
+.venture-foot{margin-top:26px;font:500 10.5px var(--mono);letter-spacing:.18em;color:var(--ink-45)}
+
+/* ============ FOCUS ============ */
+.fa-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(24px,3vw,48px)}
+.fa{border-top:1px solid var(--ink-25);padding:30px 0 44px;position:relative}
+.fa.s7{grid-column:span 7}.fa.s5{grid-column:span 5}.fa.s8{grid-column:span 8}.fa.s4{grid-column:span 4}
+.fa-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px}
+.fa-idx{font:600 11px var(--mono);letter-spacing:.14em;color:var(--ink-45);transition:color .3s}
+.glyph{color:var(--ink-55);transition:color .35s,transform .5s var(--ease)}
+.glyph path,.glyph circle,.glyph rect{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.3s var(--ease)}
+.glyph :nth-child(2){transition-delay:.12s}.glyph :nth-child(3){transition-delay:.24s}.glyph :nth-child(4){transition-delay:.36s}
+.fa-grid.in .glyph path,.fa-grid.in .glyph circle,.fa-grid.in .glyph rect{stroke-dashoffset:0}
+.fa h3{font-weight:700;font-stretch:118%;text-transform:uppercase;font-size:clamp(20px,2vw,30px);letter-spacing:.01em;
+  display:flex;align-items:baseline;gap:0;transition:transform .45s var(--ease)}
+.fa h3::before{content:"";width:0;height:2px;background:var(--rust);margin-right:0;transition:width .4s var(--ease),margin-right .4s var(--ease);align-self:center}
+.fa p{margin-top:12px;color:var(--ink-70);font-size:15.5px;max-width:44ch}
+.fa:hover .fa-idx{color:var(--rust)}
+.fa:hover .glyph{color:var(--rust);transform:translateY(-3px)}
+.fa:hover h3{transform:translateX(2px)}
+.fa:hover h3::before{width:22px;margin-right:14px}
+
+/* ============ PERSPECTIVES ============ */
+.p-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,4vw,72px);align-items:start}
+.p-featured{border:1px solid var(--ink-25);padding:clamp(26px,2.6vw,40px);transition:border-color .35s;position:relative}
+.p-featured::after{content:"";position:absolute;inset:0;cursor:pointer}
+.p-featured:hover{border-color:var(--ink)}
+.p-meta{font:500 10.5px var(--mono);letter-spacing:.18em;color:var(--ink-45);text-transform:uppercase}
+.p-meta b{color:var(--rust);font-weight:600}
+.p-featured h3{font-weight:700;font-stretch:112%;font-size:clamp(24px,2.4vw,36px);line-height:1.12;margin:16px 0 18px;letter-spacing:-.005em}
+.pf-x{color:var(--ink-70);font-size:16px;max-width:48ch}
+.pf-read{margin-top:28px}
+.p-row{display:grid;grid-template-columns:1fr auto;gap:8px 22px;align-items:center;width:100%;text-align:left;
+  padding:24px 12px;border-top:1px solid var(--ink-25);transition:background .4s var(--ease),color .4s var(--ease)}
+.p-list{border-bottom:1px solid var(--ink-25)}
+.p-row .p-meta{grid-column:1/-1}
+.p-row h4{font-weight:650;font-stretch:108%;font-size:clamp(17px,1.5vw,21px);line-height:1.25}
+.p-row svg{transition:transform .4s var(--ease)}
+.p-row:hover{background:var(--ink);color:var(--paper)}
+.p-row:hover .p-meta{color:rgba(242,239,232,.6)}
+.p-row:hover .p-meta b{color:var(--rust)}
+.p-row:hover svg{transform:translateX(5px)}
+.p-count{margin-top:22px;font:500 10px var(--mono);letter-spacing:.2em;color:var(--ink-45)}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(21,19,16,.45);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  z-index:310;opacity:0;pointer-events:none;transition:opacity .5s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(620px,94vw);background:var(--paper);border-left:1px solid var(--ink-25);
+  z-index:320;transform:translateX(103%);transition:transform .65s var(--ease);display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.d-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 28px;border-bottom:1px solid var(--ink-12);flex:none}
+.d-head .p-meta{color:var(--rust)}
+.d-x{padding:10px;margin:-10px;transition:transform .4s var(--ease)}
+.d-x:hover{transform:rotate(90deg)}
+.d-scroll{flex:1;overflow-y:auto;padding:36px 28px 48px}
+.d-scroll h3{font-weight:700;font-stretch:112%;font-size:clamp(26px,3.4vw,38px);line-height:1.1;margin-bottom:30px;letter-spacing:-.005em;max-width:16em}
+.d-scroll p{font-size:17px;line-height:1.7;color:var(--ink-70);max-width:60ch;margin-bottom:20px}
+.d-scroll p:first-of-type::first-letter{font-family:var(--serif);font-style:italic;font-size:3.4em;float:left;line-height:.78;padding:5px 12px 0 0;color:var(--rust)}
+.sig{font:500 10.5px var(--mono)!important;letter-spacing:.2em;color:var(--ink-45)!important;margin-top:34px!important}
+.d-foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:18px 28px;border-top:1px solid var(--ink-12);
+  font:500 10px var(--mono);letter-spacing:.16em;color:var(--ink-45);flex:none}
+.d-foot a{color:var(--rust)}
+.d-foot a:hover{text-decoration:underline}
+
+/* ============ CONNECT ============ */
+.connect-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,90px);align-items:start}
+.connect-lede{color:var(--ink-70);font-size:17px;max-width:44ch}
+.channels{list-style:none;margin-top:38px;border-bottom:1px solid var(--ink-25)}
+.channels li{border-top:1px solid var(--ink-25);display:flex;align-items:center;gap:22px;padding:19px 6px}
+.c-label{font:500 10px var(--mono);letter-spacing:.18em;color:var(--ink-45);width:150px;flex:none}
+.channels a{font-weight:600;font-size:16.5px;transition:color .3s;display:inline-flex;align-items:center;gap:10px}
+.channels a:hover{color:var(--rust)}
+.channels a svg{opacity:0;transform:translateX(-6px);transition:.35s var(--ease)}
+.channels a:hover svg{opacity:1;transform:none}
+.c-note{margin-top:26px;font:500 10.5px var(--mono);letter-spacing:.14em;color:var(--ink-45);line-height:2}
+.c-note b{color:var(--rust);font-weight:600}
+.f-row.two{display:grid;grid-template-columns:1fr 1fr;gap:0 34px}
+.field{margin-bottom:30px;position:relative}
+.field label{display:block;font:500 10px var(--mono);letter-spacing:.2em;color:var(--ink-45);margin-bottom:6px;transition:color .3s;text-transform:uppercase}
+.field:focus-within label{color:var(--rust)}
+.field input,.field textarea,.field select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--ink-25);
+  padding:11px 0;font:450 17px var(--sans);color:var(--ink);border-radius:0;transition:border-color .3s;appearance:none;-webkit-appearance:none}
+.field textarea{resize:vertical;min-height:96px;line-height:1.55}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-bottom-color:var(--ink)}
+.sel-wrap{position:relative}
+.sel-wrap svg{position:absolute;right:2px;top:50%;transform:translateY(-50%);pointer-events:none}
+.f-err{display:none;position:absolute;left:0;bottom:-19px;font:500 9.5px var(--mono);letter-spacing:.14em;color:var(--rust)}
+.field.error input,.field.error textarea{border-bottom-color:var(--rust)}
+.field.error .f-err{display:block}
+.f-foot{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:8px}
+.f-note{font:500 9.5px var(--mono);letter-spacing:.14em;color:var(--ink-45);max-width:300px;line-height:1.9}
+.form-done{border:1px solid var(--ink-25);padding:clamp(30px,3vw,48px);animation:panelIn .6s var(--ease)}
+.ok-line{display:inline-flex;align-items:center;gap:12px;font:600 10.5px var(--mono);letter-spacing:.18em;color:var(--rust);margin-bottom:22px}
+.ok-line::before{content:"";width:8px;height:8px;background:var(--rust);transform:rotate(45deg)}
+.form-done h3{font-weight:750;font-stretch:120%;text-transform:uppercase;font-size:clamp(26px,2.6vw,38px);margin-bottom:14px}
+.form-done p{color:var(--ink-70);max-width:46ch;margin-bottom:28px}
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink);color:var(--paper);padding:clamp(70px,8vw,110px) 0 34px}
+.f-top{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,4vw,72px);align-items:start;margin-bottom:clamp(50px,6vw,84px)}
+.f-l1{display:block;font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:clamp(25px,2.8vw,42px);line-height:1.08}
+.f-l2{display:block;font-family:var(--serif);font-style:italic;font-size:clamp(23px,2.6vw,38px);color:var(--rust);margin-top:4px}
+.f-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.f-cols h5{font:600 10px var(--mono);letter-spacing:.22em;color:rgba(242,239,232,.45);margin-bottom:18px}
+.f-cols ul{list-style:none}
+.f-cols a{display:inline-block;font-size:14.5px;color:rgba(242,239,232,.72);padding:4.5px 0;transition:color .3s,transform .35s var(--ease)}
+.f-cols a:hover{color:var(--paper);transform:translateX(5px)}
+.f-cols .mono a{font:500 11px var(--mono);letter-spacing:.1em}
+.fw{width:100%;height:auto;overflow:visible}
+.fw text{font-family:var(--sans);font-weight:800;font-stretch:125%;font-size:112px;fill:var(--paper);transition:fill .5s}
+.fw:hover text{fill:var(--rust)}
+.f-bot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid var(--pline);
+  margin-top:clamp(36px,4vw,56px);padding-top:24px;font:500 10px var(--mono);letter-spacing:.18em;color:rgba(242,239,232,.5)}
+#toTop{display:inline-flex;align-items:center;gap:10px;font:600 10px var(--mono);letter-spacing:.2em;color:var(--paper);transition:color .3s}
+#toTop:hover{color:var(--rust)}
+#toTop svg{transition:transform .35s var(--ease)}
+#toTop:hover svg{transform:translateY(-4px)}
+
+/* ============ CURSOR ============ */
+#cursor{position:fixed;left:0;top:0;z-index:999;pointer-events:none;mix-blend-mode:difference;display:none;transition:opacity .3s}
+.has-cursor #cursor{display:block}
+#cursor.is-hidden,#cursor.is-off{opacity:0}
+.c-in{position:relative;width:0;height:0;transition:transform .4s var(--ease)}
+.c-x{position:absolute;width:16px;height:1px;left:-8px;top:0;background:#fff}
+.c-y{position:absolute;width:1px;height:16px;left:0;top:-8px;background:#fff}
+.c-dot{position:absolute;width:3px;height:3px;left:-1.5px;top:-1.5px;background:#fff;border-radius:50%}
+#cursor.is-link .c-in{transform:rotate(135deg) scale(1.55)}
+.has-cursor *{cursor:none!important}
+.has-cursor input,.has-cursor textarea,.has-cursor select{cursor:text!important}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .panel{min-height:480px}
+}
+@media(max-width:980px){
+  .p-grid{grid-template-columns:1fr}
+  .connect-grid{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+  .model-grid{grid-template-columns:1fr}
+  .st-tabs{flex-direction:row;overflow-x:auto;scrollbar-width:none}
+  .st-tabs::-webkit-scrollbar{display:none}
+  .stage-tab{flex:none;padding:16px 20px;gap:10px}
+  .stage-tab::before{top:auto;bottom:0;left:0;width:0;height:2px}
+  .stage-tab.active::before{width:100%;height:2px}
+  .st-hint{display:none}
+  .st-panels{min-height:0;margin-top:36px}
+  .fa.s7,.fa.s5,.fa.s8,.fa.s4{grid-column:span 6}
+}
+@media(max-width:820px){
+  .about-grid{grid-template-columns:1fr}
+  .about-sticky{position:static;margin-bottom:8px}
+  .about-cols{columns:1}
+  .prin-row{grid-template-columns:52px 1fr}
+  .prin-d{grid-column:2}
+  .venture-head{grid-template-columns:48px 1fr auto;padding:22px 8px}
+  .v-domain,.v-arrow{display:none}
+  .vb-pad{padding:6px 8px 30px 8px}
+  .f-top{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .s-link{display:none}
+  .s-branches{grid-template-columns:1fr}
+  .s-child+.s-child{border-left:1px solid var(--ink-25);border-top:0}
+}
+@media(max-width:640px){
+  .hero-meta .hm-r{display:none}
+  .fa.s7,.fa.s5,.fa.s8,.fa.s4{grid-column:span 12}
+  .f-row.two{grid-template-columns:1fr}
+  .f-cols{grid-template-columns:1fr 1fr}
+  .c-label{width:110px}
+  .channels a{font-size:14px;word-break:break-all}
+  .id-row{grid-template-columns:1fr}
+  .id-cell+.id-cell{border-left:1px solid var(--ink-25);border-top:0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .tk-track{animation:none}
+}
+</style>
 </head>
 <body>
+<script>document.documentElement.classList.add('js');</script>
+<div id="progress"></div>
 
-  <!-- Top Sticky Navigation -->
-  <header>
-    <div class="container">
-      <div class="nav-inner">
-        <!-- Logo -->
-        <a href="#hero" class="brand-logo">
-          <div class="brand-symbol">A</div>
-          <span>ALTRADYN PRIME</span>
-        </a>
-
-        <!-- Desktop Navigation Links -->
-        <nav class="nav-links">
-          <a href="#about" class="nav-link">Overview</a>
-          <a href="#model" class="nav-link">5-Stage Model</a>
-          <a href="#ventures" class="nav-link">Sovereign Ventures</a>
-          <a href="#focus" class="nav-link">Capability Vectors</a>
-          <a href="#perspectives" class="nav-link">Perspectives</a>
-          <a href="#connect" class="nav-link">Engagement</a>
-        </nav>
-
-        <!-- CTAs -->
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <a href="#connect" class="btn btn-primary">Connect With Us</a>
-          <button class="mobile-menu-btn btn-secondary" id="mobileMenuToggle" aria-label="Toggle Navigation">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-          </button>
-        </div>
-      </div>
+<!-- ============ HEADER ============ -->
+<header id="siteHeader">
+  <div class="wrap hd">
+    <a href="#home" class="logo" aria-label="Altradyn Prime — home"><span class="dm"></span>ALTRADYN&nbsp;PRIME&nbsp;<em>LLP</em></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#home" class="n-link" data-sec="home">HOME</a>
+      <a href="#about" class="n-link" data-sec="about">ABOUT</a>
+      <a href="#model" class="n-link" data-sec="model">OUR MODEL</a>
+      <a href="#ventures" class="n-link" data-sec="ventures">VENTURES</a>
+      <a href="#focus" class="n-link" data-sec="focus">FOCUS AREAS</a>
+      <a href="#perspectives" class="n-link" data-sec="perspectives">PERSPECTIVES</a>
+      <a href="#connect" class="n-link" data-sec="connect">CONNECT</a>
+    </nav>
+    <div class="hd-cta">
+      <a href="#connect" class="tlink">START A CONVERSATION
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu"><i></i><i></i></button>
     </div>
+  </div>
+</header>
 
-    <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
-      <a href="#about" onclick="toggleMobileMenu()">Overview & Philosophy</a>
-      <a href="#model" onclick="toggleMobileMenu()">5-Stage Venture Engine</a>
-      <a href="#ventures" onclick="toggleMobileMenu()">Sovereign Ventures (6)</a>
-      <a href="#focus" onclick="toggleMobileMenu()">Capability Vectors (5)</a>
-      <a href="#perspectives" onclick="toggleMobileMenu()">Perspectives & Essays</a>
-      <a href="#connect" onclick="toggleMobileMenu()">Strategic Engagement Portal</a>
+<!-- ============ MOBILE MENU ============ -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="wrap menu-in">
+    <div class="menu-head">
+      <span class="m-word"><span class="dm"></span>ALTRADYN&nbsp;PRIME</span>
+      <button class="m-close" id="menuClose" aria-label="Close menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 3l16 16M19 3 3 19" stroke-width="1.5"/></svg>
+      </button>
     </div>
-  </header>
-
-  <!-- Hero Section -->
-  <main>
-    <section class="hero-section" id="hero" style="border-top: none;">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <div class="badge-pill">
-              <span>●</span> Platform Philosophy & Governance
-            </div>
-            <h1 class="hero-title">
-              Intelligent Systems. <em>Enduring Ventures.</em>
-            </h1>
-            <p class="hero-lead">
-              ALTRADYN Prime is an independent business-building, operating, and venture development platform. We conceive, validate, engineer, and scale enduring enterprises across artificial intelligence, autonomous platforms, and strategic physical assets.
-            </p>
-            <div class="hero-actions">
-              <a href="#ventures" class="btn btn-primary">Explore Sovereign Ventures</a>
-              <a href="#model" class="btn btn-secondary">Inspect 5-Stage Engine</a>
-              <a href="#connect" class="btn btn-secondary">Initiate Engagement</a>
-            </div>
-          </div>
-
-          <!-- Interactive Ecosystem Canvas Card -->
-          <div class="canvas-card">
-            <div class="canvas-header">
-              <span class="badge-pill">Interactive Ecosystem Graph</span>
-              <span style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">LIVE TELEMETRY</span>
-            </div>
-            <div class="canvas-container" id="canvasContainer">
-              <canvas id="ecosystemCanvas"></canvas>
-            </div>
-            <div style="margin-top: 12px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">
-              <span>Click or hover nodes to inspect synergies</span>
-              <span>6 Entities • 1 Core Fabric</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Platform Telemetry Metrics Bar -->
-        <div class="telemetry-bar">
-          <div class="telemetry-item">
-            <div class="telemetry-label">Active Ventures</div>
-            <div class="telemetry-val">6 Sovereign</div>
-          </div>
-          <div class="telemetry-item">
-            <div class="telemetry-label">Core Vectors</div>
-            <div class="telemetry-val">5 Domains</div>
-          </div>
-          <div class="telemetry-item">
-            <div class="telemetry-label">Shared Architecture</div>
-            <div class="telemetry-val">100% Unified</div>
-          </div>
-          <div class="telemetry-item">
-            <div class="telemetry-label">Governance Mode</div>
-            <div class="telemetry-val">Long-Horizon</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About & Platform Thesis Section -->
-    <section id="about">
-      <div class="container">
-        <div class="section-header">
-          <div class="badge-pill">Platform Thesis & Foundation</div>
-          <h2 class="section-title">The Platform Behind <em>What Comes Next.</em></h2>
-          <p class="section-desc">
-            Traditional corporate consulting firms write reports. Conventional IT agencies sell billable hours. Traditional venture funds play a financial lottery. <strong>ALTRADYN Prime builds the actual systems</strong>—deploying dedicated engineering pods, proprietary core intellectual property, and institutional capital.
-          </p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px;">
-            <div style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">PILLAR 01</div>
-            <h3 style="font-size: 19px; font-weight: 600; margin-bottom: 8px;">Shared Cognitive & Tech Core</h3>
-            <p style="font-size: 13px; color: var(--text-secondary);">Proprietary semantic middleware, vector lineage, and deterministic compliance architectures inherited on day zero by every portfolio venture.</p>
-          </div>
-          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px;">
-            <div style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">PILLAR 02</div>
-            <h3 style="font-size: 19px; font-weight: 600; margin-bottom: 8px;">Systemic Risk & Unit Economics</h3>
-            <p style="font-size: 13px; color: var(--text-secondary);">Empirical stress-testing of margin dynamics, counterparty incentives, and customer acquisition moats before committing scale capital.</p>
-          </div>
-          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px;">
-            <div style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">PILLAR 03</div>
-            <h3 style="font-size: 19px; font-weight: 600; margin-bottom: 8px;">Inter-Portfolio Compounding</h3>
-            <p style="font-size: 13px; color: var(--text-secondary);">Ventures feed data, distribution, and operational telemetry into one another, creating an accelerating non-linear competitive moat.</p>
-          </div>
-          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px;">
-            <div style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">PILLAR 04</div>
-            <h3 style="font-size: 19px; font-weight: 600; margin-bottom: 8px;">Sovereign Institutional Governance</h3>
-            <p style="font-size: 13px; color: var(--text-secondary);">Long-term equity alignment designed for multi-decade cash generation, strategic resilience, and sovereign jurisdictional compliance.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- The 5-Stage Business-Building Engine Section -->
-    <section id="model" style="background: var(--bg-subtle);">
-      <div class="container">
-        <div class="section-header">
-          <div class="badge-pill">The 5-Stage Engine</div>
-          <h2 class="section-title">A Systematic Engine For <em>Venture Creation.</em></h2>
-          <p class="section-desc">
-            We do not treat innovation as serendipity. We adhere to an uncompromising 5-stage validation discipline to build durable category leaders.
-          </p>
-        </div>
-
-        <!-- Stage Switcher Tabs -->
-        <div class="model-nav-grid" id="stageTabsContainer">
-          <button class="stage-tab-btn active" onclick="switchStage(1)">
-            <div class="stage-num">STAGE 01</div>
-            <div class="stage-title">Observe Change</div>
-          </button>
-          <button class="stage-tab-btn" onclick="switchStage(2)">
-            <div class="stage-num">STAGE 02</div>
-            <div class="stage-title">Identify Opportunities</div>
-          </button>
-          <button class="stage-tab-btn" onclick="switchStage(3)">
-            <div class="stage-num">STAGE 03</div>
-            <div class="stage-title">Validate Ideas</div>
-          </button>
-          <button class="stage-tab-btn" onclick="switchStage(4)">
-            <div class="stage-num">STAGE 04</div>
-            <div class="stage-title">Build Ventures</div>
-          </button>
-          <button class="stage-tab-btn" onclick="switchStage(5)">
-            <div class="stage-num">STAGE 05</div>
-            <div class="stage-title">Operate and Scale</div>
-          </button>
-        </div>
-
-        <!-- Dynamic Stage Detail Box -->
-        <div class="stage-detail-box" id="stageContentBox">
-          <!-- Populated by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Sovereign Ventures Directory Section -->
-    <section id="ventures">
-      <div class="container">
-        <div class="section-header">
-          <div class="badge-pill">Sovereign Entities</div>
-          <h2 class="section-title">Ecosystem <em>Ventures.</em></h2>
-          <p class="section-desc">
-            Independent market entities engineered on the ALTRADYN Prime platform across artificial intelligence, distributed data, and industrial assets.
-          </p>
-        </div>
-
-        <!-- Category Filters -->
-        <div class="filter-bar" id="ventureFilterBar">
-          <button class="filter-btn active" onclick="filterVentures('all', this)">All Categories</button>
-          <button class="filter-btn" onclick="filterVentures('AI & Cognitive Systems', this)">AI & Cognitive</button>
-          <button class="filter-btn" onclick="filterVentures('Data Infrastructure', this)">Data Infrastructure</button>
-          <button class="filter-btn" onclick="filterVentures('Strategic Assets', this)">Strategic Assets</button>
-          <button class="filter-btn" onclick="filterVentures('Digital Platforms', this)">Digital Platforms</button>
-          <button class="filter-btn" onclick="filterVentures('Next-Gen Systems', this)">Next-Gen Systems</button>
-        </div>
-
-        <!-- Ventures Grid -->
-        <div class="ventures-grid" id="venturesContainer">
-          <!-- Populated by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Capability Vectors / Focus Areas Section -->
-    <section id="focus" style="background: var(--bg-subtle);">
-      <div class="container">
-        <div class="section-header">
-          <div class="badge-pill">Capability Vectors</div>
-          <h2 class="section-title">Where We <em>Build & Operate.</em></h2>
-          <p class="section-desc">
-            We focus exclusively on high-friction, multi-decade market transformations where modern intelligence creates asymmetric leverage.
-          </p>
-        </div>
-
-        <div class="focus-grid" id="focusAreasContainer">
-          <!-- Populated by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Strategic Perspectives & Essays Section -->
-    <section id="perspectives">
-      <div class="container">
-        <div class="section-header">
-          <div class="badge-pill">Strategic Essays</div>
-          <h2 class="section-title">How We <em>Think.</em></h2>
-          <p class="section-desc">
-            Unfiltered strategic analyses, venture frameworks, and systems thinking from the ALTRADYN Prime research and strategy councils.
-          </p>
-        </div>
-
-        <div class="perspectives-grid" id="perspectivesContainer">
-          <!-- Populated by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Strategic Engagement Portal Section -->
-    <section id="connect" style="background: var(--bg-subtle);">
-      <div class="container">
-        <div class="section-header">
-          <div class="badge-pill">Executive Intake Portal</div>
-          <h2 class="section-title">Connect With <em>ALTRADYN Prime.</em></h2>
-          <p class="section-desc">
-            We are deliberate about the ventures we build, the capital we allocate, and the partners we welcome into our ecosystem. Select your engagement track below.
-          </p>
-        </div>
-
-        <div class="connect-layout">
-          <!-- Alignment Form -->
-          <div class="connect-form-card">
-            <!-- Pathway Track Selector -->
-            <div class="pathways-selector" id="pathwaySelector">
-              <button class="pathway-btn active" onclick="selectPathway('founder', this)">Founders</button>
-              <button class="pathway-btn" onclick="selectPathway('business_owner', this)">Enterprise</button>
-              <button class="pathway-btn" onclick="selectPathway('strategic_partner', this)">Partners</button>
-              <button class="pathway-btn" onclick="selectPathway('capital', this)">Capital</button>
-              <button class="pathway-btn" onclick="selectPathway('talent', this)">Builders</button>
-            </div>
-
-            <form id="engagementForm" onsubmit="handleFormSubmit(event)">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                <div class="form-group">
-                  <label class="form-label">Full Name *</label>
-                  <input type="text" class="form-input" id="formName" required placeholder="e.g. Elena Rostova">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Professional Email *</label>
-                  <input type="email" class="form-input" id="formEmail" required placeholder="e.g. elena@domain.com">
-                </div>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                <div class="form-group">
-                  <label class="form-label">Organization / Entity</label>
-                  <input type="text" class="form-input" id="formOrg" placeholder="e.g. Apex Systems">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Target Sector Vector</label>
-                  <select class="form-select" id="formSector">
-                    <option value="AI & Cognitive Systems">AI & Cognitive Systems</option>
-                    <option value="Enterprise Data Infrastructure">Enterprise Data Infrastructure</option>
-                    <option value="Autonomous Digital Platforms">Autonomous Digital Platforms</option>
-                    <option value="Strategic Asset Modernization">Strategic Asset Modernization</option>
-                    <option value="Next-Gen Kinetic & Robotics">Next-Gen Kinetic & Robotics</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Core Strategic Proposal / Thesis *</label>
-                <textarea class="form-textarea" id="formSummary" rows="4" required placeholder="Outline your venture thesis, operational bottleneck, or strategic alignment opportunity..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
-                Transmit Strategic Proposal to ALTRADYN Council
-              </button>
-            </form>
-
-            <div id="formSuccessMessage" style="display: none; text-align: center; padding: 32px 16px;">
-              <div style="width: 48px; height: 48px; background: var(--bg-pill); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </div>
-              <h3 style="font-size: 22px; font-weight: 400; margin-bottom: 8px;">Proposal Successfully Received</h3>
-              <p style="font-size: 13px; color: var(--text-secondary); max-width: 420px; margin: 0 auto 16px auto;">
-                Your strategic dossier has been securely routed to the ALTRADYN Prime Strategy Council.
-              </p>
-              <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px; font-family: var(--font-mono); font-size: 11px; max-width: 320px; margin: 0 auto 16px auto; text-align: left;">
-                <div>Routing Ref: <strong id="routingRef">ALT-ENG-8492</strong></div>
-                <div>Response Window: <strong>Within 48 Business Hours</strong></div>
-              </div>
-              <button class="btn btn-secondary" onclick="resetForm()">Submit Another Inquiry</button>
-            </div>
-          </div>
-
-          <!-- Alignment Standards Side Card -->
-          <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 32px 28px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div class="badge-pill" style="margin-bottom: 12px;">Mutual Conviction Filter</div>
-              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 14px;">What We Look For In Partners</h3>
-              <ul style="list-style: none; font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
-                <li style="margin-bottom: 14px;">
-                  <strong style="color: var(--text-primary);">Systems-Level Thinking:</strong> Ability to see past shallow product features to structural market architecture.
-                </li>
-                <li style="margin-bottom: 14px;">
-                  <strong style="color: var(--text-primary);">Unfair Technical or Domain Moat:</strong> Deep operational expertise, proprietary data access, or technical breakthroughs.
-                </li>
-                <li style="margin-bottom: 14px;">
-                  <strong style="color: var(--text-primary);">Long-Term Alignment:</strong> Commitment to building durable, cash-generative category leaders over quick flips.
-                </li>
-              </ul>
-            </div>
-
-            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 16px; font-family: var(--font-mono); font-size: 11px;">
-              <div style="font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">ALTRADYN PRIME LLP</div>
-              <div style="color: var(--text-muted);">council@altradynprime.com</div>
-              <div style="color: var(--text-muted); margin-top: 4px;">Institutional Office: Global Platform Hub</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="brand-logo" style="margin-bottom: 16px;">
-            <div class="brand-symbol" style="background: #FFFFFF; color: #1A1A1A;">A</div>
-            <span style="color: #FFFFFF;">ALTRADYN PRIME</span>
-          </div>
-          <p style="color: rgba(255, 255, 255, 0.7); font-size: 13px; max-width: 320px; line-height: 1.6;">
-            The parent platform and sovereign operating foundation behind high-conviction ventures in AI, data infrastructure, and physical asset systems.
-          </p>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Venture Ecosystem</div>
-          <ul class="footer-links">
-            <li><a href="#ventures" onclick="openVentureModal('synapse-flow')">SynapseFlow OS</a></li>
-            <li><a href="#ventures" onclick="openVentureModal('axiom-mesh')">Axiom Mesh</a></li>
-            <li><a href="#ventures" onclick="openVentureModal('terragrid-assets')">TerraGrid Dynamics</a></li>
-            <li><a href="#ventures" onclick="openVentureModal('khorus-platforms')">Khorus Exchange</a></li>
-            <li><a href="#ventures" onclick="openVentureModal('neural-fabric')">Vanguard Cognitive</a></li>
-            <li><a href="#ventures" onclick="openVentureModal('orion-logix')">Orion Kinetic</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Platform & Model</div>
-          <ul class="footer-links">
-            <li><a href="#about">Platform Thesis</a></li>
-            <li><a href="#model">5-Stage Creation Model</a></li>
-            <li><a href="#focus">Capability Vectors</a></li>
-            <li><a href="#perspectives">Research Perspectives</a></li>
-            <li><a href="#connect">Strategic Engagement</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Governance & Legal</div>
-          <ul class="footer-links">
-            <li><a href="#about">Platform Governance</a></li>
-            <li><a href="#about">Conviction Filter</a></li>
-            <li><a href="#connect">Partner Verification</a></li>
-            <li><a href="#connect">Institutional Office</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>ALTRADYN PRIME LLP © 2026. ALL RIGHTS RESERVED.</div>
-        <div style="display: flex; gap: 24px;">
-          <span>CONFIDENTIAL PLATFORM SPECIFICATION</span>
-          <a href="#hero" style="color: rgba(255, 255, 255, 0.8);">Back to Top ↑</a>
-        </div>
-      </div>
+    <nav class="m-nav" aria-label="Menu">
+      <a href="#home" class="m-link" style="--i:0"><span class="m-idx">01</span>HOME</a>
+      <a href="#about" class="m-link" style="--i:1"><span class="m-idx">02</span>ABOUT</a>
+      <a href="#model" class="m-link" style="--i:2"><span class="m-idx">03</span>OUR MODEL</a>
+      <a href="#ventures" class="m-link" style="--i:3"><span class="m-idx">04</span>VENTURES</a>
+      <a href="#focus" class="m-link" style="--i:4"><span class="m-idx">05</span>FOCUS AREAS</a>
+      <a href="#perspectives" class="m-link" style="--i:5"><span class="m-idx">06</span>PERSPECTIVES</a>
+      <a href="#connect" class="m-link" style="--i:6"><span class="m-idx">07</span>CONNECT</a>
+    </nav>
+    <div class="m-foot">
+      <a href="mailto:hello@altradynprime.com">HELLO@ALTRADYNPRIME.COM</a>
+      <span>ONE PLATFORM — MULTIPLE POSSIBILITIES</span>
     </div>
-  </footer>
+  </div>
+</div>
 
-  <!-- Venture Detail Modal -->
-  <div class="modal-overlay" id="ventureModal" onclick="closeVentureModal()">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <span class="badge-pill" id="mCode">ALT-01</span>
-          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Venture Architectural Blueprint</span>
+<main>
+<!-- ============ HOME / HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-meta reveal">
+      <span><b>ALTRADYN PRIME LLP</b> — INDEPENDENT VENTURE PLATFORM</span>
+      <span class="hm-r">FIG. 001 — ECOSYSTEM · LIVE VIEW</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <h1>
+          <span class="hline" style="--d:.05s"><span>ONE PLATFORM<i class="pd">.</i></span></span>
+          <span class="hline" style="--d:.15s"><span>MULTIPLE</span></span>
+          <span class="hline" style="--d:.25s"><span><em class="it">possibilities<i class="pd">.</i></em></span></span>
+        </h1>
+        <p class="hero-sub reveal" style="--d:.35s">We see businesses as <strong>systems</strong>. We identify opportunities at the intersection of technology, intelligence and changing markets — and build what comes next.</p>
+        <div class="hero-cta reveal" style="--d:.45s">
+          <a href="#model" class="btn">OUR MODEL
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg></a>
+          <a href="#ventures" class="tlink">EXPLORE VENTURES
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg></a>
         </div>
-        <button onclick="closeVentureModal()" style="font-size: 20px; font-weight: 300; padding: 4px;">&times;</button>
+        <div class="scroll-cue reveal" style="--d:.55s"><span>SCROLL</span><span class="s-line"></span></div>
       </div>
-      <div class="modal-body" id="ventureModalBody">
-        <!-- Injected via JS -->
-      </div>
-      <div class="modal-footer">
-        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">Sovereign entity backed by ALTRADYN Prime platform.</span>
-        <button class="btn btn-primary" onclick="closeVentureModal(); window.location.hash = 'connect';">Initiate Partnership</button>
+      <div class="panel reveal" style="--d:.3s">
+        <i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i>
+        <div class="panel-top"><span>LIVE SYSTEM VIEW</span><span class="live"><i></i>LIVE</span></div>
+        <div class="panel-canvas"><canvas id="systemCanvas"></canvas></div>
+        <div class="panel-read"><span class="read-sq" id="readSq"></span><span id="sysRead">CORE — ALTRADYN PRIME · THE PLATFORM — HOVER A NODE TO INSPECT</span></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Perspective Essay Reader Modal -->
-  <div class="modal-overlay" id="essayModal" onclick="closeEssayModal()">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <span class="badge-pill" id="eCategory">Venture Architecture</span>
-          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);" id="eReadTime">6 min read</span>
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="tk-track">
+    <div class="tk-half">
+      <span>TECHNOLOGY</span><i class="tsep"></i><span>ARTIFICIAL INTELLIGENCE</span><i class="tsep"></i><span>AVIATION SOLUTIONS</span><i class="tsep"></i><span>DIGITAL PLATFORMS</span><i class="tsep"></i><span>REAL ESTATE &amp; ASSET OPPORTUNITIES</span><i class="tsep"></i><span>EMERGING SECTORS</span><i class="tsep"></i>
+    </div>
+    <div class="tk-half">
+      <span>TECHNOLOGY</span><i class="tsep"></i><span>ARTIFICIAL INTELLIGENCE</span><i class="tsep"></i><span>AVIATION SOLUTIONS</span><i class="tsep"></i><span>DIGITAL PLATFORMS</span><i class="tsep"></i><span>REAL ESTATE &amp; ASSET OPPORTUNITIES</span><i class="tsep"></i><span>EMERGING SECTORS</span><i class="tsep"></i>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">01</span><span class="sec-rule"></span><span class="sec-label">ABOUT</span></div>
+    <h2 class="sec-title reveal">A platform, not a <em class="it">portfolio</em><i class="pd">.</i></h2>
+    <div class="about-grid">
+      <div class="about-sticky reveal"><b>THE PARENT</b>BUILDING · OPERATING ·<br>VENTURE DEVELOPMENT</div>
+      <div>
+        <p class="about-lede reveal">ALTRADYN Prime is an independent <strong>business-building, operating and venture development platform</strong>. We identify opportunities, develop capabilities, build businesses — then support them through long-term growth.</p>
+        <div class="about-cols reveal" style="--d:.1s">
+          <p>The platform operates under two identities. <strong>Altradyn IQ</strong> is the technology division — applied AI, aviation solutions and digital platforms under one engineering culture. <strong>Altradyn</strong> is the brand under which we pursue real estate, asset opportunities and other emerging, high-potential sectors.</p>
+          <p>Individual ventures carry their own names, teams and mandates. What the platform gives them is what a lone founder lacks: shared intelligence, operating discipline, patient capital — and a network that compounds with every venture added to it.</p>
         </div>
-        <button onclick="closeEssayModal()" style="font-size: 20px; font-weight: 300; padding: 4px;">&times;</button>
+        <div class="id-row reveal" style="--d:.15s">
+          <div class="id-cell">
+            <h4><i></i>ALTRADYN IQ</h4>
+            <span class="id-tag">THE TECHNOLOGY DIVISION</span>
+            <ul><li>APPLIED AI</li><li>AVIATION SOLUTIONS</li><li>DIGITAL PLATFORMS</li></ul>
+          </div>
+          <div class="id-cell">
+            <h4><i></i>ALTRADYN</h4>
+            <span class="id-tag">ASSETS &amp; EMERGING</span>
+            <ul><li>REAL ESTATE &amp; ASSET OPPORTUNITIES</li><li>HIGH-POTENTIAL SECTORS</li></ul>
+          </div>
+        </div>
       </div>
-      <div class="modal-body" id="essayModalBody">
-        <!-- Injected via JS -->
+    </div>
+    <div class="prin">
+      <div class="prin-row reveal"><span class="prin-num">P·01</span><span class="prin-t">Systems, not silos</span><span class="prin-d">Every business is a set of interlocking parts — capital, capability, distribution, reputation. We design the whole loop, not just the visible piece.</span></div>
+      <div class="prin-row reveal" style="--d:.06s"><span class="prin-num">P·02</span><span class="prin-t">Build at intersections</span><span class="prin-d">The best opportunities sit where technology, real assets and changing behaviour meet. Intersections are less crowded — and harder to copy.</span></div>
+      <div class="prin-row reveal" style="--d:.12s"><span class="prin-num">P·03</span><span class="prin-t">Operate, don't just invest</span><span class="prin-d">We build alongside our ventures, not above them. Operators, engineers and capital are in the room from day one — and stay there.</span></div>
+      <div class="prin-row reveal" style="--d:.18s"><span class="prin-num">P·04</span><span class="prin-t">Patience as strategy</span><span class="prin-d">We structure ventures to be held, not flipped. Systems compound — and compounding only rewards those who stay in the game.</span></div>
+    </div>
+    <div class="facts reveal">
+      <div class="fact"><small>ESTABLISHED</small><b>2024</b></div>
+      <div class="fact"><small>DIVISIONS</small><b>02</b></div>
+      <div class="fact"><small>VENTURES IN MOTION</small><b>05</b></div>
+      <div class="fact"><small>HORIZON</small><b>LONG</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR MODEL ============ -->
+<section class="sec" id="model">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">02</span><span class="sec-rule"></span><span class="sec-label">OUR MODEL</span></div>
+    <h2 class="sec-title reveal">The operating <em class="it">method</em><i class="pd">.</i></h2>
+    <div class="model-grid">
+      <div class="st-tabs reveal" role="tablist" aria-label="Operating stages">
+        <button class="stage-tab active" role="tab" aria-selected="true"><span class="st-num">01</span><span class="st-name">Identify</span><span class="st-hint">SIGNAL</span></button>
+        <button class="stage-tab" role="tab" aria-selected="false"><span class="st-num">02</span><span class="st-name">Architect</span><span class="st-hint">DESIGN</span></button>
+        <button class="stage-tab" role="tab" aria-selected="false"><span class="st-num">03</span><span class="st-name">Build</span><span class="st-hint">STANDING</span></button>
+        <button class="stage-tab" role="tab" aria-selected="false"><span class="st-num">04</span><span class="st-name">Scale</span><span class="st-hint">COMPOUND</span></button>
       </div>
-      <div class="modal-footer">
-        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">ALTRADYN Prime Strategy Publication</span>
-        <button class="btn btn-secondary" onclick="closeEssayModal()">Close Reader</button>
+      <div class="st-panels reveal" style="--d:.1s">
+        <div class="stage-panel active">
+          <div class="sp-body"><span class="sp-num">01</span>
+            <h3>Identify</h3>
+            <p class="sp-tag">Signal before noise.</p>
+            <p class="sp-desc">We watch markets, technology shifts and asset cycles the way analysts watch weather — constantly, and across boundaries. When a signal repeats across three independent sources, we write a thesis. When a thesis survives pressure, we size it honestly. Most opportunities die right here — on purpose.</p>
+            <ul class="sp-list"><li>MARKET MAPPING</li><li>THESIS DEVELOPMENT</li><li>OPPORTUNITY SIZING</li></ul>
+          </div>
+        </div>
+        <div class="stage-panel">
+          <div class="sp-body"><span class="sp-num">02</span>
+            <h3>Architect</h3>
+            <p class="sp-tag">Design the system before the business.</p>
+            <p class="sp-desc">A venture is a structure, not a slogan. We define the operating model end to end — what capability sits at the core, who the founding team must be, how the economics close, and where the platform helps versus where independence is healthier.</p>
+            <ul class="sp-list"><li>VENTURE DESIGN</li><li>CAPABILITY PLANNING</li><li>UNIT ECONOMICS</li></ul>
+          </div>
+        </div>
+        <div class="stage-panel">
+          <div class="sp-body"><span class="sp-num">03</span>
+            <h3>Build</h3>
+            <p class="sp-tag">Operators in — not consultants out.</p>
+            <p class="sp-desc">We stand the business up ourselves: hiring the founding team, building the product or acquiring the asset, landing the first customers and fixing what only contact with reality can teach. The platform's engineers, operators and capital are in the room from day one.</p>
+            <ul class="sp-list"><li>FOUNDING TEAM</li><li>PRODUCT &amp; ASSET BUILD</li><li>FIRST REVENUE</li></ul>
+          </div>
+        </div>
+        <div class="stage-panel">
+          <div class="sp-body"><span class="sp-num">04</span>
+            <h3>Scale</h3>
+            <p class="sp-tag">Compound what works.</p>
+            <p class="sp-desc">Once the system runs, growth becomes a matter of feeding the loops that work — capital, talent, distribution and shared services from the platform — while governance keeps every venture honest about what the numbers actually say.</p>
+            <ul class="sp-list"><li>GROWTH CAPITAL</li><li>SHARED PLATFORM SERVICES</li><li>GOVERNANCE &amp; BOARDS</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <figure class="structure reveal">
+      <figcaption class="fig-cap">FIG. 002 — PLATFORM STRUCTURE</figcaption>
+      <div class="s-parent"><b>ALTRADYN PRIME</b><span>THE PLATFORM — CAPITAL · CAPABILITY · CONVICTION</span></div>
+      <div class="s-link"><i></i><i></i></div>
+      <div class="s-branches">
+        <div class="s-child">
+          <h4>ALTRADYN IQ</h4><span class="s-tag">TECHNOLOGY DIVISION</span>
+          <ul><li>APPLIED AI</li><li>AVIATION SOLUTIONS</li><li>DIGITAL PLATFORMS</li></ul>
+        </div>
+        <div class="s-child">
+          <h4>ALTRADYN</h4><span class="s-tag">ASSETS &amp; EMERGING</span>
+          <ul><li>REAL ESTATE &amp; ASSET OPPORTUNITIES</li><li>EMERGING HIGH-POTENTIAL SECTORS</li></ul>
+        </div>
+      </div>
+      <p class="s-note">Ventures operate independently under their own identities — the platform stands behind all of them.</p>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ VENTURES ============ -->
+<section class="sec" id="ventures">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">03</span><span class="sec-rule"></span><span class="sec-label">VENTURES</span></div>
+    <h2 class="sec-title reveal">The ecosystem, <em class="it">indexed</em><i class="pd">.</i></h2>
+    <div class="venture-list reveal">
+      <article class="venture s-operating" data-venture="iq">
+        <button class="venture-head" aria-expanded="false">
+          <span class="v-idx">V·01</span><span class="v-name">Altradyn IQ</span>
+          <span class="v-domain">Division — Technology</span>
+          <span class="v-status"><i class="dot"></i>OPERATING</span>
+          <svg class="v-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4"/></svg>
+        </button>
+        <div class="venture-body"><div class="vb-in"><div class="vb-pad">
+          <p>Altradyn IQ concentrates the platform's technical capability — research, engineering and product — under one engineering culture. It builds for Altradyn ventures first, and selectively for outside partners where the fit is right. Where a technology opportunity deserves its own identity, IQ spins it out.</p>
+          <p class="v-meta">DOMAINS — APPLIED AI · AVIATION SOLUTIONS · DIGITAL PLATFORMS</p>
+        </div></div></div>
+      </article>
+      <article class="venture s-building" data-venture="vectorfield">
+        <button class="venture-head" aria-expanded="false">
+          <span class="v-idx">V·02</span><span class="v-name">Vectorfield</span>
+          <span class="v-domain">Venture — Applied Intelligence</span>
+          <span class="v-status"><i class="dot"></i>BUILDING</span>
+          <svg class="v-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4"/></svg>
+        </button>
+        <div class="venture-body"><div class="vb-in"><div class="vb-pad">
+          <p>Vectorfield builds forecasting and decision-support systems for environments where schedules, assets and margins collide — and where a one-percent improvement compounds daily. First deployments are live in aviation and logistics operations.</p>
+          <p class="v-meta">CAPABILITIES — MODELLING · OPTIMISATION · OPERATIONS DESIGN</p>
+        </div></div></div>
+      </article>
+      <article class="venture s-building" data-venture="avialign">
+        <button class="venture-head" aria-expanded="false">
+          <span class="v-idx">V·03</span><span class="v-name">Avialign</span>
+          <span class="v-domain">Venture — Aviation</span>
+          <span class="v-status"><i class="dot"></i>BUILDING</span>
+          <svg class="v-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4"/></svg>
+        </button>
+        <div class="venture-body"><div class="vb-in"><div class="vb-pad">
+          <p>Avialign develops operations, compliance and fleet technology for an industry that runs on precision and inherits its software from another era. Built inside Altradyn IQ — operated as its own company, under its own name.</p>
+          <p class="v-meta">CAPABILITIES — OPERATIONS TECH · COMPLIANCE SYSTEMS · FLEET SOFTWARE</p>
+        </div></div></div>
+      </article>
+      <article class="venture s-forming" data-venture="keelstone">
+        <button class="venture-head" aria-expanded="false">
+          <span class="v-idx">V·04</span><span class="v-name">Keelstone</span>
+          <span class="v-domain">Venture — Real Assets</span>
+          <span class="v-status"><i class="dot"></i>FORMING</span>
+          <svg class="v-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4"/></svg>
+        </button>
+        <div class="venture-body"><div class="vb-in"><div class="vb-pad">
+          <p>Keelstone approaches property and real assets as systems — use, yield and long-horizon value rather than transactions. The venture is being formed around a first pipeline of opportunities under the Altradyn identity.</p>
+          <p class="v-meta">FOCUS — ACQUISITION · DEVELOPMENT · ASSET MANAGEMENT</p>
+        </div></div></div>
+      </article>
+      <article class="venture s-scouting" data-venture="signal">
+        <button class="venture-head" aria-expanded="false">
+          <span class="v-idx">V·05</span><span class="v-name">Signal·05</span>
+          <span class="v-domain">Venture — Emerging Sectors</span>
+          <span class="v-status"><i class="dot"></i>SCOUTING</span>
+          <svg class="v-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4"/></svg>
+        </button>
+        <div class="venture-body"><div class="vb-in"><div class="vb-pad">
+          <p>Not every slot should be filled. Signal·05 stands deliberately open while the platform scouts its next sector: high-potential, systems-shaped, and worth a decade. When the right opportunity survives the thesis, it will earn its own name.</p>
+          <p class="v-meta">STATUS — SCOUTING · THESIS IN DEVELOPMENT</p>
+        </div></div></div>
+      </article>
+    </div>
+    <p class="venture-foot reveal">VENTURES OPERATE INDEPENDENTLY — SELECT A ROW, OR A NODE IN FIG. 001, FOR DETAIL.</p>
+  </div>
+</section>
+
+<!-- ============ FOCUS AREAS ============ -->
+<section class="sec" id="focus">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">04</span><span class="sec-rule"></span><span class="sec-label">FOCUS AREAS</span></div>
+    <h2 class="sec-title reveal">Where we <em class="it">look</em><i class="pd">.</i></h2>
+    <div class="fa-grid reveal">
+      <div class="fa s7">
+        <div class="fa-top"><span class="fa-idx">FA·01</span>
+          <svg class="glyph" width="30" height="30" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="7" y="7" width="14" height="14" pathLength="1"/><rect x="12" y="12" width="4" height="4" pathLength="1"/><path d="M14 2v5M14 21v5M2 14h5M21 14h5" pathLength="1"/></svg>
+        </div>
+        <h3>Technology</h3>
+        <p>Infrastructure, data and engineering depth — the substrate every venture stands on.</p>
+      </div>
+      <div class="fa s5">
+        <div class="fa-top"><span class="fa-idx">FA·02</span>
+          <svg class="glyph" width="30" height="30" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="5.5" cy="22.5" r="2.6" pathLength="1"/><circle cx="22.5" cy="5.5" r="2.6" pathLength="1"/><circle cx="22.5" cy="22.5" r="2.6" pathLength="1"/><path d="M7.6 20.7 20.4 7.6M8.1 22.5h11.8M22.5 8.1v11.8" pathLength="1"/></svg>
+        </div>
+        <h3>Artificial Intelligence</h3>
+        <p>Applied intelligence — models in service of decisions, where operations are real.</p>
+      </div>
+      <div class="fa s5">
+        <div class="fa-top"><span class="fa-idx">FA·03</span>
+          <svg class="glyph" width="30" height="30" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 24h24" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" opacity=".35"/><path d="M3 21C10 21 17 15 24 5" pathLength="1"/><path d="M24 5l-6.4 1.4M24 5l-1.6 6.2" pathLength="1"/></svg>
+        </div>
+        <h3>Aviation Solutions</h3>
+        <p>Operations, fleet and compliance technology for an industry undergoing a quiet software shift.</p>
+      </div>
+      <div class="fa s7">
+        <div class="fa-top"><span class="fa-idx">FA·04</span>
+          <svg class="glyph" width="30" height="30" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 8 14 3l10 5-10 5L4 8Z" pathLength="1"/><path d="M4 14l10 5 10-5" pathLength="1"/><path d="M4 20l10 5 10-5" pathLength="1"/></svg>
+        </div>
+        <h3>Digital Platforms</h3>
+        <p>Products and infrastructure that compound — workflow, distribution and network effects under one roof.</p>
+      </div>
+      <div class="fa s8">
+        <div class="fa-top"><span class="fa-idx">FA·05</span>
+          <svg class="glyph" width="30" height="30" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2.5 24c4-6 19-6 23 0" pathLength="1"/><path d="M6 18.5c3-4.5 13-4.5 16 0" pathLength="1"/><path d="M9.5 13.5c2-3 7-3 9 0" pathLength="1"/><path d="M12.5 8.8c.8-1.2 2.2-1.2 3 0" pathLength="1"/></svg>
+        </div>
+        <h3>Real Estate &amp; Asset Opportunities</h3>
+        <p>Property and real assets approached as systems — use, yield and long-horizon value rather than transactions.</p>
+      </div>
+      <div class="fa s4">
+        <div class="fa-top"><span class="fa-idx">FA·06</span>
+          <svg class="glyph" width="30" height="30" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="21" r="2.4" pathLength="1"/><path d="M9 19 22 6M22 6l-5.6 1.2M22 6l-1.4 5.6" pathLength="1"/></svg>
+        </div>
+        <h3>Emerging Sectors</h3>
+        <p>High-potential markets watched closely — entered with conviction when the system is right.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- =============================================================
-       DATA & INTERACTIVE JAVASCRIPT CONTROLLERS
-       ============================================================= -->
-  <script>
-    // -------------------------------------------------------------
-    // 1. DATA REPOSITORIES
-    // -------------------------------------------------------------
-    const VENTURES_DATA = [
-      {
-        id: 'synapse-flow',
-        code: 'ALT-01',
-        name: 'SynapseFlow OS',
-        displayCategory: 'AI & Cognitive Systems',
-        stage: 'operating',
-        tagline: 'Autonomous cognitive routing and multi-agent coordination for enterprise workflows.',
-        thesis: 'Enterprise operations will transition from human-directed software to autonomous multi-agent systems orchestrated by deterministic verification layers.',
-        architectureSummary: 'A hybrid semantic middleware that blends specialized neural models with deterministic business logic and audit constraints.',
-        problemSpace: 'Complex enterprises suffer from fragmented manual handoffs across ERP, logistics, and customer operations, bleeding margin and latency.',
-        builtCapabilities: [
-          'Multi-agent workflow orchestration',
-          'Deterministic audit and compliance verification',
-          'Real-time continuous model fine-tuning and telemetry',
-          'Zero-latency semantic memory caching'
-        ],
-        platformLeverage: [
-          'Built upon ALTRADYN Shared Cognitive Core',
-          'Accelerated by shared enterprise testing sandbox',
-          'Access to ALTRADYN cross-portfolio distribution'
-        ],
-        operationalMetrics: [
-          { label: 'Agent Transactions / Mo', value: '42M+' },
-          { label: 'Latency Reduction', value: '78%' },
-          { label: 'Operating Reliability', value: '99.98%' }
-        ],
-        techStack: ['Distributed Rust', 'PyTorch C++', 'Vector Graph DB', 'gRPC Telemetry'],
-        foundingYear: '2024'
-      },
-      {
-        id: 'axiom-mesh',
-        code: 'ALT-02',
-        name: 'Axiom Mesh',
-        displayCategory: 'Data Infrastructure',
-        stage: 'operating',
-        tagline: 'Unified real-time data fabric with distributed lineage and zero-trust verification.',
-        thesis: 'Data silos are fatal to AI transformation. Organizations require a decentralized, query-in-place data fabric with sub-millisecond governance.',
-        architectureSummary: 'An edge-native, zero-copy distributed query layer connecting heterogeneous databases without massive ETL overhead.',
-        problemSpace: 'High ingestion costs and compliance hurdles prevent real-time decisioning across global business operations.',
-        builtCapabilities: [
-          'Edge-native distributed semantic query engine',
-          'Cryptographic data lineage and provenance tracking',
-          'Automated PII/GDPR policy enforcement at network layer',
-          'Zero-copy schema synthesis'
-        ],
-        platformLeverage: [
-          'Direct integration into all ALTRADYN portfolio ventures',
-          'Shared IP repository & infrastructure cost-amortization'
-        ],
-        operationalMetrics: [
-          { label: 'Daily Data Processed', value: '1.8 PB' },
-          { label: 'Query Compute Savings', value: '62%' },
-          { label: 'Active Enterprise Nodes', value: '3,400+' }
-        ],
-        techStack: ['Apache Arrow', 'ClickHouse Core', 'eBPF Kernel Probes', 'Wasm Runtimes'],
-        foundingYear: '2024'
-      },
-      {
-        id: 'terragrid-assets',
-        code: 'ALT-03',
-        name: 'TerraGrid Dynamics',
-        displayCategory: 'Strategic Assets',
-        stage: 'operating',
-        tagline: 'Algorithmic physical asset management and yield optimization for industrial real estate.',
-        thesis: 'Real estate and industrial assets are static balance sheets waiting to be unlocked by dynamic yield modeling and predictive energy infrastructure.',
-        architectureSummary: 'A spatial intelligence platform combining satellite telemetry, IoT thermal sensors, and predictive load balancing.',
-        problemSpace: 'Industrial logistics warehouses and commercial assets operate with 30%+ energy inefficiencies and sub-optimal utilization.',
-        builtCapabilities: [
-          'Algorithmic tenant density and flow optimization',
-          'Predictive microgrid and battery storage balancing',
-          'Automated lease-to-yield valuation modeling',
-          'Digital twin physical asset telemetry'
-        ],
-        platformLeverage: [
-          'Direct equity alignment with ALTRADYN capital allocation',
-          'Cross-leveraged with Axiom Mesh data pipelines'
-        ],
-        operationalMetrics: [
-          { label: 'Managed Asset Area', value: '4.2M sq.ft' },
-          { label: 'Energy Consumption Drop', value: '29.4%' },
-          { label: 'Net Asset Yield Uplift', value: '+340 bps' }
-        ],
-        techStack: ['Spatial GIS Engine', 'Time-series IoT Stack', 'Predictive ML Yield Models'],
-        foundingYear: '2025'
-      },
-      {
-        id: 'khorus-platforms',
-        code: 'ALT-04',
-        name: 'Khorus B2B Exchange',
-        displayCategory: 'Digital Platforms',
-        stage: 'incubation',
-        tagline: 'Decentralized procurement and dynamic contract clearing for raw commodity supply chains.',
-        thesis: 'Legacy wholesale trade relies on opaque phone brokers and 90-day settlement lags; digitizing contract execution unlocks massive capital velocity.',
-        architectureSummary: 'An automated clearing and risk-pricing protocol tailored for volatile industrial inputs and supply chains.',
-        problemSpace: 'Small and medium manufacturing enterprises face 15% procurement premiums due to fragmented supply channels and credit friction.',
-        builtCapabilities: [
-          'Dynamic algorithmic price discovery & hedging',
-          'Smart collateralized contract clearing',
-          'Automated quality inspection verification API'
-        ],
-        platformLeverage: [
-          'Incubated in ALTRADYN Venture Studio',
-          'Seed capital & executive product leadership from ALTRADYN'
-        ],
-        operationalMetrics: [
-          { label: 'Cleared Pilot Volume', value: '$84M' },
-          { label: 'Settlement Speed', value: 'T+0 (vs T+30)' },
-          { label: 'Verified Suppliers', value: '420+' }
-        ],
-        techStack: ['Next.js', 'Go Core', 'PostgreSQL', 'Secure Enclave HSM'],
-        foundingYear: '2025'
-      },
-      {
-        id: 'neural-fabric',
-        code: 'ALT-05',
-        name: 'Vanguard Cognitive Labs',
-        displayCategory: 'AI & Cognitive Systems',
-        stage: 'incubation',
-        tagline: 'Small-scale, sovereign on-premise foundation models for defense and regulated enterprises.',
-        thesis: 'Strict sovereign regulatory frameworks will make public cloud LLMs non-viable for critical infrastructure, creating a multi-billion dollar shift to hardened private models.',
-        architectureSummary: 'Quantized 7B-32B specialized domain models capable of running air-gapped on standard commercial GPU clusters with zero external network leakage.',
-        problemSpace: 'Regulated aerospace, medical, and financial institutions cannot stream proprietary IP to public API endpoints.',
-        builtCapabilities: [
-          'Sub-4bit air-gapped weight quantization',
-          'Deterministic knowledge boundary guards',
-          'Hardware-agnostic inference runtimes'
-        ],
-        platformLeverage: [
-          'Supported by ALTRADYN R&D fellowships and compute clusters',
-          'Legal and compliance frameworks co-developed by ALTRADYN'
-        ],
-        operationalMetrics: [
-          { label: 'Inference Cost Ratio', value: '1/8th Cloud APIs' },
-          { label: 'Network Air-gap Grade', value: 'Level 4 Secured' },
-          { label: 'Context Retrieval Speed', value: '12ms' }
-        ],
-        techStack: ['C++ CUDA', 'Triton Inference Server', 'vLLM', 'Rust Guardrails'],
-        foundingYear: '2025'
-      },
-      {
-        id: 'orion-logix',
-        code: 'ALT-06',
-        name: 'Orion Kinetic Systems',
-        displayCategory: 'Next-Gen Systems',
-        stage: 'validation',
-        tagline: 'Autonomous robotic dispatch and predictive micro-fulfillment for high-density urban grids.',
-        thesis: 'Urban fulfillment cannot scale with human drivers alone. Hybrid autonomous micro-hubs with predictive inventory placement represent the next 50-year urban transport layer.',
-        architectureSummary: 'A spatial routing engine integrating physical sorting robots with municipal traffic intelligence.',
-        problemSpace: 'Last-mile urban parcel delivery costs represent up to 53% of total shipping overhead, causing urban gridlock and carbon spikes.',
-        builtCapabilities: [
-          'Multi-vehicle kinetic path planning',
-          'Sub-hourly demand forecast synthesis',
-          'Autonomous modular container docking'
-        ],
-        platformLeverage: [
-          'Validated via ALTRADYN Market Intelligence Engine',
-          'Synergistic with TerraGrid physical asset footprint'
-        ],
-        operationalMetrics: [
-          { label: 'Target Route Efficiency', value: '+45%' },
-          { label: 'Validation Stage', value: 'Hardware Loop 2' }
-        ],
-        techStack: ['ROS 2', 'Embedded Linux', 'Spatial Graph Neural Networks'],
-        foundingYear: '2026'
+<!-- ============ PERSPECTIVES ============ -->
+<section class="sec" id="perspectives">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">05</span><span class="sec-rule"></span><span class="sec-label">PERSPECTIVES</span></div>
+    <h2 class="sec-title reveal">Notes from the <em class="it">platform</em><i class="pd">.</i></h2>
+    <div class="p-grid">
+      <article class="p-featured reveal" data-note="systems">
+        <span class="p-meta"><b>THESIS</b> · FEB 2025 · 6 MIN</span>
+        <h3>Why we see businesses as systems</h3>
+        <p class="pf-x">Every business looks like an org chart until you operate one. Then it reveals itself as something else entirely — a system of inputs, conversions, feedback loops and delays.</p>
+        <span class="tlink pf-read">READ THE NOTE
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg></span>
+      </article>
+      <div class="reveal" style="--d:.1s">
+        <div class="p-list">
+          <button class="p-row" data-note="aviation">
+            <span class="p-meta"><b>AVIATION</b> · JAN 2025 · 4 MIN</span>
+            <h4>The quiet software decade in aviation</h4>
+            <svg width="15" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.3"/></svg>
+          </button>
+          <button class="p-row" data-note="patience">
+            <span class="p-meta"><b>OPERATING</b> · DEC 2024 · 3 MIN</span>
+            <h4>Patience is an operating asset</h4>
+            <svg width="15" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.3"/></svg>
+          </button>
+          <button class="p-row" data-note="talent">
+            <span class="p-meta"><b>TALENT</b> · NOV 2024 · 5 MIN</span>
+            <h4>What we look for in a founding operator</h4>
+            <svg width="15" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.3"/></svg>
+          </button>
+        </div>
+        <p class="p-count">04 NOTES — MORE AS THEY'RE WRITTEN.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section class="sec" id="connect">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">06</span><span class="sec-rule"></span><span class="sec-label">CONNECT</span></div>
+    <h2 class="sec-title reveal">Start the <em class="it">conversation</em><i class="pd">.</i></h2>
+    <div class="connect-grid">
+      <div class="reveal">
+        <p class="connect-lede">Whether you're building something, operating something, or deciding where to place your next decade — we read every message ourselves.</p>
+        <ul class="channels">
+          <li><span class="c-label mono">GENERAL</span><a href="mailto:hello@altradynprime.com">hello@altradynprime.com
+            <svg width="13" height="9" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg></a></li>
+          <li><span class="c-label mono">VENTURES</span><a href="mailto:ventures@altradynprime.com">ventures@altradynprime.com
+            <svg width="13" height="9" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg></a></li>
+          <li><span class="c-label mono">TALENT</span><a href="mailto:join@altradynprime.com">join@altradynprime.com
+            <svg width="13" height="9" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg></a></li>
+        </ul>
+        <p class="c-note">FOUNDERS · OWNERS · PARTNERS · INVESTORS · OPERATORS —<br><b>EVERY SERIOUS NOTE GETS A REPLY.</b></p>
+      </div>
+      <div class="reveal" style="--d:.12s">
+        <form id="contactForm" novalidate>
+          <div class="f-row two">
+            <div class="field"><label for="fName">Name *</label><input id="fName" type="text" autocomplete="name"><span class="f-err">REQUIRED</span></div>
+            <div class="field"><label for="fOrg">Organisation</label><input id="fOrg" type="text" autocomplete="organization"></div>
+          </div>
+          <div class="field"><label for="fEmail">Email *</label><input id="fEmail" type="email" autocomplete="email"><span class="f-err">VALID EMAIL REQUIRED</span></div>
+          <div class="field"><label for="fInterest">Interest</label>
+            <div class="sel-wrap">
+              <select id="fInterest">
+                <option>Partnership</option>
+                <option>Venture collaboration</option>
+                <option>Investment &amp; advisory</option>
+                <option>Join a venture</option>
+                <option>Something else</option>
+              </select>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="1.4"/></svg>
+            </div>
+          </div>
+          <div class="field"><label for="fMsg">Message *</label><textarea id="fMsg" rows="4" placeholder="Tell us what you're building, operating or looking for."></textarea><span class="f-err">A LITTLE MORE, PLEASE — MIN 10 CHARACTERS</span></div>
+          <div class="f-foot">
+            <button class="btn" type="submit">SEND MESSAGE
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg></button>
+            <span class="f-note">WE REPLY TO EVERY SERIOUS NOTE — USUALLY WITHIN TWO WORKING DAYS.</span>
+          </div>
+        </form>
+        <div class="form-done" id="formDone" hidden>
+          <span class="ok-line">TRANSMITTED — REF <span id="refCode"></span></span>
+          <h3>Thank you<i class="pd">.</i></h3>
+          <p>Your note is logged and routed to the right desk. We read everything ourselves and reply within two working days.</p>
+          <button class="btn ghost" id="sendAnother" type="button">SEND ANOTHER</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <span class="f-l1">ONE PLATFORM<i class="pd">.</i></span>
+        <span class="f-l2">Multiple possibilities<i class="pd">.</i></span>
+      </div>
+      <div class="f-cols">
+        <div>
+          <h5>INDEX</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#model">Our Model</a></li>
+            <li><a href="#ventures">Ventures</a></li>
+            <li><a href="#focus">Focus Areas</a></li>
+            <li><a href="#perspectives">Perspectives</a></li>
+            <li><a href="#connect">Connect</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>PLATFORM</h5>
+          <ul>
+            <li><a href="#about">Altradyn IQ — Technology</a></li>
+            <li><a href="#about">Altradyn — Assets &amp; Emerging</a></li>
+            <li><a href="#ventures">The Venture Index</a></li>
+            <li><a href="#perspectives">Notes &amp; Theses</a></li>
+          </ul>
+        </div>
+        <div class="mono">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><a href="mailto:hello@altradynprime.com">HELLO@ALTRADYNPRIME.COM</a></li>
+            <li><a href="mailto:ventures@altradynprime.com">VENTURES@ALTRADYNPRIME.COM</a></li>
+            <li><a href="mailto:join@altradynprime.com">JOIN@ALTRADYNPRIME.COM</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <svg class="fw" viewBox="0 0 1000 112" role="img" aria-label="ALTRADYN PRIME">
+      <text x="0" y="92" textLength="1000" lengthAdjust="spacingAndGlyphs">ALTRADYN PRIME</text>
+    </svg>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> ALTRADYN PRIME LLP</span>
+      <span>INDEPENDENT VENTURE DEVELOPMENT PLATFORM</span>
+      <button id="toTop">TOP
+        <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M5 11V1M1.5 4.5 5 1l3.5 3.5" stroke="currentColor" stroke-width="1.4"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ PERSPECTIVE DRAWER ============ -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <div class="d-head"><span class="p-meta" id="dMeta"></span>
+    <button class="d-x" id="dClose" aria-label="Close note">
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M3 3l16 16M19 3 3 19" stroke="currentColor" stroke-width="1.5"/></svg>
+    </button>
+  </div>
+  <div class="d-scroll">
+    <h3 id="dTitle"></h3>
+    <div id="dText"></div>
+    <p class="sig">— ALTRADYN PRIME · THE PLATFORM</p>
+  </div>
+  <div class="d-foot"><span>RESPOND TO THIS NOTE</span><a href="mailto:perspectives@altradynprime.com">PERSPECTIVES@ALTRADYNPRIME.COM</a></div>
+</aside>
+
+<!-- ============ CURSOR ============ -->
+<div id="cursor" aria-hidden="true"><div class="c-in"><span class="c-x"></span><span class="c-y"></span><span class="c-dot"></span></div></div>
+
+<script>
+'use strict';
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- load choreography ---------- */
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('loaded')));
+});
+
+/* ---------- header + progress ---------- */
+const headerEl = document.getElementById('siteHeader');
+const progress = document.getElementById('progress');
+let ticking = false;
+function onScroll(){
+  if (ticking) return; ticking = true;
+  requestAnimationFrame(() => {
+    const y = scrollY;
+    headerEl.classList.toggle('scrolled', y > 8);
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    ticking = false;
+  });
+}
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+/* ---------- mobile menu ---------- */
+const menu = document.getElementById('menu');
+const burger = document.getElementById('burger');
+function lockScroll(on){ document.documentElement.style.overflow = on ? 'hidden' : ''; }
+function setMenu(open){
+  menu.classList.toggle('open', open);
+  menu.setAttribute('aria-hidden', String(!open));
+  lockScroll(open);
+}
+burger.addEventListener('click', () => setMenu(true));
+document.getElementById('menuClose').addEventListener('click', () => setMenu(false));
+menu.querySelectorAll('.m-link').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+/* ---------- scroll spy ---------- */
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    document.querySelectorAll('.n-link').forEach(a =>
+      a.classList.toggle('active', a.dataset.sec === e.target.id));
+  });
+}, { rootMargin: '-42% 0px -52% 0px' });
+document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
+
+/* ---------- reveals ---------- */
+const rio = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); rio.unobserve(e.target); } });
+}, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.reveal').forEach(el => rio.observe(el));
+
+/* ---------- FIG.001 — live ecosystem schematic ---------- */
+(function initSystem(){
+  const canvas = document.getElementById('systemCanvas');
+  const readEl = document.getElementById('sysRead');
+  const readSq = document.getElementById('readSq');
+  const ctx = canvas.getContext('2d');
+  const INK = '21,19,16', RUST = '181,69,29';
+  const MONO = '"IBM Plex Mono",monospace';
+
+  const NODES = [
+    { key:'iq',        label:'ALTRADYN IQ', tag:'TECHNOLOGY DIVISION',  status:'OPERATING', orbit:0, a0:-0.45, speed:0.045, shape:'diamond' },
+    { key:'altradyn',  label:'ALTRADYN',    tag:'ASSETS & EMERGING',    status:'OPERATING', orbit:0, a0:-0.45 + Math.PI, speed:0.045, shape:'diamond' },
+    { key:'vectorfield',label:'VECTORFIELD',tag:'APPLIED INTELLIGENCE', status:'BUILDING',  orbit:1, a0:0.55,  speed:0.022, shape:'circle' },
+    { key:'avialign',  label:'AVIALIGN',    tag:'AVIATION SOLUTIONS',   status:'BUILDING',  orbit:1, a0:1.95,  speed:0.022, shape:'circle' },
+    { key:'keelstone', label:'KEELSTONE',   tag:'REAL ASSETS',          status:'FORMING',   orbit:1, a0:3.35,  speed:0.022, shape:'circle' },
+    { key:'signal',    label:'SIGNAL·05',   tag:'EMERGING SECTORS',     status:'SCOUTING',  orbit:1, a0:4.75,  speed:0.022, shape:'hollow' }
+  ];
+  NODES.forEach(n => n.h = 0);
+  let W=0,H=0,cx=0,cy=0,r1=0,r2=0, hovered=-1, lastHover=-2, visible=true;
+  const mouse = { x:-9999, y:-9999 };
+  const t0 = performance.now();
+
+  function resize(){
+    const r = canvas.parentElement.getBoundingClientRect();
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = r.width; H = r.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cx = W/2; cy = H/2;
+    const R = Math.min(W,H)/2 - 40;
+    r1 = R * 0.55; r2 = R * 0.88;
+  }
+  function render(t){
+    ctx.clearRect(0,0,W,H);
+    const time = RM ? 20 : (t - t0) / 1000;
+    ctx.lineWidth = 1;
+
+    // center crosshair hairlines
+    ctx.strokeStyle = `rgba(${INK},.05)`;
+    ctx.beginPath(); ctx.moveTo(0, cy+.5); ctx.lineTo(W, cy+.5);
+    ctx.moveTo(cx+.5, 0); ctx.lineTo(cx+.5, H); ctx.stroke();
+
+    // orbit rings
+    ctx.strokeStyle = `rgba(${INK},.16)`;
+    ctx.beginPath(); ctx.arc(cx, cy, r1, 0, 7); ctx.stroke();
+    ctx.setLineDash([2,5]);
+    ctx.strokeStyle = `rgba(${INK},.16)`;
+    ctx.beginPath(); ctx.arc(cx, cy, r2, 0, 7); ctx.stroke();
+    ctx.setLineDash([]);
+    // degree ticks on outer ring
+    ctx.strokeStyle = `rgba(${INK},.28)`;
+    for (let i=0;i<24;i++){
+      const a = i * Math.PI/12, c = Math.cos(a), s = Math.sin(a);
+      ctx.beginPath();
+      ctx.moveTo(cx + c*(r2-3), cy + s*(r2-3));
+      ctx.lineTo(cx + c*(r2+3), cy + s*(r2+3));
+      ctx.stroke();
+    }
+    // core diamond
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(Math.PI/4);
+    ctx.fillStyle = `rgba(${INK},.92)`; ctx.fillRect(-5,-5,10,10);
+    ctx.strokeStyle = `rgba(${INK},.3)`; ctx.strokeRect(-10,-10,20,20);
+    ctx.restore();
+    ctx.textAlign = 'center';
+    ctx.font = `500 9px ${MONO}`;
+    ctx.fillStyle = `rgba(${INK},.6)`;
+    ctx.fillText('ALTRADYN PRIME', cx, cy + 36);
+    ctx.fillStyle = `rgba(${INK},.35)`;
+    ctx.fillText('CORE', cx, cy - 28);
+
+    // positions
+    NODES.forEach(n => {
+      const r = n.orbit ? r2 : r1, a = n.a0 + n.speed * time;
+      n.x = cx + Math.cos(a)*r; n.y = cy + Math.sin(a)*r; n.a = a;
+    });
+    // hover pick
+    hovered = -1; let best = 26;
+    NODES.forEach((n,i) => {
+      const d = Math.hypot(mouse.x - n.x, mouse.y - n.y);
+      if (d < best){ best = d; hovered = i; }
+    });
+
+    NODES.forEach((n,i) => {
+      n.h += ((i === hovered ? 1 : 0) - n.h) * 0.14;
+      if (RM) n.h = (i === hovered ? 1 : 0);
+      const r = n.orbit ? r2 : r1, dir = Math.sign(n.speed) || 1;
+      // spoke
+      ctx.strokeStyle = `rgba(${INK},.09)`;
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(n.x, n.y); ctx.stroke();
+      if (n.h > .02){
+        ctx.strokeStyle = `rgba(${RUST},${(n.h*.55).toFixed(3)})`;
+        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(n.x, n.y); ctx.stroke();
       }
-    ];
-
-    const STAGES_DATA = {
-      1: {
-        stepNumber: 1,
-        title: 'Observe Change',
-        subtitle: 'Systemic market reconnaissance & macro signal analysis',
-        summary: 'We continuously track structural friction, technological inflection points, and shifting regulatory frameworks across global markets.',
-        objective: 'Filter signal from noise to identify multi-decade structural shifts before they become consensus trends.',
-        mechanics: [
-          'Continuous quantitative tracking of market inefficiencies, margin compression, and friction points.',
-          'Monitoring breakthrough compute, algorithmic, and material science developments.',
-          'Mapping regulatory shifts and capital reallocation in legacy infrastructure.'
-        ],
-        leverage: 'Proprietary Market Intelligence Engine scanning 12,000+ data nodes, regulatory feeds, and industry supply chains.',
-        decisionGate: 'Is this a genuine structural shift with a 10+ year horizon, or an ephemeral market narrative?',
-        outputs: ['Sector Vulnerability Reports', 'Friction Point Dossiers', 'Macro Horizon Thesis']
-      },
-      2: {
-        stepNumber: 2,
-        title: 'Identify Opportunities',
-        subtitle: 'Systemic thesis formation & structural arbitrage',
-        summary: 'We view businesses as interconnected systems. We pinpoint specific nodes where technology and intelligence create asymmetric leverage.',
-        objective: 'Formulate precise venture hypotheses that target high-margin moats and structural market deficits.',
-        mechanics: [
-          'Deconstructing legacy value chains into modular components (data, settlement, physical distribution, orchestration).',
-          'Assessing unit economics and unfair competitive leverage enabled by shared platform capabilities.',
-          'Stress-testing counter-party incentives, pricing power, and distribution moats.'
-        ],
-        leverage: 'Shared economic modeling toolsets, sector-specialist advisory councils, and cross-domain pattern matching.',
-        decisionGate: 'Does solving this problem unlock at least 5x structural leverage over incumbent models?',
-        outputs: ['Venture Concept Blueprints', 'Economic Lever Models', 'Unit Economic Projections']
-      },
-      3: {
-        stepNumber: 3,
-        title: 'Validate Ideas',
-        subtitle: 'Empirical stress-testing & commercial proof-of-conviction',
-        summary: 'Before committing significant capital, we rigorously validate demand, technological feasibility, and defensibility with real market participants.',
-        objective: 'Kill unviable ideas quickly with minimal burn while doubling down on validated, high-conviction vectors.',
-        mechanics: [
-          'Building rapid functional prototypes and synthetic market test environments.',
-          'Securing exploratory letters of intent (LOIs) and pilot commitments with enterprise partners.',
-          'Verifying technical viability, latency benchmarks, and architectural scalability.'
-        ],
-        leverage: 'Access to enterprise sandbox environments and ALTRADYN corporate partner advisory network.',
-        decisionGate: 'Do enterprise buyers demonstrate willing capital commitment and clear quantifiable ROI?',
-        outputs: ['Enterprise Pilot Commitments', 'Feasibility Benchmarks', 'Go/No-Go Investment Committee Mandate']
-      },
-      4: {
-        stepNumber: 4,
-        title: 'Build Ventures & Capabilities',
-        subtitle: 'Institutional venture engineering & co-founding execution',
-        summary: 'We assemble elite founder-operators, deploy dedicated engineering pods, and inject shared ALTRADYN core infrastructure to accelerate time-to-market.',
-        objective: 'Construct production-grade, highly defensible technology platforms and sovereign operating entities.',
-        mechanics: [
-          'Recruiting exceptional entrepreneurial leadership and matching them with pre-validated concepts.',
-          'Deploying shared technological foundations (data layers, auth, security, multi-agent frameworks).',
-          'Structuring sovereign legal, equity, and governance frameworks designed for multi-decade endurance.'
-        ],
-        leverage: 'Shared Engineering CoE, Legal & Regulatory Shield, Tier-1 Compute Clusters, and Shared Back-Office OS.',
-        decisionGate: 'Has the venture achieved product-system fit and repeatable, scalable unit economics?',
-        outputs: ['Independent Operating Entity', 'Production Infrastructure', 'Founding Executive Team']
-      },
-      5: {
-        stepNumber: 5,
-        title: 'Operate and Scale Businesses',
-        subtitle: 'Compounding ecosystem synergy & long-term capital allocation',
-        summary: 'As ventures mature into standalone leaders, ALTRADYN provides continuous strategic governance, cross-portfolio distribution, and follow-on capital.',
-        objective: 'Drive exponential compounding and build an enduring, multi-industry business ecosystem.',
-        mechanics: [
-          'Cross-selling and inter-portfolio capability sharing across all active ALTRADYN subsidiaries.',
-          'Dynamic capital allocation based on cash generation, return on invested capital (ROIC), and strategic leverage.',
-          'Attracting external institutional growth capital or executing strategic asset integrations.'
-        ],
-        leverage: 'Ecosystem network effects, institutional credibility, parent balance sheet, and board-level strategy.',
-        decisionGate: 'Does the operating business reinforce the broader ALTRADYN ecosystem moat and create enduring value?',
-        outputs: ['Market-Dominant Venture', 'Self-Sustaining Cash Flow Engine', 'Shared IP Contribution']
-      }
-    };
-
-    const FOCUS_AREAS_DATA = [
-      {
-        id: 'ai-cognitive',
-        title: 'Artificial Intelligence & Cognitive Systems',
-        category: 'AI & Cognitive Systems',
-        desc: 'Autonomous multi-agent swarms, deterministic neural middleware, and domain-specialized sovereign inference.',
-        thesis: 'The next era of AI is autonomous systems deeply embedded into industrial, logistical, and financial decision loops with verifiable guarantees.',
-        activeVentures: '2 Ventures Active'
-      },
-      {
-        id: 'digital-platforms',
-        title: 'Autonomous Digital Platforms & Marketplaces',
-        category: 'Digital Platforms',
-        desc: 'Algorithmic clearing, smart contract settlement, and frictionless transactional networks for high-friction markets.',
-        thesis: 'Software-driven programmatic clearing unlocks massive dormant velocity across legacy intermediary chains.',
-        activeVentures: '1 Venture Active'
-      },
-      {
-        id: 'data-infra',
-        title: 'Enterprise Data & Intelligence Infrastructure',
-        category: 'Data Infrastructure',
-        desc: 'Decentralized query-in-place fabrics, cryptographic data lineage, and zero-latency semantic indexing.',
-        thesis: 'Unified, governed, and instant access to operational data exhaust without brittle ETL pipelines.',
-        activeVentures: '1 Venture Active'
-      },
-      {
-        id: 'strategic-assets',
-        title: 'Real Estate & Strategic Asset Opportunities',
-        category: 'Strategic Assets',
-        desc: 'Algorithmic asset optimization, smart microgrids, and high-yield physical-digital operational convergence.',
-        thesis: 'Digital twins and algorithmic yield models unlock extraordinary balance sheet leverage across physical infrastructure.',
-        activeVentures: '1 Venture Active'
-      },
-      {
-        id: 'next-gen-systems',
-        title: 'Next-Gen Physical-Digital & Robotic Systems',
-        category: 'Next-Gen Systems',
-        desc: 'Spatial graph path planning, robotic micro-fulfillment, and kinetic logistics coordination.',
-        thesis: 'When spatial intelligence meets robotics, the cost curve of moving atoms begins to mirror the economics of software.',
-        activeVentures: '1 Venture Active'
-      }
-    ];
-
-    const PERSPECTIVES_DATA = [
-      {
-        id: 'businesses-as-systems',
-        title: 'Businesses as Systems: Why Conventional Venture Models Fail in the Age of Intelligence',
-        category: 'Venture Architecture',
-        readTime: '6 min read',
-        date: 'February 2026',
-        summary: 'Building isolated products is a fragile strategy. The most enduring enterprises are constructed as compounding operational systems where data, capital, and capabilities reinforce one another.',
-        quote: 'The future does not arrive fully formed. It gets built by those who see organizations not as collections of departments, but as dynamic feedback loops.',
-        theses: [
-          'Isolated startups face crippling customer acquisition and infrastructure duplication costs.',
-          'A platform model amortizes complex capabilities (AI models, data governance, legal architecture) across multiple operating entities.',
-          'True competitive advantage comes not from single software features, but from structural system-level leverage.'
-        ],
-        paragraphs: [
-          'For the past two decades, the dominant venture building playbook was deceptively simple: find a fragmented market, build a single-point SaaS application, raise hyper-dilutive rounds of venture capital, and spend aggressively on customer acquisition. This model worked when software margins were naturally 80%+ and distribution channels were underpriced.',
-          'Today, that paradigm has broken down. Software commoditization is accelerating at an unprecedented rate. Foundation models and generative code tools mean that any standalone feature can be replicated within weeks. When software becomes cheap to write, the moat shifts fundamentally to structural systems, proprietary data feedback loops, and sovereign execution capabilities.',
-          'At ALTRADYN Prime, we approach business building through the lens of complex systems theory. A business is not an isolated balance sheet; it is an information processing and value transfer engine. When we incubate or scale a venture, we do not start with a feature checklist. We start by mapping the entire value system—identifying where friction concentrates, where leverage can be applied, and how the new venture can draw upon and reinforce the parent ecosystem.',
-          'Consider the difference between a standalone AI startup and a venture built on the ALTRADYN platform. The standalone startup spends twelve months and millions of dollars building data lineage pipelines, enterprise audit mechanisms, and compliance shields. An ALTRADYN venture inherits these capabilities on day zero from our shared core. This 5x acceleration in time-to-value is what turns promising hypotheses into enduring, cash-generative enterprises.'
-        ]
-      },
-      {
-        id: 'opportunity-rarely-announces-itself',
-        title: 'Opportunity Rarely Announces Itself: The Art of Asymmetric Market Observation',
-        category: 'Market Intelligence',
-        readTime: '5 min read',
-        date: 'January 2026',
-        summary: 'Consensus trends are already priced in. High-conviction venture platforms generate superior returns by observing friction points that incumbents ignore or consider immutable.',
-        quote: 'Technology is only useful when it creates leverage. Without structural leverage, technology is merely expensive overhead.',
-        theses: [
-          'Consensus market opportunities suffer from immediate margin erosion and bidding wars.',
-          'The most valuable ventures originate at the intersection of regulatory changes, physical assets, and computational advances.',
-          'Observation is an active discipline requiring quantitative telemetry, not passive brainstorming.'
-        ],
-        paragraphs: [
-          'Whenever an industry trend reaches the front page of mainstream financial publications, the risk-adjusted returns for new entrants have already plummeted. When everyone agrees that a sector is the next big thing, capital floods in, talent costs spike, and customer acquisition costs explode.',
-          'Real asymmetric opportunities reside in the uncomfortable spaces between established industry boundaries. They exist where traditional real estate operators do not understand edge compute, where industrial chemical manufacturers rely on manual phone brokers, or where defense contractors are paralyzed by public cloud security constraints.',
-          'At ALTRADYN Prime, our Stage 1 observation methodology relies on structured friction mapping. We study where human latency causes margin collapse, where regulatory compliance creates artificial bottlenecks, and where physical assets underperform their computational potential. When we find an anomaly where modern computational intelligence can deliver an order-of-magnitude efficiency gain, we formulate a thesis and initiate empirical validation.',
-          'We do not seek to build everything. We remain exceptionally selective, choosing only those opportunities where ALTRADYN platform capabilities create an unfair and enduring competitive advantage.'
-        ]
-      },
-      {
-        id: 'physical-digital-convergence',
-        title: 'Beyond Pure Software: The Unstoppable Convergence of Physical Assets and Algorithmic Intelligence',
-        category: 'Strategic Assets',
-        readTime: '7 min read',
-        date: 'December 2025',
-        summary: 'The next decade of transformative enterprise value will not come from purely virtual applications, but from bringing computational precision to physical infrastructure, energy grids, and real estate.',
-        quote: 'When spatial intelligence meets physical infrastructure, the cost curve of moving and managing atoms begins to mirror the economics of software.',
-        theses: [
-          'Purely virtual software is vulnerable to rapid commoditization; physical-digital integrations establish formidable defensive moats.',
-          'Real estate, logistics warehouses, and industrial assets require algorithmic operational layers to survive rising energy and capital costs.',
-          'Asset-backed technology ventures generate higher quality, multi-generational cash flows.'
-        ],
-        paragraphs: [
-          'For the past thirty years, the technology sector treated the physical world as an afterthought. Software companies prided themselves on being "asset-light," scoffing at balance sheets with physical inventory or land holdings. Yet the physical world remains where 85% of global GDP is produced, consumed, and transported.',
-          'Today, rising interest rates, geopolitical realignments, and escalating energy costs have rendered pure asset-light models fragile. Conversely, physical assets that lack intelligent computational orchestration suffer from debilitating yield drag.',
-          'Through ventures like TerraGrid Dynamics and Orion Kinetic Systems, ALTRADYN Prime is pioneering the synthesis of heavy physical assets and light algorithmic intelligence. By deploying IoT thermal arrays, spatial digital twins, and predictive battery balancing across millions of square feet of industrial space, we transform static concrete and steel into dynamic, self-optimizing balance sheet assets.',
-          'This hybrid model creates twin moats: software-like operating margins underpinned by the enduring tangible value of hard real estate and infrastructure.'
-        ]
-      }
-    ];
-
-    // -------------------------------------------------------------
-    // 2. RENDERING CONTROLLERS
-    // -------------------------------------------------------------
-
-    // Render 5-Stage Engine Content
-    function switchStage(stageNum) {
-      const stage = STAGES_DATA[stageNum];
-      if (!stage) return;
-
-      // Update Tab Styles
-      const tabButtons = document.querySelectorAll('#stageTabsContainer .stage-tab-btn');
-      tabButtons.forEach((btn, index) => {
-        if (index + 1 === stageNum) {
-          btn.classList.add('active');
+      // trail arc along orbit
+      ctx.strokeStyle = `rgba(${INK},${(.18 + n.h*.25).toFixed(3)})`;
+      ctx.beginPath(); ctx.arc(cx, cy, r, n.a - .5*dir, n.a, dir < 0); ctx.stroke();
+      // node body
+      const rad = 4.5 + n.h*2.2;
+      if (n.shape === 'diamond'){
+        ctx.save(); ctx.translate(n.x, n.y); ctx.rotate(Math.PI/4);
+        ctx.fillStyle = `rgba(${INK},.92)`; ctx.fillRect(-rad, -rad, rad*2, rad*2);
+        if (n.h > .02){ ctx.fillStyle = `rgba(${RUST},${n.h.toFixed(3)})`; ctx.fillRect(-rad,-rad,rad*2,rad*2); }
+        ctx.restore();
+      } else {
+        ctx.beginPath(); ctx.arc(n.x, n.y, rad, 0, 7);
+        if (n.shape === 'hollow'){
+          ctx.setLineDash([2,3]);
+          ctx.strokeStyle = `rgba(${INK},${(.6 + n.h*.4).toFixed(3)})`;
+          ctx.stroke(); ctx.setLineDash([]);
         } else {
-          btn.classList.remove('active');
+          ctx.fillStyle = `rgba(${INK},.92)`; ctx.fill();
+          if (n.h > .02){ ctx.fillStyle = `rgba(${RUST},${n.h.toFixed(3)})`; ctx.fill(); }
         }
-      });
-
-      // Update Box Content
-      const box = document.getElementById('stageContentBox');
-      box.innerHTML = `
-        <div class="stage-detail-grid">
-          <div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-              <span class="badge-pill">STAGE 0${stage.stepNumber}</span>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-transform: uppercase;">EXECUTION PROTOCOL</span>
-            </div>
-            <h3 style="font-size: 28px; font-weight: 300; margin-bottom: 6px;">${stage.title}</h3>
-            <p style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">${stage.subtitle}</p>
-            <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">${stage.summary}</p>
-
-            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 18px; margin-bottom: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">STAGE OBJECTIVE</div>
-              <p style="font-size: 13px; color: var(--text-primary); font-weight: 500;">${stage.objective}</p>
-            </div>
-
-            <div style="margin-bottom: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px;">KEY EXECUTION MECHANICS</div>
-              <ul style="list-style: none; font-size: 13px; color: var(--text-secondary);">
-                ${stage.mechanics.map(m => `
-                  <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
-                    <span style="font-family: var(--font-mono); font-size: 10px; color: #1A1A1A; font-weight: 700;">●</span>
-                    <span>${m}</span>
-                  </li>
-                `).join('')}
-              </ul>
-            </div>
-          </div>
-
-          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-            <div style="background: var(--bg-canvas); border: 1px solid var(--border-color); padding: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">ALTRADYN PLATFORM LEVERAGE</div>
-              <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">${stage.leverage}</p>
-
-              <div style="border-top: 1px solid var(--border-color); padding-top: 14px;">
-                <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">GOVERNANCE DECISION GATE</div>
-                <p style="font-size: 12px; font-style: italic; color: var(--text-primary);">"${stage.decisionGate}"</p>
-              </div>
-            </div>
-
-            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 20px;">
-              <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">MANDATORY STAGE OUTPUTS</div>
-              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                ${stage.outputs.map(out => `
-                  <span style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 4px 8px; font-family: var(--font-mono); font-size: 11px; color: var(--text-primary);">${out}</span>
-                `).join('')}
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // Render Ventures Grid
-    function renderVentures(filterCategory = 'all') {
-      const container = document.getElementById('venturesContainer');
-      const filtered = filterCategory === 'all' 
-        ? VENTURES_DATA 
-        : VENTURES_DATA.filter(v => v.displayCategory === filterCategory);
-
-      container.innerHTML = filtered.map(v => `
-        <div class="venture-card">
-          <div>
-            <div class="venture-header">
-              <span class="badge-pill">${v.code}</span>
-              <span style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; padding: 2px 6px; background: var(--bg-subtle); border: 1px solid var(--border-color); font-weight: 600;">
-                ● ${v.stage}
-              </span>
-            </div>
-            <h3 class="venture-name">${v.name}</h3>
-            <div class="venture-cat">${v.displayCategory}</div>
-            <p class="venture-tagline">${v.tagline}</p>
-            <div class="venture-thesis-quote">"${v.thesis}"</div>
-          </div>
-
-          <div style="border-top: 1px solid var(--border-color); padding-top: 16px; margin-top: 8px;">
-            <button class="btn btn-secondary" style="width: 100%;" onclick="openVentureModal('${v.id}')">
-              Inspect Blueprint →
-            </button>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function filterVentures(cat, btn) {
-      document.querySelectorAll('#ventureFilterBar .filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderVentures(cat);
-    }
-
-    // Render Focus Areas Grid
-    function renderFocusAreas() {
-      const container = document.getElementById('focusAreasContainer');
-      container.innerHTML = FOCUS_AREAS_DATA.map(fa => `
-        <div class="focus-card">
-          <div class="badge-pill">${fa.category}</div>
-          <h3 class="focus-title">${fa.title}</h3>
-          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.5;">${fa.desc}</p>
-          <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 10px; font-size: 11px; font-style: italic; color: var(--text-primary); margin-bottom: 16px;">
-            "${fa.thesis}"
-          </div>
-          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">${fa.activeVentures}</div>
-        </div>
-      `).join('');
-    }
-
-    // Render Perspectives Hub
-    function renderPerspectives() {
-      const container = document.getElementById('perspectivesContainer');
-      container.innerHTML = PERSPECTIVES_DATA.map(art => `
-        <div class="essay-card" onclick="openEssayModal('${art.id}')">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-family: var(--font-mono); font-size: 11px;">
-              <span class="badge-pill">${art.category}</span>
-              <span style="color: var(--text-muted);">${art.readTime}</span>
-            </div>
-            <h3 style="font-size: 20px; font-weight: 400; margin-bottom: 10px; line-height: 1.3;">${art.title}</h3>
-            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5;">${art.summary}</p>
-            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px; font-size: 12px; font-style: italic; color: var(--text-primary); margin-bottom: 16px;">
-              "${art.quote}"
-            </div>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 14px; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 11px;">
-            <span style="color: var(--text-muted);">${art.date}</span>
-            <span style="font-weight: 600; text-transform: uppercase;">Read Essay →</span>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    // -------------------------------------------------------------
-    // 3. MODALS & INTERACTION LOGIC
-    // -------------------------------------------------------------
-    function openVentureModal(id) {
-      const v = VENTURES_DATA.find(item => item.id === id);
-      if (!v) return;
-
-      document.getElementById('mCode').innerText = v.code;
-      const body = document.getElementById('ventureModalBody');
-      body.innerHTML = `
-        <div style="margin-bottom: 24px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-            <h2 style="font-size: 26px; font-weight: 300;">${v.name}</h2>
-            <span class="badge-pill">● Status: ${v.stage}</span>
-          </div>
-          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">${v.displayCategory} • Est. ${v.foundingYear}</div>
-          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 20px;">${v.tagline}</p>
-          <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 16px; font-style: italic; font-size: 13px; color: var(--text-primary); margin-bottom: 24px;">
-            "${v.thesis}"
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-          <div style="background: #FBFBFA; border: 1px solid var(--border-color); padding: 16px;">
-            <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">PROBLEM SPACE</div>
-            <p style="font-size: 12px; color: var(--text-secondary);">${v.problemSpace}</p>
-          </div>
-          <div style="background: #FBFBFA; border: 1px solid var(--border-color); padding: 16px;">
-            <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">ARCHITECTURAL SOLUTION</div>
-            <p style="font-size: 12px; color: var(--text-secondary);">${v.architectureSummary}</p>
-          </div>
-        </div>
-
-        <div style="margin-bottom: 24px;">
-          <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">OPERATIONAL TELEMETRY METRICS</div>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-            ${v.operationalMetrics.map(m => `
-              <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px;">
-                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">${m.label}</div>
-                <div style="font-family: var(--font-display); font-size: 18px; font-weight: 400; color: var(--text-primary); margin-top: 2px;">${m.value}</div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-          <div>
-            <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">ENGINEERED CAPABILITIES</div>
-            <ul style="list-style: none; font-size: 12px; color: var(--text-secondary);">
-              ${v.builtCapabilities.map(cap => `
-                <li style="margin-bottom: 6px; padding-left: 12px; text-indent: -12px;">✓ ${cap}</li>
-              `).join('')}
-            </ul>
-          </div>
-          <div>
-            <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">INHERITED PLATFORM LEVERAGE</div>
-            <ul style="list-style: none; font-size: 12px; color: var(--text-secondary);">
-              ${v.platformLeverage.map(lev => `
-                <li style="margin-bottom: 6px; padding-left: 12px; text-indent: -12px;">⚡ ${lev}</li>
-              `).join('')}
-            </ul>
-          </div>
-        </div>
-
-        <div>
-          <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">CORE TECHNICAL STACK</div>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            ${v.techStack.map(t => `<span style="background: var(--bg-pill); border: 1px solid var(--border-color); padding: 4px 8px; font-family: var(--font-mono); font-size: 11px;">${t}</span>`).join('')}
-          </div>
-        </div>
-      `;
-
-      document.getElementById('ventureModal').classList.add('active');
-    }
-
-    function closeVentureModal() {
-      document.getElementById('ventureModal').classList.remove('active');
-    }
-
-    function openEssayModal(id) {
-      const art = PERSPECTIVES_DATA.find(item => item.id === id);
-      if (!art) return;
-
-      document.getElementById('eCategory').innerText = art.category;
-      document.getElementById('eReadTime').innerText = art.readTime;
-      const body = document.getElementById('essayModalBody');
-      body.innerHTML = `
-        <h1 style="font-size: 26px; font-weight: 300; line-height: 1.25; margin-bottom: 12px;">${art.title}</h1>
-        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 18px;">${art.summary}</p>
-        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); padding-bottom: 16px; border-bottom: 1px solid var(--border-color); margin-bottom: 20px;">
-          Published by ALTRADYN Strategy Council • ${art.date}
-        </div>
-
-        <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 18px; margin-bottom: 24px;">
-          <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">CORE ARCHITECTURAL THESES</div>
-          <ul style="list-style: none; font-size: 12px; color: var(--text-secondary);">
-            ${art.theses.map(t => `<li style="margin-bottom: 6px;">✓ ${t}</li>`).join('')}
-          </ul>
-        </div>
-
-        <div style="background: #FFFFFF; border: 1px solid var(--border-color); padding: 16px; font-style: italic; font-size: 14px; color: var(--text-primary); margin-bottom: 24px;">
-          "${art.quote}"
-        </div>
-
-        <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
-          ${art.paragraphs.map(p => `<p style="margin-bottom: 16px;">${p}</p>`).join('')}
-        </div>
-      `;
-
-      document.getElementById('essayModal').classList.add('active');
-    }
-
-    function closeEssayModal() {
-      document.getElementById('essayModal').classList.remove('active');
-    }
-
-    // Engagement Pathway Switcher
-    let currentPathway = 'founder';
-    function selectPathway(pathway, btn) {
-      currentPathway = pathway;
-      document.querySelectorAll('#pathwaySelector .pathway-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      document.getElementById('engagementForm').style.display = 'none';
-      document.getElementById('routingRef').innerText = 'ALT-ENG-' + Math.floor(1000 + Math.random() * 9000);
-      document.getElementById('formSuccessMessage').style.display = 'block';
-    }
-
-    function resetForm() {
-      document.getElementById('engagementForm').reset();
-      document.getElementById('engagementForm').style.display = 'block';
-      document.getElementById('formSuccessMessage').style.display = 'none';
-    }
-
-    function toggleMobileMenu() {
-      document.getElementById('mobileDrawer').classList.toggle('open');
-    }
-    document.getElementById('mobileMenuToggle').addEventListener('click', toggleMobileMenu);
-
-    // Keyboard ESC to close modals
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeVentureModal();
-        closeEssayModal();
+      }
+      // label
+      const c = Math.cos(n.a), s = Math.sin(n.a);
+      const lx = n.x + c*18, ly = n.y + s*18;
+      ctx.textAlign = Math.abs(c) <= .35 ? 'center' : (c > 0 ? 'left' : 'right');
+      let ty = Math.abs(c) <= .35 ? (s < 0 ? ly - 10 : ly + 16) : ly + 3;
+      const tagBelow = !(Math.abs(c) <= .35 && s < 0);
+      ctx.font = `500 ${(9.5 + n.h*1.6).toFixed(1)}px ${MONO}`;
+      ctx.fillStyle = n.h > .5 ? `rgba(${RUST},1)` : `rgba(${INK},.8)`;
+      ctx.fillText(n.label, lx, ty);
+      if (n.h > .02){
+        ctx.font = `400 8px ${MONO}`;
+        ctx.fillStyle = `rgba(${RUST},${n.h.toFixed(3)})`;
+        ctx.fillText(n.tag + ' — ' + n.status, lx, ty + (tagBelow ? 12 : -12));
       }
     });
 
-    // -------------------------------------------------------------
-    // 4. INTERACTIVE ECOSYSTEM NETWORK CANVAS (VANILLA JS)
-    // -------------------------------------------------------------
-    function initCanvas() {
-      const canvas = document.getElementById('ecosystemCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      const container = document.getElementById('canvasContainer');
-
-      let width = container.clientWidth;
-      let height = container.clientHeight;
-      canvas.width = width * window.devicePixelRatio;
-      canvas.height = height * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-
-      const nodes = [
-        { id: 'core', label: 'ALTRADYN Core', x: width * 0.5, y: height * 0.5, radius: 24, isCenter: true, angle: 0 },
-        { id: 'synapse', label: 'SynapseFlow', x: 0, y: 0, radius: 14, angle: 0 },
-        { id: 'axiom', label: 'Axiom Mesh', x: 0, y: 0, radius: 14, angle: (Math.PI * 2) / 5 },
-        { id: 'terragrid', label: 'TerraGrid', x: 0, y: 0, radius: 14, angle: (Math.PI * 4) / 5 },
-        { id: 'khorus', label: 'Khorus Ex', x: 0, y: 0, radius: 14, angle: (Math.PI * 6) / 5 },
-        { id: 'vanguard', label: 'Vanguard Cognitive', x: 0, y: 0, radius: 14, angle: (Math.PI * 8) / 5 }
-      ];
-
-      let hoverNode = null;
-      let orbitRadius = Math.min(width, height) * 0.38;
-      let baseAngle = 0;
-
-      function updatePositions() {
-        baseAngle += 0.002;
-        nodes.forEach((n) => {
-          if (n.isCenter) {
-            n.x = width * 0.5;
-            n.y = height * 0.5;
-          } else {
-            const currentAngle = n.angle + baseAngle;
-            n.x = width * 0.5 + Math.cos(currentAngle) * orbitRadius;
-            n.y = height * 0.5 + Math.sin(currentAngle) * orbitRadius;
-          }
-        });
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, width, height);
-
-        // Draw Orbit Ring
-        ctx.beginPath();
-        ctx.arc(width * 0.5, height * 0.5, orbitRadius, 0, Math.PI * 2);
-        ctx.strokeStyle = '#E5E5E3';
-        ctx.lineWidth = 1;
-        ctx.stroke();
-
-        // Draw Connection Lines
-        nodes.forEach(n => {
-          if (!n.isCenter) {
-            ctx.beginPath();
-            ctx.moveTo(nodes[0].x, nodes[0].y);
-            ctx.lineTo(n.x, n.y);
-            ctx.strokeStyle = '#E5E5E3';
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        });
-
-        // Draw Outer Venture Connections
-        for (let i = 1; i < nodes.length; i++) {
-          const next = i === nodes.length - 1 ? 1 : i + 1;
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[next].x, nodes[next].y);
-          ctx.strokeStyle = 'rgba(229, 229, 227, 0.6)';
-          ctx.setLineDash([4, 4]);
-          ctx.stroke();
-          ctx.setLineDash([]);
-        }
-
-        // Draw Nodes
-        nodes.forEach(n => {
-          ctx.beginPath();
-          ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
-          if (n.isCenter) {
-            ctx.fillStyle = '#1A1A1A';
-            ctx.fill();
-            ctx.strokeStyle = '#1A1A1A';
-          } else {
-            ctx.fillStyle = hoverNode === n ? '#1A1A1A' : '#FFFFFF';
-            ctx.fill();
-            ctx.strokeStyle = '#1A1A1A';
-          }
-          ctx.lineWidth = 1.5;
-          ctx.stroke();
-
-          // Text Labels
-          ctx.font = n.isCenter ? '600 11px Space Grotesk' : '500 10px JetBrains Mono';
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          if (n.isCenter) {
-            ctx.fillStyle = '#FFFFFF';
-            ctx.fillText('CORE', n.x, n.y);
-          } else {
-            ctx.fillStyle = hoverNode === n ? '#FFFFFF' : '#1A1A1A';
-            ctx.fillText(n.label.substring(0, 3).toUpperCase(), n.x, n.y);
-
-            // Label beneath
-            ctx.font = '500 9px JetBrains Mono';
-            ctx.fillStyle = '#6B6B6B';
-            ctx.fillText(n.label, n.x, n.y + n.radius + 12);
-          }
-        });
-
-        updatePositions();
-        requestAnimationFrame(draw);
-      }
-
-      window.addEventListener('resize', () => {
-        width = container.clientWidth;
-        height = container.clientHeight;
-        canvas.width = width * window.devicePixelRatio;
-        canvas.height = height * window.devicePixelRatio;
-        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-        orbitRadius = Math.min(width, height) * 0.38;
-      });
-
-      canvas.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        const mx = e.clientX - rect.left;
-        const my = e.clientY - rect.top;
-        hoverNode = nodes.find(n => Math.hypot(n.x - mx, n.y - my) < n.radius + 6) || null;
-      });
-
-      draw();
+    // readout
+    if (hovered !== lastHover){
+      lastHover = hovered;
+      readEl.textContent = hovered < 0
+        ? 'CORE — ALTRADYN PRIME · THE PLATFORM — HOVER A NODE TO INSPECT'
+        : `NODE ${String(hovered+1).padStart(2,'0')} — ${NODES[hovered].label} · ${NODES[hovered].tag} — STATUS: ${NODES[hovered].status}`;
+      readSq.classList.add('tick');
+      setTimeout(() => readSq.classList.remove('tick'), 320);
     }
+  }
+  let last = performance.now();
+  function loop(t){
+    if (visible){ render(t); last = t; } else { t0 += t - last; last = t; }
+    requestAnimationFrame(loop);
+  }
+  canvas.addEventListener('mousemove', e => { mouse.x = e.offsetX; mouse.y = e.offsetY; if (RM) render(performance.now()); });
+  canvas.addEventListener('mouseleave', () => { mouse.x = mouse.y = -9999; if (RM) render(performance.now()); });
+  canvas.addEventListener('click', () => {
+    if (hovered < 0) return;
+    const k = NODES[hovered].key;
+    if (k === 'iq' || k === 'altradyn') document.getElementById('focus').scrollIntoView({ behavior: RM ? 'auto' : 'smooth' });
+    else openVenture(k);
+  });
+  new IntersectionObserver(es => es.forEach(e => visible = e.isIntersecting), { threshold: 0 }).observe(canvas.parentElement);
+  if ('ResizeObserver' in window) new ResizeObserver(() => { resize(); if (RM) render(performance.now()); }).observe(canvas.parentElement);
+  addEventListener('resize', () => { resize(); if (RM) render(performance.now()); });
+  resize();
+  document.fonts.ready.then(() => { resize(); if (RM) render(performance.now()); });
+  if (!RM) requestAnimationFrame(loop); else render(performance.now());
+})();
 
-    // -------------------------------------------------------------
-    // INITIALIZATION ON DOM LOAD
-    // -------------------------------------------------------------
-    document.addEventListener('DOMContentLoaded', () => {
-      switchStage(1);
-      renderVentures('all');
-      renderFocusAreas();
-      renderPerspectives();
-      initCanvas();
-    });
-  </script>
+/* ---------- ventures accordion ---------- */
+function openVenture(key){
+  const v = document.querySelector(`.venture[data-venture="${key}"]`);
+  if (!v) return;
+  document.querySelectorAll('.venture.open').forEach(o => {
+    if (o !== v){ o.classList.remove('open'); o.querySelector('.venture-head').setAttribute('aria-expanded','false'); }
+  });
+  v.classList.add('open');
+  v.querySelector('.venture-head').setAttribute('aria-expanded','true');
+  setTimeout(() => v.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' }), 80);
+  v.classList.remove('flash'); void v.offsetWidth; v.classList.add('flash');
+}
+document.querySelectorAll('.venture-head').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const v = btn.closest('.venture');
+    const open = v.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+});
+
+/* ---------- model stage tabs ---------- */
+const tabs = [...document.querySelectorAll('.stage-tab')];
+const panels = [...document.querySelectorAll('.stage-panel')];
+tabs.forEach((t,i) => t.addEventListener('click', () => {
+  tabs.forEach((x,j) => { x.classList.toggle('active', j===i); x.setAttribute('aria-selected', String(j===i)); });
+  panels.forEach((p,j) => p.classList.toggle('active', j===i));
+}));
+
+/* ---------- perspectives drawer ---------- */
+const NOTES = {
+  systems: {
+    meta: 'THESIS · FEB 2025 · 6 MIN',
+    title: 'Why we see businesses as systems',
+    body: [
+      'Every business looks like an org chart until you operate one. Then it reveals itself as something else entirely: a system of inputs, conversions, feedback loops and delays — capital turning into capability, capability into product, product into reputation, and reputation back into capital.',
+      'When you see businesses this way, most "strategy" questions change shape. Pricing is not a number; it is a signal inside a loop. Hiring is not headcount; it is adding a node with its own delays and gain. A market shift is not a headline; it is a change in the boundary conditions of hundreds of dependent systems at once.',
+      'This is why ALTRADYN Prime is built as a platform rather than a fund or a holding company in the traditional sense. If businesses are systems, the highest-leverage object you can build is the thing that improves the parts individual ventures cannot see from inside themselves: shared intelligence, reusable capability, patient structure.',
+      'One platform. Multiple possibilities — not because it sounds good, but because systems that share a substrate compound faster than systems that do not.'
+    ]
+  },
+  aviation: {
+    meta: 'AVIATION · JAN 2025 · 4 MIN',
+    title: 'The quiet software decade in aviation',
+    body: [
+      'Aviation is one of the most systemised industries on earth — and one of the least software-native. The aircraft is a computer with wings; the operation around it often still runs on spreadsheets, PDFs and institutional memory.',
+      'That gap is closing, and it will close quietly. Not with flashy consumer apps, but in the unglamorous middle: crew scheduling, maintenance planning, compliance trails, parts logistics, turnaround coordination. The operators who instrument these processes first will compound advantages for a decade.',
+      'We care about this space because it rewards exactly what we practise: long development horizons, deep domain respect, and technology that serves decisions rather than decorating them. Expect to see our work here under Altradyn IQ — and under venture identities of its own.'
+    ]
+  },
+  patience: {
+    meta: 'OPERATING · DEC 2024 · 3 MIN',
+    title: 'Patience is an operating asset',
+    body: [
+      'Markets price in quarters. Systems develop in years. The mismatch is the opportunity.',
+      'Most capital is rented, so most businesses are built to be sold. We take a different stance: the ventures we form are structured to be held, operated and compounded. That single choice changes almost every downstream decision — what you build, who you hire, and which revenue you politely refuse.',
+      'Patience is not passivity. It is an operating asset with a specific yield: the freedom to do difficult, unglamorous work that produces durable advantage. We deploy it deliberately, and we expect it to outperform.'
+    ]
+  },
+  talent: {
+    meta: 'TALENT · NOV 2024 · 5 MIN',
+    title: 'What we look for in a founding operator',
+    body: [
+      'We meet a lot of impressive people. Most of them are impressive in ways that do not survive contact with an operating environment.',
+      'The operators we build with share three traits. They think in systems — they can find the loop that matters inside a messy situation. They carry domain obsession — a genuine, slightly unreasonable interest in one industry\u2019s fine print. And they have pace with integrity — they move quickly without bending the truth about what is actually working.',
+      'If that describes you, we should talk — whether or not a venture exists yet for you to join. Some of the best ones start as a conversation. join@altradynprime.com'
+    ]
+  }
+};
+const drawer = document.getElementById('drawer');
+const scrim = document.getElementById('scrim');
+let lastFocus = null;
+function openNote(id){
+  const n = NOTES[id]; if (!n) return;
+  document.getElementById('dMeta').textContent = n.meta;
+  document.getElementById('dTitle').textContent = n.title;
+  const box = document.getElementById('dText');
+  box.innerHTML = '';
+  n.body.forEach(t => { const p = document.createElement('p'); p.textContent = t; box.appendChild(p); });
+  drawer.querySelector('.d-scroll').scrollTop = 0;
+  lastFocus = document.activeElement;
+  drawer.classList.add('open'); scrim.classList.add('open');
+  lockScroll(true);
+  document.getElementById('dClose').focus();
+}
+function closeNote(){
+  drawer.classList.remove('open'); scrim.classList.remove('open');
+  lockScroll(false);
+  if (lastFocus) lastFocus.focus();
+}
+document.querySelectorAll('[data-note]').forEach(el => el.addEventListener('click', () => openNote(el.dataset.note)));
+document.getElementById('dClose').addEventListener('click', closeNote);
+scrim.addEventListener('click', closeNote);
+addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (drawer.classList.contains('open')) closeNote();
+  if (menu.classList.contains('open')) setMenu(false);
+});
+
+/* ---------- contact form ---------- */
+const form = document.getElementById('contactForm');
+const done = document.getElementById('formDone');
+function setErr(id, on){ document.getElementById(id).closest('.field').classList.toggle('error', on); }
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('fName').value.trim();
+  const email = document.getElementById('fEmail').value.trim();
+  const msg = document.getElementById('fMsg').value.trim();
+  const okName = name.length > 1;
+  const okMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const okMsg = msg.length >= 10;
+  setErr('fName', !okName); setErr('fEmail', !okMail); setErr('fMsg', !okMsg);
+  if (!(okName && okMail && okMsg)){
+    (!okName ? document.getElementById('fName') : !okMail ? document.getElementById('fEmail') : document.getElementById('fMsg')).focus();
+    return;
+  }
+  const chars = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+  const ref = 'AP-' + String(new Date().getFullYear()).slice(2) + '-' +
+    Array.from({length:4}, () => chars[Math.floor(Math.random()*chars.length)]).join('');
+  document.getElementById('refCode').textContent = ref;
+  form.hidden = true; done.hidden = false;
+  done.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' });
+});
+['fName','fEmail','fMsg'].forEach(id =>
+  document.getElementById(id).addEventListener('input', () => setErr(id, false)));
+document.getElementById('sendAnother').addEventListener('click', () => {
+  form.reset(); form.hidden = false; done.hidden = true;
+  document.getElementById('fName').focus();
+});
+
+/* ---------- footer ---------- */
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('toTop').addEventListener('click', () =>
+  scrollTo({ top: 0, behavior: RM ? 'auto' : 'smooth' }));
+
+/* ---------- precision cursor ---------- */
+if (matchMedia('(pointer:fine)').matches && !RM){
+  document.documentElement.classList.add('has-cursor');
+  const cur = document.getElementById('cursor');
+  let x = innerWidth/2, y = innerHeight/2, tx = x, ty = y;
+  addEventListener('mousemove', e => {
+    tx = e.clientX; ty = e.clientY;
+    const t = e.target;
+    const link = t.closest && t.closest('a,button,[role="button"],.venture-head,.stage-tab,.p-featured,label,#systemCanvas');
+    cur.classList.toggle('is-link', !!link);
+    cur.classList.toggle('is-hidden', !!(t.closest && t.closest('input,textarea,select')));
+  });
+  (function follow(){
+    x += (tx - x) * .22; y += (ty - y) * .22;
+    cur.style.transform = `translate(${x}px,${y}px)`;
+    requestAnimationFrame(follow);
+  })();
+  document.documentElement.addEventListener('mouseleave', () => cur.classList.add('is-off'));
+  document.documentElement.addEventListener('mouseenter', () => cur.classList.remove('is-off'));
+}
+</script>
 </body>
 </html>
